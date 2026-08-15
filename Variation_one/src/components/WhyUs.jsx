@@ -1,0 +1,55 @@
+import React from 'react';
+import { PawPrint } from 'lucide-react';
+import rabbitImage from '../assets/rabbit_care.png'; 
+
+export default function WhyUs() {
+  return (
+    <section id="whyus" className="relative w-full flex flex-col lg:flex-row transition-colors duration-300">
+      
+      {/* Left Column (Image) */}
+      <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto min-h-[500px] whyus-image-container">
+        <img
+          src={rabbitImage}
+          alt="Woman holding a rabbit"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Right Column (Content) */}
+      <div className="w-full lg:w-1/2 bg-[#fdf0f4] dark:bg-slate-900 relative overflow-hidden flex">
+        
+        {/* Background Decorative Icon */}
+        <PawPrint size={140} className="absolute bottom-8 right-12 text-[#ec558b] opacity-10 dark:opacity-5 rotate-12 pointer-events-none" fill="currentColor" />
+
+        {/* Content restricted to max-w-7xl alignment (Right side alignment) */}
+        <div className="w-full max-w-[640px] px-4 sm:px-6 lg:px-8 xl:pl-16 py-8 lg:py-16 lg:py-32 relative z-10 flex flex-col justify-center mr-auto whyus-text-container">
+          <span className="text-[#ec558b] font-bold text-[11px] tracking-wide uppercase mb-4 block">
+            Do we service your postcode?
+          </span>
+          
+          <h2 className="text-[32px] sm:text-[40px] lg:text-[44px] font-serif text-slate-800 dark:text-slate-100 leading-tight mb-6">
+            The Map We Cover
+          </h2>
+          
+          <p className="text-slate-600 dark:text-slate-400 text-[15px] mb-10 max-w-[460px] leading-[1.7]">
+            YourHomeVet is operating 24/7 in Greater London. Please refer to the map to find out if your postcode is covered by our service. If you have any doubts or are not too far from our operating border, please call us to see if an arrangement can be made.
+          </p>
+          
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/emergency-vet-near-me"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md"
+            >
+              Explore Areas We Cover
+            </a>
+            <a
+              href="#call"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-sm border border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white dark:hover:text-slate-900 text-[11px] font-bold uppercase tracking-wide transition-colors"
+            >BOOK AN APPOINTMENT</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  );
+}
