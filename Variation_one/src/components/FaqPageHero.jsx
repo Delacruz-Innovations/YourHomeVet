@@ -13,7 +13,7 @@ const categories = [
 const faqs = [
   { question: "Does my insurance cover the emergency consultation?", answer: "Most pet insurance policies cover emergency consultations, but this depends on your specific coverage and deductible. We provide all necessary documentation for you to submit a claim." },
   { question: "What if my pet requires continuous monitoring?", answer: "If your pet requires continuous monitoring, we will stabilize them at your home and safely transfer them to our 24-hour animal hospital or a partner facility." },
-  { question: "Do you cover my area?", answer: "We cover Greater London and surrounding areas. Please check our interactive map or call our dispatch team to confirm coverage for your specific postcode." },
+  { question: "Do you cover my area?", answer: "We cover all areas across Dubai. Please check our interactive map or call our dispatch team to confirm coverage for your specific location." },
   { question: "What if my pet needs surgery?", answer: "We perform minor procedures at home when safe to do so. For major surgeries, we will transport your pet to a fully equipped surgical facility." },
   { question: "Do you take Amex?", answer: "Yes, we accept American Express as well as all other major credit and debit cards." },
   { question: "Is it a Vet that comes to the house or a nurse?", answer: "A fully qualified, RCVS-registered veterinary surgeon will attend every emergency call-out." },

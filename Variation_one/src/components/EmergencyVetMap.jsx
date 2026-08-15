@@ -25,7 +25,7 @@ export default function EmergencyVetMap() {
           </h3>
           
           <p className="text-slate-700 dark:text-slate-300 text-[14px] sm:text-[15px] leading-[1.8] mb-8">
-            YourHomeVet is operating 24/7 in Greater London. Please refer to the map to find out if your postcode is covered by our service. If you have any doubts or are not too far from our operating border, please call us to see if an arrangement can be made.
+            YourHomeVet is operating 24/7 in Dubai. Please refer to the map to find out if your location is covered by our service. If you have any doubts or are not too far from our operating border, please call us to see if an arrangement can be made.
           </p>
           
           {/* Action Buttons */}

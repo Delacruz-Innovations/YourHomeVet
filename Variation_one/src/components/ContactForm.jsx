@@ -66,7 +66,7 @@ export default function ContactForm() {
               <div className="w-12 h-12 rounded-full border border-slate-300 dark:border-slate-700 bg-[#fdf5b6] dark:bg-[#524c25] flex items-center justify-center shrink-0">
                 <MapPin size={18} className="text-slate-700 dark:text-slate-300" />
               </div>
-              <span className="text-[16px] text-slate-800 dark:text-slate-200">HQ : YourHomeVet Shoreditch, 51 Hoxton Square, London, N1 6PB</span>
+              <span className="text-[16px] text-slate-800 dark:text-slate-200">HQ : YourHomeVet, Downtown Dubai, UAE</span>
             </div>
           </div>
         </div>

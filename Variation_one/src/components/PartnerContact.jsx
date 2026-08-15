@@ -16,7 +16,7 @@ export default function PartnerContact() {
           </h2>
           
           <p className="text-slate-600 dark:text-slate-400 text-[15px] sm:text-[16px] leading-[1.8] max-w-md">
-            If you'd want to meet for an informal chat, discuss out-of-hours or just say hello to another independent practice from London, from Edinburgh, Glasgow, Stirling, Perth etc (it's a small world after all!), feel free to drop us a message here.
+            If you'd want to meet for an informal chat, discuss out-of-hours or just say hello to another independent practice in Dubai or across the UAE, feel free to drop us a message here.
           </p>
         </div>
         

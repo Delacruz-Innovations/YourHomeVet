@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import WhyUs from '../components/WhyUs';
@@ -9,9 +10,7 @@ import Testimonials from '../components/Testimonials';
 import Emergency from '../components/Emergency';
 
 export default function Home() {
-  // GSAP scroll and entrance animations for Home
   useEffect(() => {
-    // Hero Entrance
     gsap.fromTo(
       '.hero-text-container > *',
       { opacity: 0, y: 40 },
@@ -23,7 +22,6 @@ export default function Home() {
       { opacity: 1, scale: 1, duration: 1, ease: 'power3.out', delay: 0.3 }
     );
 
-    // Scroll Trigger animations for all other sections
     const scrollAnims = [
       { trigger: '.about-text-container', targets: '.about-text-container > *' },
       { trigger: '.about-cards-container', targets: '.about-cards-container > *' },
@@ -57,7 +55,6 @@ export default function Home() {
       }
     });
 
-    // Cleanup ScrollTriggers on unmount
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
@@ -65,6 +62,11 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Emergency Vet at Home, Dubai"
+        description="24/7 emergency home vet service across Dubai. A Registered Veterinary Surgeon comes to your door. No waiting rooms — expert pet care in the comfort of your home."
+        canonical="https://yourhomevet.ae/"
+      />
       <Hero />
       <About />
       <WhyUs />

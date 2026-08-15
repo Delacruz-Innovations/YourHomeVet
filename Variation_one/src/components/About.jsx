@@ -51,7 +51,7 @@ export default function About() {
                 A team of highly qualified pet-loving veterinary surgeons providing 24/7 emergency care
               </h2>
               <p className="text-slate-600 dark:text-slate-400 text-[15px] max-w-lg leading-[1.7]">
-                From the most efficient phone triage to technical medical care – all in the stress-free comfort of your home or our London veterinary clinic.
+                From the most efficient phone triage to technical medical care – all in the stress-free comfort of your home or our Dubai veterinary clinic.
               </p>
             </div>
           </div>

@@ -13,7 +13,7 @@ export default function IntroSection() {
             Personalised at-home vet care
           </span>
           <h2 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6 leading-tight">
-            World-class home vet care for London's pets
+            World-class home vet care for Dubai's pets
           </h2>
           <p className="text-slate-600 mb-6 leading-relaxed text-[15px]">
             Founded to eliminate the stress out of routine veterinary care. YourHomeVet was formed in order to reduce anxiety levels in our furry patients and create ease for their owners.

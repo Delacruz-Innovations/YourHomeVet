@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SEO from './components/SEO';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import IntroSection from './components/IntroSection';
@@ -18,11 +19,30 @@ function App() {
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
+
+  const isBookPage = currentHash === '#book';
+
   return (
     <div className="min-h-screen bg-[#f7faf3] font-sans selection:bg-[#ec558b] selection:text-white">
+
+      {/* Per-view SEO tags */}
+      {isBookPage ? (
+        <SEO
+          title="Book an Appointment – Home Vet Visit Dubai"
+          description="Book a home vet visit in Dubai with YourHomeVet. Contact us by email or WhatsApp and our team will bring expert, stress-free care directly to your doorstep."
+          canonical="https://yourhomevet.ae/#book"
+        />
+      ) : (
+        <SEO
+          title="Home Vet Care at Your Doorstep, Dubai"
+          description="Personalised, stress-free home veterinary care across Dubai. Expert vets come to your door for routine consultations, vaccinations, health checks, and more."
+          canonical="https://yourhomevet.ae/"
+        />
+      )}
+
       <Header />
-      
-      {currentHash === '#book' ? (
+
+      {isBookPage ? (
         <BookAppointment />
       ) : (
         <main>
@@ -35,7 +55,7 @@ function App() {
           <CTA />
         </main>
       )}
-      
+
       <Footer />
     </div>
   );

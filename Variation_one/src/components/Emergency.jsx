@@ -35,7 +35,7 @@ export default function Emergency() {
         </h2>
         
         <p className="text-slate-600 dark:text-slate-400 text-[15px] mb-12 leading-[1.8]">
-          YourHomeVet operates 24/7 in the Greater London. Worried? Concerned? Every minute counts. Get connected to our Phone Triage Team immediately or send a call-back request filling the form below. If your pet's condition is critical, call us right away to book an emergency consultation. Our team is on standby to provide immediate help.
+          YourHomeVet operates 24/7 in Dubai. Worried? Concerned? Every minute counts. Get connected to our Phone Triage Team immediately or send a call-back request filling the form below. If your pet's condition is critical, call us right away to book an emergency consultation. Our team is on standby to provide immediate help.
         </p>
 
         {/* Action Buttons */}

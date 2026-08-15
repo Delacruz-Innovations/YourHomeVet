@@ -4,7 +4,7 @@ const benefits = [
   {
     id: 1,
     title: "Independent and dedicated out-of-hours service",
-    content: "YourHomeVet is the first and only mobile practice dedicated to out-of-hours care in Greater London and Scotland. We offer the most gentle care and are backed by an our 24/7 facility in North-Central London and collaborate with other 24/7 hospitals all over the UK."
+    content: "YourHomeVet is the premier mobile practice dedicated to out-of-hours care in Dubai and the UAE. We offer the most gentle care and are backed by our 24/7 facilities."
   },
   {
     id: 2,

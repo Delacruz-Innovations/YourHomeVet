@@ -11,10 +11,10 @@ export default function Faq() {
     { question: 'Do you offer follow-up visits after treatment?', answer: 'Yes, we can arrange follow-up visits to ensure your pet is recovering smoothly.' },
     { question: 'What if my pet needs to go to a clinic?', answer: 'We work closely with several partner practices and will arrange safe transport and handover if clinic facilities are required.' },
     { question: 'What type of pets do you treat at home?', answer: 'We primarily treat dogs and cats, but our team also includes specialists for common exotic pets like rabbits and birds.' },
-    { question: 'What areas do you cover?', answer: 'We currently cover all of Greater London and specific regions in Scotland. Please refer to our coverage map.' },
+    { question: 'What areas do you cover?', answer: 'We currently cover all areas of Dubai and surrounding regions in the UAE. Please refer to our coverage map.' },
     { question: 'How do I get a pet insurance claim?', answer: 'We will provide all necessary medical notes and invoices directly to you or your insurance provider to expedite the claim process.' },
     { question: 'Is the home visit fee included in the treatment cost?', answer: 'The home visit incurs a standard call-out fee. All treatment and medication costs are discussed transparently before administration.' },
-    { question: 'Do you work with pet insurance companies?', answer: 'Yes, we work with most major UK pet insurance providers.' },
+    { question: 'Do you work with pet insurance companies?', answer: 'Yes, we work with most major UAE pet insurance providers.' },
     { question: 'Can I choose a specific vet to visit my pet?', answer: 'While we try to accommodate requests, we prioritize dispatching the nearest available emergency vet to ensure rapid response.' },
     { question: 'What should I do before the vet arrives?', answer: 'Keep your pet calm and still in a quiet room. Do not attempt to feed them or administer human medication.' }
   ];

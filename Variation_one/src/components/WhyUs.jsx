@@ -32,7 +32,7 @@ export default function WhyUs() {
           </h2>
           
           <p className="text-slate-600 dark:text-slate-400 text-[15px] mb-10 max-w-[460px] leading-[1.7]">
-            YourHomeVet is operating 24/7 in Greater London. Please refer to the map to find out if your postcode is covered by our service. If you have any doubts or are not too far from our operating border, please call us to see if an arrangement can be made.
+            YourHomeVet is operating 24/7 in Dubai. Please refer to the map to find out if your location is covered by our service. If you have any doubts or are not too far from our operating border, please call us to see if an arrangement can be made.
           </p>
           
           <div className="flex flex-wrap gap-4">

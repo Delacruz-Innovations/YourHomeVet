@@ -68,7 +68,7 @@ export default function Header({ darkMode, toggleDarkMode }) {
         <div className="bg-[#9cbc65] text-white py-2 px-4 w-full">
           <div className="max-w-7xl mx-auto flex items-center justify-center text-xs sm:text-[13px] font-medium tracking-wide text-center">
             <PawPrint size={14} className="mr-2 inline-block shrink-0" />
-            <span>24/7 VETERINARY EMERGENCY SERVICES - GREATER LONDON - SCOTLAND CALL <a href="tel:03308089066" className="hover:underline font-bold">0330 808 9066</a></span>
+            <span>24/7 VETERINARY EMERGENCY SERVICES - DUBAI - UAE CALL <a href="tel:03308089066" className="hover:underline font-bold">0330 808 9066</a></span>
           </div>
         </div>
 
