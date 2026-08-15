@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function PartnerContact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
   return (
     <section className="w-full py-8 lg:py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16 lg:gap-24 items-start">
@@ -23,7 +30,20 @@ export default function PartnerContact() {
         {/* Right Column: Contact Form */}
         <div className="w-full lg:w-1/2">
           <div className="bg-[#f5f9fc] dark:bg-slate-900 p-8 sm:p-12 rounded-sm border border-slate-100 dark:border-slate-800">
-            <form className="flex flex-col gap-6">
+            {isSubmitted ? (
+              <div className="flex flex-col items-center justify-center py-10 text-center">
+                <div className="w-16 h-16 bg-black dark:bg-white text-white dark:text-black rounded-full flex items-center justify-center mb-6 shadow-md">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Inquiry Submitted!</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">
+                  Thank you for your interest in partnering with us. Our team will review your inquiry and get back to you soon.
+                </p>
+              </div>
+            ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               
               {/* Practice Name */}
               <div className="flex flex-col gap-2">
@@ -80,7 +100,7 @@ export default function PartnerContact() {
               {/* ReCAPTCHA Placeholder */}
               <div className="flex items-center justify-between w-full max-w-[280px] bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-4 rounded-sm shadow-sm mt-2">
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" className="w-6 h-6 rounded border-slate-300 text-[#5b8cce] focus:ring-[#5b8cce]" />
+                  <input type="checkbox" className="w-6 h-6 rounded border-slate-300 text-[#5b8cce] focus:ring-[#5b8cce]" required />
                   <span className="text-[13px] text-slate-600 dark:text-slate-400">I'm not a robot</span>
                 </div>
                 <div className="flex flex-col items-center justify-center opacity-70">
@@ -101,6 +121,7 @@ export default function PartnerContact() {
               </button>
 
             </form>
+            )}
           </div>
         </div>
 

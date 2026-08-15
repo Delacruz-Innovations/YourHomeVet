@@ -3,11 +3,11 @@ import { PawPrint } from 'lucide-react';
 
 export default function AboutNewsletter() {
   const [email, setEmail] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle newsletter subscription
-    console.log('Subscribed:', email);
+    setIsSubmitted(true);
     setEmail('');
   };
 
@@ -30,25 +30,31 @@ export default function AboutNewsletter() {
 
         {/* Right Side: Form */}
         <div className="w-full md:w-1/2">
-          <form 
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 w-full"
-          >
-            <input 
-              type="email" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email Address" 
-              required
-              className="w-full px-5 py-4 rounded-sm border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all shadow-sm"
-            />
-            <button 
-              type="submit"
-              className="shrink-0 px-8 py-4 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
+          {isSubmitted ? (
+            <div className="w-full py-4 px-6 bg-[#dbe6ef] text-slate-800 rounded-sm text-sm font-semibold border border-[#99c8e8]">
+              Thank you for subscribing!
+            </div>
+          ) : (
+            <form 
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row gap-3 w-full"
             >
-              SUBSCRIBE
-            </button>
-          </form>
+              <input 
+                type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email Address" 
+                required
+                className="w-full px-5 py-4 rounded-sm border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all shadow-sm"
+              />
+              <button 
+                type="submit"
+                className="shrink-0 px-8 py-4 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
+              >
+                SUBSCRIBE
+              </button>
+            </form>
+          )}
         </div>
 
       </div>

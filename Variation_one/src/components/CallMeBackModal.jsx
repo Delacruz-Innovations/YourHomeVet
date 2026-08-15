@@ -4,12 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CallMeBackModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);
     window.addEventListener('openCallMeBackModal', handleOpen);
     return () => window.removeEventListener('openCallMeBackModal', handleOpen);
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setTimeout(() => setIsSubmitted(false), 300); // reset after transition
+  };
 
   if (!isOpen) return null;
 
@@ -36,69 +47,90 @@ export default function CallMeBackModal() {
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           className="relative w-full max-w-[500px] bg-white rounded-md shadow-2xl overflow-hidden my-auto"
         >
-          {/* Close Button - Floats outside the white bounds visually */}
+          {/* Close Button */}
           <button 
-            onClick={() => setIsOpen(false)}
-            className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-100 transition-colors z-10 shadow-sm border border-slate-200"
+            onClick={handleClose}
+            className="absolute top-6 right-6 p-2 rounded-full hover:bg-black/5 text-slate-600 transition-colors z-10"
           >
-            <X size={20} strokeWidth={1.5} />
+            <X size={20} />
           </button>
 
-          <div className="p-8 sm:p-10 pt-12">
+          <div className="p-8 sm:p-12">
             
-            <form className="flex flex-col gap-6">
+            <div className="mb-8">
+              <h2 className="text-3xl font-extrabold text-slate-800 tracking-tight mb-2">Request a Call Back</h2>
+              <p className="text-slate-600 text-sm">
+                Leave your details below and one of our veterinary specialists will call you back as soon as possible.
+              </p>
+            </div>
+
+            {isSubmitted ? (
+              <div className="flex flex-col items-center justify-center py-10 text-center">
+                <div className="w-16 h-16 bg-[#99c8e8] text-slate-800 rounded-full flex items-center justify-center mb-6 shadow-md">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-2">Request Received!</h3>
+                <p className="text-slate-600 text-sm">
+                  We have received your call back request. Our team will be in touch shortly.
+                </p>
+                <button 
+                  onClick={handleClose}
+                  className="mt-8 px-8 py-3 rounded-full border border-slate-300 hover:bg-slate-50 text-slate-700 text-[13px] font-semibold transition-colors"
+                >
+                  Close Window
+                </button>
+              </div>
+            ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               
-              <div>
-                <label className={labelStyles}>Full name *</label>
-                <input type="text" className={inputStyles} required />
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="w-full">
+                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Your Name</label>
+                  <input type="text" placeholder="John Doe" className={inputStyles} required />
+                </div>
+                <div className="w-full">
+                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
+                  <input type="tel" placeholder="+44 1234 567890" className={inputStyles} required />
+                </div>
               </div>
 
-              <div>
-                <label className={labelStyles}>Email</label>
-                <input type="email" className={inputStyles} />
+              <div className="w-full">
+                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Best time to call</label>
+                <div className={selectWrapper}>
+                  <select className={inputStyles} required defaultValue="asap">
+                    <option value="asap">As soon as possible</option>
+                    <option value="morning">Morning (9AM - 12PM)</option>
+                    <option value="afternoon">Afternoon (12PM - 5PM)</option>
+                    <option value="evening">Evening (5PM - 8PM)</option>
+                  </select>
+                  {selectIcon}
+                </div>
               </div>
 
-              <div>
-                <label className={labelStyles}>Phone number *</label>
-                <input type="tel" className={inputStyles} required />
-              </div>
-
-              <div>
-                <label className={labelStyles}>Postcode *</label>
-                <input type="text" className={inputStyles} required />
-              </div>
-
-              <div>
-                <label className={labelStyles}>Describe your problem *</label>
+              <div className="w-full">
+                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Brief Reason for Call</label>
                 <textarea 
-                  rows={4}
-                  className={`${inputStyles} resize-none`}
+                  placeholder="e.g., Question about my dog's vaccination, Emergency..." 
+                  rows={3}
+                  className="w-full bg-transparent border border-slate-400/60 p-4 text-[14px] text-slate-800 placeholder:text-slate-500 focus:outline-none focus:border-slate-800 transition-colors rounded-sm resize-none"
                   required
                 ></textarea>
               </div>
 
-              {/* reCAPTCHA Mockup */}
-              <div className="w-[300px] h-[78px] bg-[#f9f9f9] border border-[#d3d3d3] rounded-[3px] flex items-center justify-between px-4 mt-2 shadow-sm">
-                <div className="flex items-center gap-3">
-                  <div className="w-7 h-7 border-2 border-[#c1c1c1] rounded-sm bg-white"></div>
-                  <span className="text-[14px] text-[#222]">I'm not a robot</span>
-                </div>
-                <div className="flex flex-col items-center justify-center">
-                  <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA" className="w-8 h-8 opacity-70" />
-                  <span className="text-[10px] text-[#555] mt-1">reCAPTCHA</span>
-                </div>
-              </div>
-
-              <div className="mt-4">
+              {/* Submit Button */}
+              <div className="pt-4">
                 <button 
                   type="submit"
-                  className="w-full py-4 rounded-sm bg-black hover:bg-slate-800 text-white text-[12px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
+                  className="px-8 py-3.5 rounded-full bg-[#99c8e8] hover:bg-[#86badc] text-slate-800 text-[13px] font-semibold transition-colors shadow-sm w-full sm:w-auto"
                 >
-                  REQUEST CALL BACK
+                  Submit Request
                 </button>
               </div>
 
             </form>
+            )}
           </div>
         </motion.div>
       </div>

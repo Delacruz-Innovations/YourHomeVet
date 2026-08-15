@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Send } from 'lucide-react';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
+    lastName: '',
     email: '',
     phone: '',
     message: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,14 +17,13 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add logic here for actual form submission
-    alert('Thank you for contacting us! We will get back to you shortly.');
-    setFormData({ fullName: '', email: '', phone: '', message: '' });
+    setIsSubmitted(true);
   };
 
+  const inputStyles = "w-full bg-transparent border-b border-slate-400/60 dark:border-slate-500 pb-2 text-[14px] text-slate-800 dark:text-slate-200 placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:border-slate-800 dark:focus:border-slate-300 transition-colors rounded-none appearance-none";
+
   return (
-    <section className="relative w-full min-h-screen flex flex-col lg:flex-row bg-[#e6f2fd] dark:bg-slate-950 transition-colors overflow-hidden pt-12 lg:pt-24 lg:pt-16 lg:pt-32 pb-16 lg:pb-0">
+    <section className="relative w-full min-h-screen flex flex-col lg:flex-row bg-[#e6f2fd] dark:bg-slate-950 transition-colors overflow-hidden pt-12 lg:pt-32 pb-16 lg:pb-0">
       
       {/* Soft Ambient Radial Glow Effects for Background */}
       <div className="absolute top-0 -left-24 w-[500px] h-[500px] rounded-full bg-[#dbeefe] opacity-90 blur-3xl pointer-events-none"></div>

@@ -1,122 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SEO from './components/SEO';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import ContactPage from './components/ContactPage';
+import PetExportPage from './components/PetExportPage';
+import EmergenciesPage from './components/EmergenciesPage';
+import ServicesListPage from './components/ServicesListPage';
+import ServiceDetailsPage from './components/ServiceDetailsPage';
+import ServiceAmbulancePage from './components/ServiceAmbulancePage';
+import Service247Page from './components/Service247Page';
+import ServiceVaccinationPage from './components/ServiceVaccinationPage';
+import ServiceDewormingPage from './components/ServiceDewormingPage';
+import ServiceSoftTissuePage from './components/ServiceSoftTissuePage';
+import ServiceOrthopedicPage from './components/ServiceOrthopedicPage';
+import ServiceBloodTestsPage from './components/ServiceBloodTestsPage';
+import BookingModal from './components/BookingModal';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  useEffect(() => {
+    const handleGlobalClick = (e) => {
+      const target = e.target.closest('a, button');
+      if (target) {
+        // If it's a link to #book or contains specific text
+        const href = target.getAttribute('href');
+        const text = target.textContent.trim().toUpperCase();
+        
+        if (href === '#book' || text === 'BOOK AN APPOINTMENT') {
+          e.preventDefault();
+          window.dispatchEvent(new Event('openBookingModal'));
+        }
+      }
+    };
+    document.addEventListener('click', handleGlobalClick);
+    return () => document.removeEventListener('click', handleGlobalClick);
+  }, []);
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Router>
+      <div className="min-h-screen flex flex-col bg-[#FFF0F5] text-slate-800 transition-colors duration-300 selection:bg-[#F2306D]/20 selection:text-[#F2306D]">
+        <SEO />
+        
+        <Header />
 
-      <div className="ticks"></div>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<ServicesListPage />} />
+            <Route path="/services/check-ups" element={<ServiceDetailsPage />} />
+            <Route path="/services/ambulance" element={<ServiceAmbulancePage />} />
+            <Route path="/services/24-7-availability" element={<Service247Page />} />
+            <Route path="/services/vaccination" element={<ServiceVaccinationPage />} />
+            <Route path="/services/deworming" element={<ServiceDewormingPage />} />
+            <Route path="/services/soft-tissue-surgery" element={<ServiceSoftTissuePage />} />
+            <Route path="/services/orthopedic-surgery" element={<ServiceOrthopedicPage />} />
+            <Route path="/services/blood-tests" element={<ServiceBloodTestsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/pet-export" element={<PetExportPage />} />
+            <Route path="/resources/emergencies" element={<EmergenciesPage />} />
+          </Routes>
+        </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <Footer />
+        <BookingModal />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
