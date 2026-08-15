@@ -41,12 +41,7 @@ export default function Hero() {
             >
               Book an Appointment
             </a>
-            <a
-              href="tel:+"
-              className="bg-transparent hover:bg-[#F2306D] text-[#F2306D] hover:text-white border-2 border-[#F2306D] font-bold text-[13px] tracking-wide px-8 py-3 rounded-full transition-colors"
-            >
-              Call Us
-            </a>
+           
           </motion.div>
         </div>
 
