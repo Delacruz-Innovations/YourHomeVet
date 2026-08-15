@@ -101,10 +101,10 @@ export default function PetcareGrid() {
           ))}
         </div>
         
-        {/* Articles Grid - Carousel on mobile */}
-        <div className="flex flex-nowrap md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-x-8 gap-y-12 md:gap-y-8 lg:gap-y-16 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-8 -mx-4 px-4 sm:px-6 md:mx-0 md:px-0 md:pb-0">
+        {/* Articles Grid - stacked on mobile, grid on tablet+ */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-x-8 gap-y-10 md:gap-y-8 lg:gap-y-16">
           {articles.map((article) => (
-            <a href={`/petcare-advice/diabetes-in-dogs`} key={article.id} className="flex flex-col group cursor-pointer min-w-[280px] sm:min-w-[320px] md:min-w-0 shrink-0 snap-center md:snap-align-none">
+            <a href={`/petcare-advice/diabetes-in-dogs`} key={article.id} className="flex flex-col group cursor-pointer">
               {/* Image */}
               <div className="w-full aspect-[4/3] overflow-hidden rounded-sm mb-6 bg-slate-100 dark:bg-slate-900">
                 <img 

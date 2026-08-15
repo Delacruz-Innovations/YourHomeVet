@@ -57,10 +57,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* Values Grid - Carousel on mobile, Grid on desktop */}
-        <div className="flex flex-nowrap md:grid md:grid-cols-3 gap-6 md:gap-12 lg:gap-8 lg:gap-16 about-cards-container overflow-x-auto snap-x snap-mandatory no-scrollbar pb-6 -mx-4 px-4 sm:px-6 md:mx-0 md:px-0 md:pb-0">
+        {/* Values Grid - stacked on mobile, 3-col on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 lg:gap-16 about-cards-container">
           {values.map((item, idx) => (
-            <div key={idx} className="flex flex-col items-start text-left min-w-[280px] sm:min-w-[320px] md:min-w-0 shrink-0 snap-center md:snap-align-none bg-white md:bg-transparent dark:bg-slate-900 md:dark:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none shadow-sm md:shadow-none border border-slate-100 md:border-transparent dark:border-slate-800">
+            <div key={idx} className="flex flex-col items-start text-left bg-white md:bg-transparent dark:bg-slate-900 md:dark:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none shadow-sm md:shadow-none border border-slate-100 md:border-transparent dark:border-slate-800">
               <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${item.bg}`}>
                 {item.icon}
               </div>
