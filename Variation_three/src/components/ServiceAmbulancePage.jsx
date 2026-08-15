@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from './SEO';
 import ServiceDetailsHero from './ServiceDetailsHero';
 import ServiceAmbulanceContent from './ServiceAmbulanceContent';
 import Reviews from './Reviews';
@@ -8,7 +9,12 @@ import ContactBanner from './ContactBanner';
 export default function ServiceAmbulancePage() {
   return (
     <>
-      <ServiceDetailsHero title="Pet Ambulance" />
+      <SEO 
+        title="Pet Ambulance Service" 
+        description="Safe, fast, and fully equipped pet ambulance services in Dubai for medical transport and emergencies." 
+        canonical="https://homevetsdubai.com/services/ambulance"
+      />
+      <ServiceDetailsHero title="Ambulance" />
       <ServiceAmbulanceContent />
       <Reviews />
       <ResourcesVideo />

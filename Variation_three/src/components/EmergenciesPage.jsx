@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from './SEO';
 import { motion } from 'framer-motion';
 import { PawPrint, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,6 +9,11 @@ import ResourcesVideo from './ResourcesVideo';
 export default function EmergenciesPage() {
   return (
     <>
+      <SEO 
+        title="Emergency Vets" 
+        description="24/7 emergency veterinary services in Dubai. Immediate home-visit care for your pet's urgent health needs." 
+        canonical="https://homevetsdubai.com/emergencies"
+      />
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-40 bg-[#a4d4c8] flex flex-col items-center justify-center text-white">
         <motion.div

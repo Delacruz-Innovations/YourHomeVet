@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from './SEO';
 import { motion } from 'framer-motion';
 import { 
   Stethoscope, Syringe, Bug, Scissors, Clock, Truck, Bone, TestTube
@@ -22,6 +23,11 @@ const services = [
 export default function ServicesListPage() {
   return (
     <>
+      <SEO 
+        title="Our Services" 
+        description="Explore our range of premium mobile veterinary services in Dubai including annual checkups, vaccinations, surgeries, and 24/7 care." 
+        canonical="https://homevetsdubai.com/services"
+      />
       {/* Hero Section */}
       <section className="relative w-full h-[350px] bg-slate-100 flex items-center justify-center overflow-hidden">
         <div 
