@@ -21,10 +21,20 @@ import AreasCovered from './pages/AreasCovered';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // 1. Check localStorage first
+    const saved = localStorage.getItem('yhv-dark-mode');
+    if (saved !== null) return saved === 'true';
+    // 2. Fall back to OS preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
   
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(prev => {
+      const next = !prev;
+      localStorage.setItem('yhv-dark-mode', String(next));
+      return next;
+    });
   };
 
   // Sync dark class on document element so Tailwind's dark: mode works globally
