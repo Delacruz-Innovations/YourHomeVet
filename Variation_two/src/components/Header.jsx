@@ -73,17 +73,17 @@ export default function Header() {
           <div className="max-w-7xl mx-auto px-6 h-10 flex items-center justify-between text-[11px] font-medium text-slate-600 tracking-wide">
             <div className="flex items-center gap-2 hover:text-[#ec558b] transition-colors">
               <Mail size={14} className="text-[#9cbc65]" />
-              <a href="mailto:hello@yourhomevet.co.uk">hello@yourhomevet.co.uk</a>
+              <a href="mailto:Info@yourhomevet.ae">Info@yourhomevet.ae</a>
             </div>
             <div className="flex items-center gap-3">
               <a
-                href="mailto:hello@yourhomevet.co.uk"
+                href="mailto:Info@yourhomevet.ae"
                 className="w-6 h-6 rounded-full bg-slate-600 hover:bg-[#ec558b] text-white flex items-center justify-center transition-colors"
               >
                 <Mail size={12} />
               </a>
               <a
-                href="https://wa.me/443308089066"
+                href="https://wa.me/971505503777"
                 className="w-6 h-6 rounded-full bg-slate-600 hover:bg-[#9cbc65] text-white flex items-center justify-center transition-colors"
               >
                 <MessageCircle size={12} />
@@ -176,10 +176,10 @@ export default function Header() {
               Book An Appointment
             </a>
             <div className="flex items-center gap-4 justify-center mt-2">
-              <a href="mailto:hello@yourhomevet.co.uk" className="text-[#9cbc65] hover:text-white transition-colors">
+              <a href="mailto:Info@yourhomevet.ae" className="text-[#9cbc65] hover:text-white transition-colors">
                 <Mail size={22} />
               </a>
-              <a href="https://wa.me/443308089066" className="text-[#9cbc65] hover:text-white transition-colors">
+              <a href="https://wa.me/971505503777" className="text-[#9cbc65] hover:text-white transition-colors">
                 <MessageCircle size={22} />
               </a>
             </div>

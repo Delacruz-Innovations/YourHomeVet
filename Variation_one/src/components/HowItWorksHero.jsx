@@ -28,7 +28,7 @@ export default function HowItWorksHero() {
         </h1>
         
         <p className="text-slate-600 dark:text-slate-400 text-[15px] mb-10 max-w-md leading-[1.7]">
-          Dial 0330 808 9066. We'll ask a few quick questions, arrange for a vet to visit your home, and provide the care your pet needs right where they feel safest.
+          Dial +971 50 550 3777. We'll ask a few quick questions, arrange for a vet to visit your home, and provide the care your pet needs right where they feel safest.
         </p>
         
         <div className="flex flex-wrap gap-4">

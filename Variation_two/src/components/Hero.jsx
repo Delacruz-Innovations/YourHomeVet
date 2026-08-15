@@ -29,8 +29,8 @@ export default function Hero() {
             <a href="#book" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-colors shadow-lg w-full sm:w-auto">
               Book Appointment
             </a>
-            <a href="tel:03308089066" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-[#9cbc65] hover:bg-[#8ab051] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-colors shadow-lg w-full sm:w-auto">
-              Call Us: 0330 808 9066
+            <a href="tel:+971505503777" className="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-[#9cbc65] hover:bg-[#8ab051] text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-widest transition-colors shadow-lg w-full sm:w-auto">
+              Call Us: +971 50 550 3777
             </a>
           </div>
         </motion.div>

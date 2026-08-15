@@ -52,14 +52,14 @@ export default function ContactForm() {
               <div className="w-12 h-12 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center shrink-0">
                 <Phone size={18} className="text-slate-700 dark:text-slate-300" />
               </div>
-              <span className="text-[16px] text-slate-800 dark:text-slate-200">0330 808 9066</span>
+              <span className="text-[16px] text-slate-800 dark:text-slate-200">+971 50 550 3777</span>
             </div>
             
             <div className="flex items-center gap-6">
               <div className="w-12 h-12 rounded-full border border-slate-300 dark:border-slate-700 bg-[#e4f7ca] dark:bg-[#344621] flex items-center justify-center shrink-0">
                 <Mail size={18} className="text-slate-700 dark:text-slate-300" />
               </div>
-              <span className="text-[16px] text-slate-800 dark:text-slate-200">admin@yourhomevet.co.uk</span>
+              <span className="text-[16px] text-slate-800 dark:text-slate-200">Info@yourhomevet.ae</span>
             </div>
             
             <div className="flex items-center gap-6">

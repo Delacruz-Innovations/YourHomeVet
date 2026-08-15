@@ -27,10 +27,10 @@ export default function IntroSection() {
               Book Appointment
             </a>
             <div className="flex items-center gap-4">
-              <a href="mailto:hello@yourhomevet.co.uk" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
+              <a href="mailto:Info@yourhomevet.ae" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
                 <Mail size={22} strokeWidth={2.5} />
               </a>
-              <a href="https://wa.me/443308089066" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
+              <a href="https://wa.me/971505503777" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
                 <MessageCircle size={22} strokeWidth={2.5} />
               </a>
             </div>

@@ -68,7 +68,7 @@ export default function Header({ darkMode, toggleDarkMode }) {
         <div className="bg-[#9cbc65] text-white py-2 px-4 w-full">
           <div className="max-w-7xl mx-auto flex items-center justify-center text-xs sm:text-[13px] font-medium tracking-wide text-center">
             <PawPrint size={14} className="mr-2 inline-block shrink-0" />
-            <span>24/7 VETERINARY EMERGENCY SERVICES - DUBAI - UAE CALL <a href="tel:03308089066" className="hover:underline font-bold">0330 808 9066</a></span>
+            <span>24/7 VETERINARY EMERGENCY SERVICES - DUBAI - UAE CALL <a href="tel:+971505503777" className="hover:underline font-bold">+971 50 550 3777</a></span>
           </div>
         </div>
 
@@ -150,7 +150,7 @@ export default function Header({ darkMode, toggleDarkMode }) {
               <motion.a
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                href="tel:03308089066"
+                href="tel:+971505503777"
                 className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[13px] font-bold shadow-md shadow-pink-500/20 transition-all duration-200 tracking-wide"
               >BOOK AN APPOINTMENT</motion.a>
 
@@ -212,7 +212,7 @@ export default function Header({ darkMode, toggleDarkMode }) {
           
           {/* Additional Contact/Action info at bottom of menu */}
           <div className="mobile-nav-link mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
-            <a href="tel:03308089066" className="inline-flex items-center justify-center px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] transition-colors text-white text-[13px] font-bold tracking-wide w-full shadow-lg shadow-pink-500/20">
+            <a href="tel:+971505503777" className="inline-flex items-center justify-center px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] transition-colors text-white text-[13px] font-bold tracking-wide w-full shadow-lg shadow-pink-500/20">
               BOOK AN APPOINTMENT
             </a>
           </div>

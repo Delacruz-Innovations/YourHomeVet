@@ -6,7 +6,7 @@ export default function StepsTimeline() {
     {
       num: '01',
       title: 'The Phone Triage',
-      desc: 'When you call 0330 808 9066, a registered nurse will ask a few simple questions to understand your pet\'s condition. We\'ll give you advice and, if needed, arrange for a vet to visit you at home.',
+      desc: 'When you call +971 50 550 3777, a registered nurse will ask a few simple questions to understand your pet\'s condition. We\'ll give you advice and, if needed, arrange for a vet to visit you at home.',
       time: 'Usually in 15 mins',
       img: 'https://images.unsplash.com/photo-1601758177266-bc599de87707?auto=format&fit=crop&q=80&w=800',
       bgClass: 'bg-[#eef5fd] dark:bg-blue-900/10',

@@ -35,7 +35,7 @@ export default function ServiceHero() {
             SERVICES
           </a>
           <a 
-            href="tel:03308089066" 
+            href="tel:+971505503777" 
             className="px-8 py-3.5 rounded-sm border border-slate-400/50 dark:border-slate-700 bg-white/40 dark:bg-slate-900/40 text-slate-800 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-800 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"
           >BOOK AN APPOINTMENT</a>
         </div>

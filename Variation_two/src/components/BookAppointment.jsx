@@ -17,11 +17,11 @@ export default function BookAppointment() {
         
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-          <a href="mailto:hello@yourhomevet.co.uk" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-widest transition-colors shadow-sm">
+          <a href="mailto:Info@yourhomevet.ae" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-widest transition-colors shadow-sm">
             <Mail size={16} />
             Email
           </a>
-          <a href="https://wa.me/443308089066" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#9cbc65] hover:bg-[#8ab051] text-white text-[11px] font-bold uppercase tracking-widest transition-colors shadow-sm">
+          <a href="https://wa.me/971505503777" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-[#9cbc65] hover:bg-[#8ab051] text-white text-[11px] font-bold uppercase tracking-widest transition-colors shadow-sm">
             <MessageCircle size={16} />
             WhatsApp
           </a>

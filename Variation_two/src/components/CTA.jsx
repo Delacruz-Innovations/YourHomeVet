@@ -22,7 +22,7 @@ export default function CTA() {
             <a href="#book" className="inline-flex items-center justify-center px-8 py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-widest transition-colors shadow-sm w-full sm:w-auto">
               Book An Appointment
             </a>
-            <a href="https://wa.me/443308089066" className="inline-flex items-center justify-center px-8 py-3.5 bg-transparent border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-[11px] font-bold uppercase tracking-widest transition-colors w-full sm:w-auto">
+            <a href="https://wa.me/971505503777" className="inline-flex items-center justify-center px-8 py-3.5 bg-transparent border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-[11px] font-bold uppercase tracking-widest transition-colors w-full sm:w-auto">
               Send Us A Message
             </a>
           </div>
@@ -30,11 +30,11 @@ export default function CTA() {
           <div className="text-slate-500 text-sm">
             <div className="mb-6">
               <p className="mb-1 uppercase tracking-widest text-[10px] font-bold text-[#9cbc65]">Email</p>
-              <a href="mailto:hello@yourhomevet.co.uk" className="hover:text-[#ec558b] transition-colors">hello@yourhomevet.co.uk</a>
+              <a href="mailto:Info@yourhomevet.ae" className="hover:text-[#ec558b] transition-colors">Info@yourhomevet.ae</a>
             </div>
             <div>
               <p className="mb-1 uppercase tracking-widest text-[10px] font-bold text-[#9cbc65]">WhatsApp</p>
-              <a href="https://wa.me/443308089066" className="hover:text-[#ec558b] transition-colors">Click here</a>
+              <a href="https://wa.me/971505503777" className="hover:text-[#ec558b] transition-colors">Click here</a>
             </div>
           </div>
         </div>

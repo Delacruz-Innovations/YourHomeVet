@@ -97,7 +97,7 @@ export default function ServiceSteps() {
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4">
                   <a
-                    href="tel:03308089066"
+                    href="tel:+971505503777"
                     className="px-7 py-3.5 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] transition-colors shadow-md"
                   >BOOK AN APPOINTMENT</a>
                   <a

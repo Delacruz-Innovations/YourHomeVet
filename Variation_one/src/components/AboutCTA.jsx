@@ -22,7 +22,7 @@ export default function AboutCTA() {
             BOOK AN APPOINTMENT
           </a>
           <a 
-            href="tel:03308089066" 
+            href="tel:+971505503777" 
             className="px-8 py-3.5 rounded-sm border border-slate-300 dark:border-slate-700 bg-transparent text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-900 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"
           >BOOK AN APPOINTMENT</a>
         </div>

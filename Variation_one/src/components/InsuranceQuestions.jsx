@@ -35,7 +35,7 @@ export default function InsuranceQuestions() {
           <motion.a
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            href="tel:03308089066"
+            href="tel:+971505503777"
             className="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md"
           >BOOK AN APPOINTMENT</motion.a>
           <motion.a

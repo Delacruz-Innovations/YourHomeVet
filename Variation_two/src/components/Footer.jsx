@@ -19,8 +19,8 @@ export default function Footer() {
           </nav>
           
           {/* Email */}
-          <a href="mailto:hello@yourhomevet.co.uk" className="text-slate-300 hover:text-white text-[13px] font-medium transition-colors text-center md:text-right">
-            hello@yourhomevet.co.uk
+          <a href="mailto:Info@yourhomevet.ae" className="text-slate-300 hover:text-white text-[13px] font-medium transition-colors text-center md:text-right">
+            Info@yourhomevet.ae
           </a>
         </div>
         
@@ -37,10 +37,10 @@ export default function Footer() {
           
           {/* Social Icons */}
           <div className="flex items-center gap-4 text-slate-400">
-            <a href="mailto:hello@yourhomevet.co.uk" className="hover:text-white transition-colors">
+            <a href="mailto:Info@yourhomevet.ae" className="hover:text-white transition-colors">
               <Mail size={16} />
             </a>
-            <a href="https://wa.me/443308089066" className="hover:text-white transition-colors">
+            <a href="https://wa.me/971505503777" className="hover:text-white transition-colors">
               <MessageCircle size={16} />
             </a>
           </div>

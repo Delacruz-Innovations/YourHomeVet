@@ -17,7 +17,7 @@ export default function WhatsAppWidget() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const whatsappNumber = "443308089066"; // Based on the phone number on the site
+  const whatsappNumber = "971505503777"; // Based on the phone number on the site
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   return (

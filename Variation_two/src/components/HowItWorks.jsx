@@ -62,10 +62,10 @@ export default function HowItWorks() {
               Book Appointment
             </a>
             <div className="flex items-center gap-4 mt-1 ml-1">
-              <a href="mailto:hello@yourhomevet.co.uk" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
+              <a href="mailto:Info@yourhomevet.ae" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
                 <Mail size={20} strokeWidth={2.5} />
               </a>
-              <a href="https://wa.me/443308089066" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
+              <a href="https://wa.me/971505503777" className="text-[#9cbc65] hover:text-[#8ab051] transition-colors">
                 <MessageCircle size={20} strokeWidth={2.5} />
               </a>
             </div>
