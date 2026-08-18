@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-import PetcareHero from '../components/PetcareHero';
-import PetcareGrid from '../components/PetcareGrid';
+import HealthLibraryContent from '../components/HealthLibraryContent';
+import Emergency from '../components/Emergency';
 
 export default function PetcareAdvice() {
   useEffect(() => {
@@ -9,14 +9,14 @@ export default function PetcareAdvice() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col">
       <SEO
-        title="Petcare Advice & Vet Tips"
-        description="Expert pet health advice from our Dubai vets — covering nutrition, emergency care, preventative treatments, and more. Keep your pet happy and healthy."
-        canonical="https://yourhomevet.ae/petcare-advice"
+        title="Health Library – Veterinary Petcare Advice Dubai"
+        description="Explore 25+ medical conditions, canine/feline nutrition guides, body language tips, and pet care advice from expert Dubai veterinarians."
+        canonical="https://yourhomevet.ae/health-library"
       />
-      <PetcareHero />
-      <PetcareGrid />
+      <HealthLibraryContent />
+      <Emergency />
     </div>
   );
 }

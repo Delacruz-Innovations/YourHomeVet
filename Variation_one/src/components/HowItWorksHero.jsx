@@ -5,9 +5,19 @@ export default function HowItWorksHero() {
   return (
     <section className="relative w-full h-[550px] lg:h-[650px] flex flex-col lg:flex-row overflow-hidden bg-[#f7faf3] dark:bg-slate-900">
       
+      {/* Background Image for Mobile and Tablet */}
+      <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=1200" 
+          alt="Dog Bandage" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
+      </div>
+
       {/* Decorative Paw Prints */}
-      <PawPrint size={60} className="absolute top-[15%] left-[5%] text-[#9cbc65] opacity-20 dark:opacity-5 rotate-12 pointer-events-none" />
-      <PawPrint size={80} className="absolute bottom-[20%] left-[8%] text-[#9cbc65] opacity-20 dark:opacity-5 -rotate-12 pointer-events-none" />
+      <PawPrint size={60} className="absolute top-[15%] left-[5%] text-[#9cbc65] opacity-20 dark:opacity-5 rotate-12 pointer-events-none hidden lg:block" />
+      <PawPrint size={80} className="absolute bottom-[20%] left-[8%] text-[#9cbc65] opacity-20 dark:opacity-5 -rotate-12 pointer-events-none hidden lg:block" />
 
       {/* Dashed Heart Decorative */}
       <div className="absolute top-1/4 right-[45%] opacity-30 dark:opacity-10 pointer-events-none hidden lg:block z-10 rotate-12">
@@ -17,23 +27,23 @@ export default function HowItWorksHero() {
       </div>
 
       {/* Left Text */}
-      <div className="w-full lg:w-[50%] h-full flex flex-col justify-center px-4 sm:px-8 lg:pl-16 xl:pl-[calc((100vw-1280px)/2+2rem)] relative z-10 lg:bg-transparent bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm lg:backdrop-blur-none">
+      <div className="w-full lg:w-[50%] h-full flex flex-col justify-center px-4 sm:px-8 lg:pl-16 xl:pl-[calc((100vw-1280px)/2+2rem)] relative z-10">
         
         <span className="text-[#9cbc65] font-bold text-[11px] tracking-[0.2em] uppercase mb-4 block">
           Emergency Vet
         </span>
         
-        <h1 className="text-[36px] sm:text-[44px] lg:text-[54px] font-serif text-slate-800 dark:text-slate-100 leading-tight mb-6 max-w-lg">
+        <h1 className="text-[36px] sm:text-[44px] lg:text-[54px] font-serif text-white lg:text-slate-800 lg:dark:text-slate-100 leading-tight mb-6 max-w-lg">
           How does the pet emergency service work <span className="text-[#ec558b]">?</span>
         </h1>
         
-        <p className="text-slate-600 dark:text-slate-400 text-[15px] mb-10 max-w-md leading-[1.7]">
+        <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[15px] mb-10 max-w-md leading-[1.7]">
           Dial +971 50 550 3777. We'll ask a few quick questions, arrange for a vet to visit your home, and provide the care your pet needs right where they feel safest.
         </p>
         
         <div className="flex flex-wrap gap-4">
           <a href="#call" className="px-8 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md">BOOK AN APPOINTMENT</a>
-          <a href="#advice" className="px-8 py-3.5 rounded-sm border border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white dark:hover:text-slate-900 text-[11px] font-bold uppercase tracking-wide transition-colors">
+          <a href="#advice" className="px-8 py-3.5 rounded-sm border border-white/30 lg:border-[#9cbc65] bg-slate-950/40 lg:bg-transparent text-white lg:text-[#9cbc65] lg:dark:text-slate-400 hover:bg-white/20 lg:hover:bg-[#9cbc65] lg:hover:text-white lg:dark:hover:text-slate-900 text-[11px] font-bold uppercase tracking-wide transition-all">
             Expert Advice
           </a>
         </div>

@@ -1,12 +1,20 @@
 import React, { useEffect } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import Header from './Header';
 import Footer from './Footer';
 import WhatsAppWidget from './WhatsAppWidget';
 import BookingModal from './BookingModal';
 import CallMeBackModal from './CallMeBackModal';
+import PageTransition from './PageTransition';
+
+// Register plugins once
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function Layout({ darkMode, toggleDarkMode }) {
+  const location = useLocation();
   
   // Global click interceptor for modals
   useEffect(() => {
@@ -30,18 +38,44 @@ export default function Layout({ darkMode, toggleDarkMode }) {
     return () => document.removeEventListener('click', handleGlobalClick);
   }, []);
 
-  return (
-    <div className="min-h-screen flex flex-col font-sans text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-950 transition-colors duration-300">
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      
-      {/* Main Content Area */}
-      <main className="flex-grow">
-        <Outlet />
-      </main>
+  // Initialize GSAP ScrollSmoother
+  useEffect(() => {
+    let smoother;
+    try {
+      smoother = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 2,
+        effects: true,
+        normalizeScroll: true
+      });
+    } catch (err) {
+      console.warn("GSAP ScrollSmoother initialization info:", err);
+    }
 
-      <Footer />
+    return () => {
+      if (smoother && typeof smoother.kill === 'function') {
+        smoother.kill();
+      }
+    };
+  }, []);
+
+  return (
+    <div id="smooth-wrapper" className="min-h-screen font-sans text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-950 transition-colors duration-300">
+      <div id="smooth-content" className="min-h-screen flex flex-col">
+        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        
+        {/* Main Content Area */}
+        <main className="flex-grow pt-[116px]">
+          <PageTransition location={location}>
+            <Outlet />
+          </PageTransition>
+        </main>
+
+        <Footer />
+      </div>
       
-      {/* Global Widgets & Modals */}
+      {/* Global Floating Widgets & Modals (outside smooth-content to prevent fixed position conflicts) */}
       <WhatsAppWidget />
       <BookingModal />
       <CallMeBackModal />

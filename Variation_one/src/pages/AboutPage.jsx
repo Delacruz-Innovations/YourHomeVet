@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-import AboutHero from '../components/AboutHero';
-import AboutCTA from '../components/AboutCTA';
+import AboutUsContent from '../components/AboutUsContent';
 import AboutTeam from '../components/AboutTeam';
-import AboutTestimonials from '../components/AboutTestimonials';
-import AboutNewsletter from '../components/AboutNewsletter';
+import Emergency from '../components/Emergency';
 
 export default function AboutPage() {
   useEffect(() => {
@@ -12,17 +10,15 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col">
       <SEO
-        title="About YourHomeVet – Our Veterinary Team in Dubai"
-        description="Meet the YourHomeVet team — dedicated to bringing expert, compassionate veterinary care to Dubai homes. Learn about our mission and our registered vets."
+        title="About Us – Modern Vet Dubai 30+ Years Legacy"
+        description="Learn about Modern Vet's 30+ year history in Dubai since 1995, our integrated medical model, state-of-the-art diagnostic CT imaging, and compassionate veterinary team."
         canonical="https://yourhomevet.ae/about"
       />
-      <AboutHero />
-      <AboutCTA />
+      <AboutUsContent />
       <AboutTeam />
-      <AboutTestimonials />
-      <AboutNewsletter />
+      <Emergency />
     </div>
   );
 }

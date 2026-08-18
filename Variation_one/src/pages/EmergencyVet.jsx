@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-import EmergencyVetHero from '../components/EmergencyVetHero';
-import EmergencyVetBlocks from '../components/EmergencyVetBlocks';
-import Testimonials from '../components/Testimonials';
-import EmergencyVetMap from '../components/EmergencyVetMap';
+import EmergencyContent from '../components/EmergencyContent';
 import Emergency from '../components/Emergency';
 
 export default function EmergencyVet() {
@@ -12,16 +9,13 @@ export default function EmergencyVet() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full flex flex-col">
       <SEO
-        title="Emergency Vet Dubai – Home Visit 24/7"
-        description="Need an emergency vet in Dubai? We come to your home 24/7. No waiting rooms — speak directly to a registered vet and get expert pet care at your door."
+        title="24/7 Emergency Vet Service Dubai – Immediate At-Home Response"
+        description="Immediate at-home emergency veterinary care in Dubai. Our ICU-equipped mobile vets dispatch within minutes for critical pet injuries and illnesses."
         canonical="https://yourhomevet.ae/emergency-vet"
       />
-      <EmergencyVetHero />
-      <EmergencyVetBlocks />
-      <Testimonials />
-      <EmergencyVetMap />
+      <EmergencyContent />
       <Emergency />
     </div>
   );

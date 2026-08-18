@@ -89,19 +89,19 @@ export default function BookingModal() {
               <div className="flex flex-col md:flex-row gap-8 md:gap-12">
                 <div className={selectWrapper}>
                   <select className={inputStyles} required defaultValue="">
-                    <option value="" disabled>Select Species</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="other">Other</option>
+                    <option value="" disabled className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Select Species</option>
+                    <option value="dog" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Dog</option>
+                    <option value="cat" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Cat</option>
+                    <option value="other" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Other</option>
                   </select>
                   {selectIcon}
                 </div>
                 <div className={selectWrapper}>
                   <select className={inputStyles} required defaultValue="">
-                    <option value="" disabled>Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="unknown">Unknown</option>
+                    <option value="" disabled className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Gender</option>
+                    <option value="male" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Male</option>
+                    <option value="female" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Female</option>
+                    <option value="unknown" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Unknown</option>
                   </select>
                   {selectIcon}
                 </div>
@@ -159,8 +159,8 @@ export default function BookingModal() {
                     </div>
                     <div className={selectWrapper}>
                       <select className={inputStyles} required defaultValue="AM">
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
+                        <option value="AM" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">AM</option>
+                        <option value="PM" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">PM</option>
                       </select>
                       {selectIcon}
                     </div>

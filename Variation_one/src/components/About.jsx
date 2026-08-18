@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Phone, Stethoscope, Home, PawPrint } from 'lucide-react'; 
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function About() {
+  const sectionRef = useRef(null);
+  const cardsRef = useRef(null);
+
   const values = [
     {
       icon: <Phone size={24} className="text-[#5b8cce] dark:text-blue-400" />,
@@ -23,14 +30,61 @@ export default function About() {
     },
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Text header onscroll stagger with entrance and exit
+      if (sectionRef.current) {
+        gsap.fromTo(
+          sectionRef.current.querySelectorAll('.about-text-container > *'),
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.85,
+            stagger: 0.12,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 80%',
+              end: 'bottom 20%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
+      }
+
+      // 3 Value cards staggered wave entrance and exit
+      if (cardsRef.current) {
+        gsap.fromTo(
+          cardsRef.current.children,
+          { opacity: 0, y: 50, scale: 0.94 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: cardsRef.current,
+              start: 'top 85%',
+              end: 'bottom 15%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="how-it-works" className="w-full bg-[#f9f9fa] dark:bg-slate-950 py-16 md:py-12 lg:py-24 lg:py-16 lg:py-32 relative overflow-hidden transition-colors duration-300">
+    <section ref={sectionRef} id="how-it-works" className="w-full bg-[#f9f9fa] dark:bg-slate-950 py-16 md:py-12 lg:py-24 lg:py-16 lg:py-32 relative overflow-hidden transition-colors duration-300">
       
-      {/* Background Decorative Paw Prints */}
       <PawPrint size={140} className="absolute left-[-3%] top-1/2 -translate-y-1/2 text-[#9cbc65] opacity-[0.04] dark:opacity-5 -rotate-12 pointer-events-none" />
       <PawPrint size={140} className="absolute right-[-3%] top-[60%] text-[#9cbc65] opacity-[0.04] dark:opacity-5 rotate-12 pointer-events-none" />
       
-      {/* Dashed Heart Decorative Graphic */}
       <div className="absolute top-10 right-[15%] opacity-30 dark:opacity-20 pointer-events-none hidden lg:block -rotate-6">
          <svg width="250" height="350" viewBox="0 0 200 300" fill="none" stroke="#ec558b" strokeWidth="1.5" strokeDasharray="6 6">
             <path d="M100 80 C 100 30, 30 30, 50 90 C 70 150, 100 160, 100 160 C 100 160, 130 150, 150 90 C 170 30, 100 30, 100 80 Z" />
@@ -40,7 +94,6 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Header Section */}
         <div className="mb-20 about-text-container">
           <span className="text-[#9cbc65] font-bold text-[11px] tracking-[0.2em] uppercase mb-5 block">
             YourHomeVet Values
@@ -57,8 +110,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Values Grid - stacked on mobile, 3-col on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 lg:gap-16 about-cards-container">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 lg:gap-16 about-cards-container">
           {values.map((item, idx) => (
             <div key={idx} className="flex flex-col items-start text-left bg-white md:bg-transparent dark:bg-slate-900 md:dark:bg-transparent p-6 md:p-0 rounded-2xl md:rounded-none shadow-sm md:shadow-none border border-slate-100 md:border-transparent dark:border-slate-800">
               <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${item.bg}`}>

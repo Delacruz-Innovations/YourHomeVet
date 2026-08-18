@@ -2,11 +2,21 @@ import React from 'react';
 
 export default function ArticleHero() {
   return (
-    <section className="relative w-full pt-12 lg:pt-24 lg:pt-16 lg:pt-32 px-4 sm:px-6 lg:px-8 bg-[#eaf4fe] dark:bg-slate-950 transition-colors">
+    <section className="relative w-full pt-12 lg:pt-24 lg:pt-16 lg:pt-32 px-4 sm:px-6 lg:px-8 bg-[#eaf4fe] dark:bg-slate-950 transition-colors overflow-hidden">
       
+      {/* Background Image for Mobile and Tablet */}
+      <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1602498456745-e9503b30470b?auto=format&fit=crop&q=80&w=1200" 
+          alt="Dog with diabetes" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/85 to-slate-950/60" />
+      </div>
+
       {/* Soft Ambient Radial Glow Effects */}
-      <div className="absolute top-0 left-0 w-[450px] h-[450px] rounded-full bg-[#dbeefe] opacity-90 blur-3xl pointer-events-none"></div>
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-[#e0d4f5] opacity-60 blur-3xl pointer-events-none"></div>
+      <div className="hidden lg:block absolute top-0 left-0 w-[450px] h-[450px] rounded-full bg-[#dbeefe] opacity-90 blur-3xl pointer-events-none"></div>
+      <div className="hidden lg:block absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-[#e0d4f5] opacity-60 blur-3xl pointer-events-none"></div>
 
       <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center mb-12 lg:mb-8 lg:mb-16">
         
@@ -16,7 +26,7 @@ export default function ArticleHero() {
         </span>
         
         {/* Title */}
-        <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-serif text-slate-900 dark:text-slate-100 font-normal leading-[1.1] mb-8 tracking-tight">
+        <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-[1.1] mb-8 tracking-tight">
           Diabetes in Dogs: Should You Be Worried?
         </h1>
         

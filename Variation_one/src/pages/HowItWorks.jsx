@@ -2,9 +2,6 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import HowItWorksHero from '../components/HowItWorksHero';
 import StepsTimeline from '../components/StepsTimeline';
-import PricingBanner from '../components/PricingBanner';
-import Testimonials from '../components/Testimonials';
-import Faq from '../components/Faq';
 import Emergency from '../components/Emergency';
 
 export default function HowItWorks() {
@@ -15,15 +12,12 @@ export default function HowItWorks() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="How It Works – Home Vet Visits Dubai"
-        description="Three simple steps to get a vet to your home in Dubai. Call us, we advise you, then a Registered Veterinary Surgeon comes to your door — all without leaving your house."
+        title="How It Works – 24/7 At-Home Vet Process"
+        description="Learn how our at-home mobile vet service works in Dubai. Call our emergency line, get dispatched within minutes, and receive professional medical care at home."
         canonical="https://yourhomevet.ae/pet-emergency-how-it-works"
       />
       <HowItWorksHero />
       <StepsTimeline />
-      <PricingBanner />
-      <Testimonials />
-      <Faq />
       <Emergency />
     </div>
   );

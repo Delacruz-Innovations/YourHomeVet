@@ -1,13 +1,65 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PawPrint } from 'lucide-react';
 import rabbitImage from '../assets/rabbit_care.png'; 
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function WhyUs() {
+  const sectionRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Parallax and entrance on image
+      if (imageRef.current) {
+        gsap.fromTo(
+          imageRef.current.querySelector('img'),
+          { scale: 1.1, opacity: 0.8 },
+          {
+            scale: 1,
+            opacity: 1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 85%',
+              end: 'bottom top',
+              scrub: 1
+            }
+          }
+        );
+      }
+
+      // Text container staggered reveal on scroll (with entrance and exit)
+      if (sectionRef.current) {
+        gsap.fromTo(
+          sectionRef.current.querySelectorAll('.whyus-text-container > *'),
+          { opacity: 0, x: 40 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.85,
+            stagger: 0.12,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 75%',
+              end: 'bottom 20%',
+              toggleActions: 'play reverse play reverse'
+            }
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="whyus" className="relative w-full flex flex-col lg:flex-row transition-colors duration-300">
+    <section ref={sectionRef} id="whyus" className="relative w-full flex flex-col lg:flex-row transition-colors duration-300">
       
-      {/* Left Column (Image) */}
-      <div className="w-full lg:w-1/2 relative h-[400px] lg:h-auto min-h-[500px] whyus-image-container">
+      <div ref={imageRef} className="w-full lg:w-1/2 relative h-[400px] lg:h-auto min-h-[500px] whyus-image-container">
         <img
           src={rabbitImage}
           alt="Woman holding a rabbit"
@@ -15,13 +67,10 @@ export default function WhyUs() {
         />
       </div>
 
-      {/* Right Column (Content) */}
       <div className="w-full lg:w-1/2 bg-[#fdf0f4] dark:bg-slate-900 relative overflow-hidden flex">
         
-        {/* Background Decorative Icon */}
         <PawPrint size={140} className="absolute bottom-8 right-12 text-[#ec558b] opacity-10 dark:opacity-5 rotate-12 pointer-events-none" fill="currentColor" />
 
-        {/* Content restricted to max-w-7xl alignment (Right side alignment) */}
         <div className="w-full max-w-[640px] px-4 sm:px-6 lg:px-8 xl:pl-16 py-8 lg:py-16 lg:py-32 relative z-10 flex flex-col justify-center mr-auto whyus-text-container">
           <span className="text-[#ec558b] font-bold text-[11px] tracking-wide uppercase mb-4 block">
             Do we service your postcode?

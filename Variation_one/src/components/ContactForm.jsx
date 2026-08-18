@@ -25,6 +25,16 @@ export default function ContactForm() {
   return (
     <section className="relative w-full min-h-screen flex flex-col lg:flex-row bg-[#e6f2fd] dark:bg-slate-950 transition-colors overflow-hidden pt-12 lg:pt-32 pb-16 lg:pb-0">
       
+      {/* Background Image for Mobile and Tablet */}
+      <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1200" 
+          alt="Dog and Cat" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
+      </div>
+      
       {/* Soft Ambient Radial Glow Effects for Background */}
       <div className="absolute top-0 -left-24 w-[500px] h-[500px] rounded-full bg-[#dbeefe] opacity-90 blur-3xl pointer-events-none"></div>
       <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] rounded-full bg-[#e8f7e8] opacity-60 blur-3xl pointer-events-none"></div>
@@ -32,42 +42,42 @@ export default function ContactForm() {
       {/* Left Column: Contact Info */}
       <div className="w-full lg:w-1/2 flex flex-col p-8 sm:p-12 lg:p-20 xl:p-24 relative z-10 lg:pr-8">
         <div className="max-w-xl">
-          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 mb-6 block">
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-slate-500 lg:dark:text-slate-400 mb-6 block">
             CONTACT
           </span>
           
-          <h1 className="text-[42px] sm:text-[56px] lg:text-[66px] font-serif text-slate-900 dark:text-slate-100 font-normal leading-[1.1] mb-8 tracking-tight">
+          <h1 className="text-[42px] sm:text-[56px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-[1.1] mb-8 tracking-tight">
             Let's get in touch
           </h1>
           
-          <p className="text-slate-600 dark:text-slate-400 text-[16px] leading-[1.8] mb-6">
+          <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[16px] leading-[1.8] mb-6">
             For all non-veterinary emergency related query, please don't hesitate to contact us either directly by email or by using this contact form.
           </p>
-          <p className="text-slate-600 dark:text-slate-400 text-[16px] leading-[1.8] mb-12">
+          <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[16px] leading-[1.8] mb-12">
             Our team will endeavour to answer as quickly as possible.
           </p>
           
           {/* Contact Details List */}
           <div className="flex flex-col gap-8 mb-8 lg:mb-16">
             <div className="flex items-center gap-6">
-              <div className="w-12 h-12 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center shrink-0">
-                <Phone size={18} className="text-slate-700 dark:text-slate-300" />
+              <div className="w-12 h-12 rounded-full border border-white/30 lg:border-slate-300 dark:border-slate-700 flex items-center justify-center shrink-0">
+                <Phone size={18} className="text-white lg:text-slate-700 dark:lg:text-slate-300" />
               </div>
-              <span className="text-[16px] text-slate-800 dark:text-slate-200">+971 50 550 3777</span>
+              <span className="text-[16px] text-white lg:text-slate-800 dark:lg:text-slate-200">+971 50 550 3777</span>
             </div>
             
             <div className="flex items-center gap-6">
-              <div className="w-12 h-12 rounded-full border border-slate-300 dark:border-slate-700 bg-[#e4f7ca] dark:bg-[#344621] flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-full border border-white/30 lg:border-slate-300 dark:border-slate-700 bg-[#e4f7ca] dark:bg-[#344621] flex items-center justify-center shrink-0">
                 <Mail size={18} className="text-slate-700 dark:text-slate-300" />
               </div>
-              <span className="text-[16px] text-slate-800 dark:text-slate-200">Info@yourhomevet.ae</span>
+              <span className="text-[16px] text-white lg:text-slate-800 dark:lg:text-slate-200">Info@yourhomevet.ae</span>
             </div>
             
             <div className="flex items-center gap-6">
-              <div className="w-12 h-12 rounded-full border border-slate-300 dark:border-slate-700 bg-[#fdf5b6] dark:bg-[#524c25] flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-full border border-white/30 lg:border-slate-300 dark:border-slate-700 bg-[#fdf5b6] dark:bg-[#524c25] flex items-center justify-center shrink-0">
                 <MapPin size={18} className="text-slate-700 dark:text-slate-300" />
               </div>
-              <span className="text-[16px] text-slate-800 dark:text-slate-200">HQ : YourHomeVet, Downtown Dubai, UAE</span>
+              <span className="text-[16px] text-white lg:text-slate-800 dark:lg:text-slate-200">HQ : YourHomeVet, Downtown Dubai, UAE</span>
             </div>
           </div>
         </div>
@@ -88,7 +98,7 @@ export default function ContactForm() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             
             <div className="flex flex-col gap-2">
-              <label htmlFor="fullName" className="text-[13px] text-slate-700 dark:text-slate-300">Full name *</label>
+              <label htmlFor="fullName" className="text-[13px] text-white lg:text-slate-700 dark:lg:text-slate-300">Full name *</label>
               <input 
                 type="text" 
                 id="fullName" 
@@ -101,7 +111,7 @@ export default function ContactForm() {
             </div>
             
             <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-[13px] text-slate-700 dark:text-slate-300">Email *</label>
+              <label htmlFor="email" className="text-[13px] text-white lg:text-slate-700 dark:lg:text-slate-300">Email *</label>
               <input 
                 type="email" 
                 id="email" 
@@ -114,7 +124,7 @@ export default function ContactForm() {
             </div>
             
             <div className="flex flex-col gap-2">
-              <label htmlFor="phone" className="text-[13px] text-slate-700 dark:text-slate-300">Phone number *</label>
+              <label htmlFor="phone" className="text-[13px] text-white lg:text-slate-700 dark:lg:text-slate-300">Phone number *</label>
               <input 
                 type="tel" 
                 id="phone" 
@@ -127,7 +137,7 @@ export default function ContactForm() {
             </div>
             
             <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-[13px] text-slate-700 dark:text-slate-300">How can we help you? *</label>
+              <label htmlFor="message" className="text-[13px] text-white lg:text-slate-700 dark:lg:text-slate-300">How can we help you? *</label>
               <textarea 
                 id="message" 
                 name="message"

@@ -36,23 +36,33 @@ export default function FaqPageHero() {
   const [openIdx, setOpenIdx] = useState(-1);
 
   return (
-    <section className="relative w-full pt-12 lg:pt-24 lg:pt-16 lg:pt-32 pb-20 lg:pb-28 px-4 sm:px-6 lg:px-8 bg-[#e8f4fd] dark:bg-slate-950 transition-colors min-h-screen">
+    <section className="relative w-full py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#e8f4fd] dark:bg-slate-950 transition-colors min-h-screen overflow-hidden">
       
-      {/* Soft Ambient Radial Glow Effects (Blue/Purple) */}
-      <div className="absolute top-1/4 -left-24 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#dbeefe] opacity-90 blur-3xl pointer-events-none"></div>
-      <div className="absolute top-1/3 -right-24 w-[700px] h-[700px] rounded-full bg-[#e0d4f5] opacity-60 blur-3xl pointer-events-none"></div>
+      {/* Background Image for Mobile and Tablet */}
+      <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=1200" 
+          alt="FAQ Support" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/85 to-slate-950/70" />
+      </div>
+
+      {/* Soft Ambient Radial Glow Effects for Desktop */}
+      <div className="hidden lg:block absolute top-1/4 -left-24 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#dbeefe] opacity-90 blur-3xl pointer-events-none"></div>
+      <div className="hidden lg:block absolute top-1/3 -right-24 w-[700px] h-[700px] rounded-full bg-[#e0d4f5] opacity-60 blur-3xl pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
         
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-slate-700 dark:text-slate-300 mb-6 block">
+        <div className="text-center mb-10 sm:mb-12">
+          <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-slate-700 lg:dark:text-slate-300 mb-4 sm:mb-6 block">
             FREQUENTLY ASKED QUESTIONS
           </span>
-          <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-serif text-slate-900 dark:text-slate-100 font-normal leading-tight mb-6 tracking-tight max-w-3xl mx-auto">
+          <h1 className="text-[32px] sm:text-[48px] lg:text-[56px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-4 sm:mb-6 tracking-tight max-w-3xl mx-auto">
             We are always happy to help answer any questions you may have!
           </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-[15px] sm:text-[16px] leading-[1.75] max-w-xl mx-auto font-normal">
+          <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[14px] sm:text-[16px] leading-[1.75] max-w-xl mx-auto font-normal">
             Below are some of our most frequently asked questions. If your question is not answered below, please contact us and we'll assist you.
           </p>
         </div>

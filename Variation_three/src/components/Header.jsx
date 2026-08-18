@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X } from 'lucide-react';
@@ -7,7 +7,26 @@ import logo from '../assets/logo.png';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [navVisible, setNavVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 60) {
+        setNavVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 5) {
+        setNavVisible(false); // Scroll down -> hide
+      } else if (currentScrollY < lastScrollY && lastScrollY - currentScrollY > 5) {
+        setNavVisible(true); // Scroll up -> show
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const servicesList = [
     { name: 'Ambulance', path: '/services/ambulance' },
@@ -38,7 +57,7 @@ export default function Header() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 transition-colors">
+    <header className={`fixed top-0 left-0 right-0 z-50 w-full bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 transition-transform duration-300 ease-in-out ${navVisible ? 'translate-y-0 shadow-md' : '-translate-y-full shadow-none'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative">
         
         {/* Logo */}

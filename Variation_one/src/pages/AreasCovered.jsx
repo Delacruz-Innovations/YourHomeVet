@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
 import AreasCoveredMap from '../components/AreasCoveredMap';
 import About from '../components/About';
-import Testimonials from '../components/Testimonials';
 
 export default function AreasCovered() {
   useEffect(() => {
@@ -22,8 +21,6 @@ export default function AreasCovered() {
       <div className="pt-12 lg:pt-24 lg:pt-16 lg:pt-32 pb-16">
         <About />
       </div>
-
-      <Testimonials />
     </div>
   );
 }

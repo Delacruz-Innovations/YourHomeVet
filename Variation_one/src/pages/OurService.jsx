@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-import OurServiceHero from '../components/ServiceHero';
-import ServiceCustomizedCare from '../components/ServiceCustomizedCare';
-import ServiceSteps from '../components/ServiceSteps';
-import ServiceRestInMind from '../components/ServiceRestInMind';
+import AllServicesContent from '../components/AllServicesContent';
 import Emergency from '../components/Emergency';
-import Faq from '../components/Faq';
 
 export default function OurService() {
   useEffect(() => {
@@ -15,16 +11,12 @@ export default function OurService() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Our Veterinary Services – At-Home Pet Care Dubai"
-        description="Expert at-home vet services in Dubai including emergency care, wellness checks, vaccinations, and end-of-life support. Book a home visit today."
+        title="Our Services – 24/7 At-Home & Specialist Vet Care Dubai"
+        description="Explore 25+ veterinary services delivered by Modern Vet across 6+ Dubai locations. Emergency, dental, neurology, ophthalmology, vaccinations, and mobile clinic."
         canonical="https://yourhomevet.ae/24-7-emergency-care-at-your-door"
       />
-      <OurServiceHero />
-      <ServiceCustomizedCare />
-      <ServiceSteps />
-      <ServiceRestInMind />
+      <AllServicesContent />
       <Emergency />
-      <Faq />
     </div>
   );
 }

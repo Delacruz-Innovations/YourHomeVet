@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-serif: "Instrument Sans", sans-serif;
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Hide scrollbar for Chrome, Safari and Opera */
