@@ -11,7 +11,7 @@ export default function PetDentalCare() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Pet Dental Care & Scaling Dubai – Modern Vet"
+        title="Pet Dental Care & Scaling Dubai – YourHomeVet"
         description="Professional dental scaling, polishing, digital dental X-rays, and extractions for pets in Dubai. Prevent periodontal disease."
         canonical="https://yourhomevet.ae/pet-dental-care"
       />

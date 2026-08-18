@@ -11,8 +11,8 @@ export default function GalleryPage() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Photo Gallery – Modern Vet Hospital Facilities & Care Dubai"
-        description="Browse photo gallery of Modern Vet's 24/7 hospital, surgical suites, CT imaging, ICU, mobile clinic, and happy pet patients across Dubai."
+        title="Photo Gallery – YourHomeVet Hospital Facilities & Care Dubai"
+        description="Browse photo gallery of YourHomeVet's 24/7 hospital, surgical suites, CT imaging, ICU, mobile clinic, and happy pet patients across Dubai."
         canonical="https://yourhomevet.ae/gallery"
       />
       <GalleryContent />

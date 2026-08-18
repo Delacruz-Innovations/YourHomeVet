@@ -11,7 +11,7 @@ export default function PetSpayNeuter() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Spay & Neuter Packages Dubai – Modern Vet Surgery"
+        title="Spay & Neuter Packages Dubai – YourHomeVet Surgery"
         description="Compassionate, safe spay and neuter surgical packages for dogs and cats in Dubai."
         canonical="https://yourhomevet.ae/spay-neuter"
       />

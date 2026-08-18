@@ -71,7 +71,7 @@ export default function WhyUs() {
         
         <PawPrint size={140} className="absolute bottom-8 right-12 text-[#ec558b] opacity-10 dark:opacity-5 rotate-12 pointer-events-none" fill="currentColor" />
 
-        <div className="w-full max-w-[640px] px-4 sm:px-6 lg:px-8 xl:pl-16 py-8 lg:py-16 lg:py-32 relative z-10 flex flex-col justify-center mr-auto whyus-text-container">
+        <div className="w-full max-w-[640px] px-4 sm:px-6 lg:px-8 xl:pl-16 py-8 lg:py-8 lg:py-32 relative z-10 flex flex-col justify-center mr-auto whyus-text-container">
           <span className="text-[#ec558b] font-bold text-[11px] tracking-wide uppercase mb-4 block">
             Do we service your postcode?
           </span>

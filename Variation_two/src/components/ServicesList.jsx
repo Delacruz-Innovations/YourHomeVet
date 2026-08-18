@@ -22,7 +22,7 @@ export default function ServicesList() {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-white scroll-mt-20">
+    <section id="services" className="py-8 md:py-24 bg-white scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         
         {/* Left Column: Intro & CTA */}

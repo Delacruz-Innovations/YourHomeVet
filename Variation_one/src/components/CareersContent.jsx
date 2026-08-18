@@ -9,12 +9,11 @@ import {
   Heart, 
   Sparkles, 
   CheckCircle2, 
-  ChevronRight, 
-  Play,
-  Share2,
+  ChevronRight,
   Building2,
   Award
 } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function CareersContent() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,7 +25,7 @@ export default function CareersContent() {
     },
     {
       title: "Dedication & Compassion",
-      desc: "Modern Vet was built for compassion and everything we do is motivated by our dedication to ease the lives of pet owners and their pets."
+      desc: "YourHomeVet was built for compassion and everything we do is motivated by our dedication to ease the lives of pet owners and their pets."
     },
     {
       title: "Excellence in Service",
@@ -62,7 +61,7 @@ export default function CareersContent() {
       location: "Dubai",
       type: "Full time",
       policy: "ONSITE",
-      desc: "Are you a qualified Pharmacist with a passion for animal health and patient care? Join Modern Vet and play a key role in supporting exceptional veterinary care and inventory management.",
+      desc: "Are you a qualified Pharmacist with a passion for animal health and patient care? Join YourHomeVet and play a key role in supporting exceptional veterinary care and inventory management.",
       applyUrl: "https://modern-vet.whitecarrot.ai/jobs/c3f1edc0-ab56-420f-9c5f-68a9b60d4caa"
     }
   ];
@@ -77,10 +76,10 @@ export default function CareersContent() {
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Header & About Section */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" 
             alt="Veterinary team collaboration" 
             className="w-full h-full object-cover"
@@ -91,10 +90,10 @@ export default function CareersContent() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8 border-b border-white/10 lg:border-slate-100 dark:lg:border-slate-800 pb-6 relative z-10">
           <div>
             <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-slate-400 lg:dark:text-slate-400 mb-1 block">
-              ModernVet &gt; Careers
+              yourhomevet &gt; Careers
             </span>
             <h1 className="text-[36px] sm:text-[52px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-[1.1] tracking-tight">
-              Careers At Modern Vet
+              Careers At YourHomeVet
             </h1>
           </div>
 
@@ -141,9 +140,9 @@ export default function CareersContent() {
 
         {/* Hospital Video Container */}
         <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 group aspect-video bg-slate-900 flex items-center justify-center max-w-5xl mx-auto mb-16">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200" 
-            alt="Modern Vet Hospital Careers Video" 
+            alt="YourHomeVet Hospital Careers Video" 
             className="w-full h-full object-cover opacity-80 group-hover:opacity-70 transition-opacity"
           />
           <button className="w-20 h-20 rounded-full bg-[#ec558b] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform absolute z-10">

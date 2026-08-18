@@ -35,7 +35,7 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="py-20 bg-[#fafafa] dark:bg-slate-950 overflow-hidden">
+    <section className="py-4 bg-[#fafafa] dark:bg-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Section */}

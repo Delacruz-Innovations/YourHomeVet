@@ -12,7 +12,7 @@ export default function AboutNewsletter() {
   };
 
   return (
-    <section className="w-full py-16 lg:py-12 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#e8f4fd] dark:bg-slate-900 transition-colors border-t border-slate-200 dark:border-slate-800">
+    <section className="w-full py-8 lg:py-12 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#e8f4fd] dark:bg-slate-900 transition-colors border-t border-slate-200 dark:border-slate-800">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
         
         {/* Left Side: Copy */}

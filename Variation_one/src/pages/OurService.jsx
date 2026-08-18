@@ -12,7 +12,7 @@ export default function OurService() {
     <div className="w-full flex flex-col">
       <SEO
         title="Our Services – 24/7 At-Home & Specialist Vet Care Dubai"
-        description="Explore 25+ veterinary services delivered by Modern Vet across 6+ Dubai locations. Emergency, dental, neurology, ophthalmology, vaccinations, and mobile clinic."
+        description="Explore 25+ veterinary services delivered by YourHomeVet across 6+ Dubai locations. Emergency, dental, neurology, ophthalmology, vaccinations, and mobile clinic."
         canonical="https://yourhomevet.ae/24-7-emergency-care-at-your-door"
       />
       <AllServicesContent />

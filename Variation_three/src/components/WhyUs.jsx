@@ -28,7 +28,7 @@ const highlights = [
 
 export default function WhyUs() {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-slate-900 overflow-hidden">
+    <section id="about" className="py-4 bg-white dark:bg-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title Area */}

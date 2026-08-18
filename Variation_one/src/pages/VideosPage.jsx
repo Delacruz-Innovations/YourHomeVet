@@ -11,8 +11,8 @@ export default function VideosPage() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Veterinary Videos & Presentations – Modern Vet Dubai"
-        description="Watch presentations by Modern Vet specialist doctors, clinic overviews for Palm and Downtown Dubai, and video guides on advanced veterinary care."
+        title="Veterinary Videos & Presentations – YourHomeVet Dubai"
+        description="Watch presentations by YourHomeVet specialist doctors, clinic overviews for Palm and Downtown Dubai, and video guides on advanced veterinary care."
         canonical="https://yourhomevet.ae/our-video"
       />
       <VideosContent />

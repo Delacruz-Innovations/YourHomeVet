@@ -66,7 +66,7 @@ export default function Layout({ darkMode, toggleDarkMode }) {
         <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         
         {/* Main Content Area */}
-        <main className="flex-grow pt-[116px]">
+        <main className="flex-grow">
           <PageTransition location={location}>
             <Outlet />
           </PageTransition>

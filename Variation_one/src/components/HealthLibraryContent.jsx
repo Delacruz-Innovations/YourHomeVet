@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, ChevronRight, BookOpen, Clock } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function HealthLibraryContent() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -178,7 +179,7 @@ export default function HealthLibraryContent() {
         
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=1200" 
             alt="Featured Article Background" 
             className="w-full h-full object-cover"
@@ -188,7 +189,7 @@ export default function HealthLibraryContent() {
 
         <div className="relative z-10">
           <span className="text-xs font-semibold text-slate-300 lg:text-slate-400 uppercase tracking-widest block mb-2">
-            ModernVet &gt; health-library
+            yourhomevet &gt; health-library
           </span>
           <div className="inline-block px-14 py-4 bg-white/10 lg:bg-slate-50 dark:lg:bg-slate-900 border border-white/20 lg:border-slate-200 dark:lg:border-slate-800 rounded-sm shadow-sm mb-6">
             <h1 className="text-3xl sm:text-4xl font-serif text-white lg:text-slate-900 dark:lg:text-slate-100 font-bold tracking-wide">
@@ -244,7 +245,7 @@ export default function HealthLibraryContent() {
               <div>
                 {/* Photo */}
                 <div className="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
-                  <img 
+                  <LazyImage 
                     src={art.image} 
                     alt={art.title} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"

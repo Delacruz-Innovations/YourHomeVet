@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function PartnerHero() {
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#f0f6ff] dark:bg-slate-950 transition-colors min-h-[450px]">
+    <section className="relative w-full py-8 sm:py-4 lg:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#f0f6ff] dark:bg-slate-950 transition-colors min-h-[450px]">
       
       {/* Background Image for Mobile and Tablet */}
       <div className="absolute inset-0 w-full h-full z-0 lg:hidden">

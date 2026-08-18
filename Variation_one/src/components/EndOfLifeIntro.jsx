@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function EndOfLifeIntro() {
   return (
-    <section className="w-full py-16 lg:py-12 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors">
+    <section className="w-full py-8 lg:py-12 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-8 lg:gap-16 items-start">
         
         {/* Left Column: Text Content */}

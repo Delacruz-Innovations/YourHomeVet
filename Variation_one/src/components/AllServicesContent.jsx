@@ -23,6 +23,7 @@ import {
   Award,
   Zap
 } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function AllServicesContent() {
 
@@ -204,7 +205,7 @@ export default function AllServicesContent() {
       title: "Pet Taxi",
       badge: "Convenience",
       icon: <Truck className="text-[#51b255]" size={24} />,
-      desc: "Safe, stress-free pet transport to and from any Modern Vet location — climate-controlled vehicles with trained handlers.",
+      desc: "Safe, stress-free pet transport to and from any YourHomeVet location — climate-controlled vehicles with trained handlers.",
       link: "/ourservice/mobile-clinic"
     },
     {
@@ -285,10 +286,10 @@ export default function AllServicesContent() {
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Hero Header */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=1200" 
             alt="Dog group veterinary services" 
             className="w-full h-full object-cover"
@@ -306,12 +307,12 @@ export default function AllServicesContent() {
               Our Services
             </h1>
             <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[14px] sm:text-[16px] leading-[1.8] mb-8">
-              From routine wellness visits to complex specialist care — Modern Vet delivers compassionate, expert veterinary medicine across 6+ Dubai locations, 24 hours a day, every day of the year.
+              From routine wellness visits to complex specialist care — YourHomeVet delivers compassionate, expert veterinary medicine across 6+ Dubai locations, 24 hours a day, every day of the year.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-black lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
@@ -330,9 +331,9 @@ export default function AllServicesContent() {
           {/* Desktop Image Banner (Hidden on Mobile & Tablet) */}
           <div className="hidden lg:block lg:col-span-5">
             <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800 aspect-[4/3] group">
-              <img 
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=900" 
-                alt="Veterinary Care at Modern Vet Dubai" 
+                alt="Veterinary Care at YourHomeVet Dubai" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
@@ -401,7 +402,7 @@ export default function AllServicesContent() {
 
           <div className="flex flex-wrap items-center gap-4 shrink-0">
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest shadow-md transition-all"

@@ -11,7 +11,7 @@ export default function PricesPage() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Vet Costs & Transparent Prices Dubai – Modern Vet"
+        title="Vet Costs & Transparent Prices Dubai – YourHomeVet"
         description="Clear, upfront pricing for veterinary consultations, vaccinations, surgical procedures, and dental scaling in Dubai."
         canonical="https://yourhomevet.ae/prices"
       />

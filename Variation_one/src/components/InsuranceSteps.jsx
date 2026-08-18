@@ -25,7 +25,7 @@ const steps = [
 
 export default function InsuranceSteps() {
   return (
-    <section className="w-full py-8 lg:py-16 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors">
+    <section className="w-full py-8 lg:py-8 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors">
       <div className="max-w-4xl mx-auto">
         
         {/* Header */}

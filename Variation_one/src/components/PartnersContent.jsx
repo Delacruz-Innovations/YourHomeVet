@@ -5,7 +5,6 @@ import {
   Globe, 
   MapPin, 
   Clock, 
-  ExternalLink, 
   ShieldCheck, 
   Award,
   Heart,
@@ -14,6 +13,7 @@ import {
   Home as HomeIcon,
   Calendar
 } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function PartnersContent() {
   const partnersList = [
@@ -114,7 +114,7 @@ export default function PartnersContent() {
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Header Title Section */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
           <img 

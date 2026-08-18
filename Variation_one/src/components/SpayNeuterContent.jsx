@@ -14,6 +14,7 @@ import {
   Zap,
   Clock
 } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function SpayNeuterContent() {
   const [selectedPet, setSelectedPet] = useState('Dog');
@@ -67,11 +68,11 @@ export default function SpayNeuterContent() {
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=1200" 
             alt="Pet Spay and Neuter Care" 
             className="w-full h-full object-cover"
@@ -94,7 +95,7 @@ export default function SpayNeuterContent() {
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-black lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
@@ -113,7 +114,7 @@ export default function SpayNeuterContent() {
           {/* Desktop Image Side */}
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <img 
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=900" 
                 alt="Pet Spay and Neuter Care" 
                 className="absolute inset-0 w-full h-full object-cover"
@@ -133,7 +134,7 @@ export default function SpayNeuterContent() {
       </section>
 
       {/* Your Trusted Partner Section & Special Package Banner */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7">
@@ -158,7 +159,7 @@ export default function SpayNeuterContent() {
                 </h3>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Modern Vet has introduced new, specifically tailored Spay and Neuter Packages that offer full coverage of all necessary surgical aspects, as well as an entire spectrum of post-surgical support and preferred pricing on future related services.
+                YourHomeVet has introduced new, specifically tailored Spay and Neuter Packages that offer full coverage of all necessary surgical aspects, as well as an entire spectrum of post-surgical support and preferred pricing on future related services.
               </p>
             </div>
           </div>
@@ -176,7 +177,7 @@ export default function SpayNeuterContent() {
 
             <div className="flex flex-col gap-3">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-lg transition-all block"
@@ -196,7 +197,7 @@ export default function SpayNeuterContent() {
       </section>
 
       {/* Transparent Pricing Matrix Section */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Clear & Upfront Costs
@@ -290,7 +291,7 @@ export default function SpayNeuterContent() {
             </div>
 
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full py-4 bg-[#51b255] hover:bg-[#439c47] text-white text-center text-xs font-bold uppercase tracking-widest rounded-full transition-all shadow-md block"
@@ -328,7 +329,7 @@ export default function SpayNeuterContent() {
             </div>
 
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-center text-xs font-bold uppercase tracking-widest rounded-full transition-all shadow-md block"
@@ -342,7 +343,7 @@ export default function SpayNeuterContent() {
         {/* Pricing Footer Action */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a 
-            href="https://modernvet.com/booking/" 
+            href="https://yourhomevet.com/booking/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
@@ -359,7 +360,7 @@ export default function SpayNeuterContent() {
       </section>
 
       {/* What Is Pet Sterilization? */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -426,7 +427,7 @@ export default function SpayNeuterContent() {
       </section>
 
       {/* Why Spay or Neuter Your Pet? Section */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Health & Behavioral Benefits

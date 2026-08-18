@@ -23,6 +23,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from './ui/carousel';
+import LazyImage from './ui/LazyImage';
 import PetDentalInfographic from './PetDentalInfographic';
 
 // CarouselSection Component: Standard horizontal carousel with next/prev buttons & swipe support (no scroll locking)
@@ -47,7 +48,7 @@ const SkiperPinnedCarousel = ({
   return (
     <div
       id={sectionId}
-      className="py-16 sm:py-20 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
+      className="py-8 sm:py-4 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
     >
       <div className="w-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-8 shrink-0">
@@ -303,11 +304,11 @@ export default function DentalContent() {
     <div className="w-full bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Overview / Hero Banner */}
-      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
             alt="Pet Dental Care Examination" 
             className="w-full h-full object-cover"
@@ -333,7 +334,7 @@ export default function DentalContent() {
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
@@ -351,7 +352,7 @@ export default function DentalContent() {
 
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <img 
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
                 alt="Pet Dental Care Examination" 
                 className="w-full h-[440px] object-cover"
@@ -379,7 +380,7 @@ export default function DentalContent() {
       />
 
       {/* Transparent Pricing Section */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Transparent Pricing
@@ -463,7 +464,7 @@ export default function DentalContent() {
             </div>
 
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm transition-colors shadow-md block"
@@ -502,7 +503,7 @@ export default function DentalContent() {
             </div>
 
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full py-4 bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm transition-colors shadow-md block"
@@ -515,7 +516,7 @@ export default function DentalContent() {
       </section>
 
       {/* Warning Signs Section */}
-      <section className="py-16 bg-[#fff9fa] dark:bg-slate-900/80 border-y border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-[#fff9fa] dark:bg-slate-900/80 border-y border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -546,7 +547,7 @@ export default function DentalContent() {
       <PetDentalInfographic />
 
       {/* Why Is Anesthesia Essential? (Matching screenshot design) */}
-      <section className="py-16 lg:py-24 bg-[#fffbfa] dark:bg-slate-900/60 border-y border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-[#fffbfa] dark:bg-slate-900/60 border-y border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           
           {/* Centered Header */}
@@ -563,7 +564,7 @@ export default function DentalContent() {
             {/* Left Photo of Veterinary Surgeon */}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-3xl overflow-hidden shadow-xl border border-rose-100 dark:border-slate-800">
-                <img 
+                <LazyImage 
                   src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=900" 
                   alt="Veterinary surgeon performing pet dental procedure" 
                   className="w-full h-[480px] sm:h-[540px] object-cover"
@@ -619,7 +620,7 @@ export default function DentalContent() {
       </section>
 
       {/* Pet Dental Care at Home */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7">
@@ -662,7 +663,7 @@ export default function DentalContent() {
 
             <div className="space-y-3">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full py-4 bg-white text-[#ec558b] text-center text-xs font-bold uppercase tracking-widest rounded-sm transition-all hover:bg-slate-100 shadow-md block"

@@ -80,7 +80,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="how-it-works" className="w-full bg-[#f9f9fa] dark:bg-slate-950 py-16 md:py-12 lg:py-24 lg:py-16 lg:py-32 relative overflow-hidden transition-colors duration-300">
+    <section ref={sectionRef} id="how-it-works" className="w-full bg-[#f9f9fa] dark:bg-slate-950 pt-20 sm:pt-24 lg:pt-32 pb-16 lg:pb-24 relative overflow-hidden transition-colors duration-300">
       
       <PawPrint size={140} className="absolute left-[-3%] top-1/2 -translate-y-1/2 text-[#9cbc65] opacity-[0.04] dark:opacity-5 -rotate-12 pointer-events-none" />
       <PawPrint size={140} className="absolute right-[-3%] top-[60%] text-[#9cbc65] opacity-[0.04] dark:opacity-5 rotate-12 pointer-events-none" />

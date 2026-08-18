@@ -87,7 +87,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} id="home" className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[580px] lg:min-h-0 overflow-hidden">
+    <section ref={heroRef} id="home" className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[580px] lg:min-h-0">
       
       <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
         
@@ -97,7 +97,7 @@ export default function Hero() {
           <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
         </div>
 
-        <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 py-12 lg:py-32 relative z-10 flex flex-col justify-center ml-auto">
+        <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
           <div
             ref={textContainerRef}
             className="w-full max-w-lg hero-text-container"
@@ -135,7 +135,7 @@ export default function Hero() {
               </motion.a>
             </div>
 
-            <div className="flex lg:hidden gap-3 mt-8 z-10">
+            <div className="hidden gap-3 mt-8 z-10">
               <button 
                 onClick={prevImage}
                 className="w-10 h-10 bg-slate-900/80 text-white rounded-full flex items-center justify-center hover:bg-slate-800 transition-transform active:scale-95 border border-white/20"
@@ -194,10 +194,11 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute left-1/2 bottom-0 lg:-bottom-12 -translate-x-1/2 translate-y-1/2 lg:translate-y-0 z-20">
+      {/* Center Floating Rotating Badge */}
+      <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
         <div 
           ref={badgeRef}
-          className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.15)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800"
+          className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto"
         >
           <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
         </div>

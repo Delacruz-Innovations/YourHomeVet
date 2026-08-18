@@ -17,6 +17,7 @@ import {
   FileCheck,
   Check
 } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function VaccinationsContent() {
   const [selectedPet, setSelectedPet] = useState('Dog');
@@ -78,11 +79,11 @@ export default function VaccinationsContent() {
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=1200" 
             alt="Pet Vaccination Administration" 
             className="w-full h-full object-cover"
@@ -108,7 +109,7 @@ export default function VaccinationsContent() {
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-black lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
@@ -127,7 +128,7 @@ export default function VaccinationsContent() {
           {/* Desktop Image Side */}
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <img 
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
                 alt="Pet Vaccination Administration" 
                 className="absolute inset-0 w-full h-full object-cover"
@@ -147,7 +148,7 @@ export default function VaccinationsContent() {
       </section>
 
       {/* Importance of Vaccination */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7">
@@ -172,7 +173,7 @@ export default function VaccinationsContent() {
             </p>
             <div className="flex flex-col gap-3">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all block"
@@ -192,7 +193,7 @@ export default function VaccinationsContent() {
       </section>
 
       {/* Core vs. Non-Core Vaccines */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Customized Protection
@@ -248,7 +249,7 @@ export default function VaccinationsContent() {
       </section>
 
       {/* Recommended Pet Vaccination Schedule Table */}
-      <section className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -290,7 +291,7 @@ export default function VaccinationsContent() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Transparent Pricing
@@ -319,7 +320,7 @@ export default function VaccinationsContent() {
               </div>
             </div>
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full py-4 bg-[#51b255] hover:bg-[#439c47] text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm shadow-md block"
@@ -345,7 +346,7 @@ export default function VaccinationsContent() {
               </div>
             </div>
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm shadow-md block"
@@ -373,7 +374,7 @@ export default function VaccinationsContent() {
           </div>
           <div className="flex flex-wrap items-center gap-4 shrink-0">
             <a 
-              href="https://modernvet.com/booking/" 
+              href="https://yourhomevet.com/booking/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="px-7 py-3.5 bg-[#51b255] hover:bg-[#439c47] text-white text-xs font-bold uppercase tracking-wide rounded-sm shadow-md"
@@ -390,15 +391,15 @@ export default function VaccinationsContent() {
         </div>
       </section>
 
-      {/* Modern Vet Vaccination Process */}
-      <section className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      {/* YourHomeVet Vaccination Process */}
+      <section className="py-8 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
               Step-By-Step Care
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 dark:text-slate-100">
-              Modern Vet Vaccination Process
+              YourHomeVet Vaccination Process
             </h2>
           </div>
 
@@ -421,14 +422,14 @@ export default function VaccinationsContent() {
       </section>
 
       {/* Zoetis Partnership & Advantages Grid */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Zoetis Partnership */}
           <div className="p-8 sm:p-10 rounded-sm bg-gradient-to-br from-[#fff2f6] to-white dark:from-slate-900 dark:to-slate-800 border border-rose-200 dark:border-slate-700 shadow-lg">
             <Award size={36} className="text-[#ec558b] mb-4" />
             <h3 className="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
-              Zoetis and Modern Vet Partnership
+              Zoetis and YourHomeVet Partnership
             </h3>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
               <li className="flex items-start gap-3">
@@ -486,7 +487,7 @@ export default function VaccinationsContent() {
       </section>
 
       {/* Microchipping & Contraindications */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-12">
           
           {/* Microchipping Card */}

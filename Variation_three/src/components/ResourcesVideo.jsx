@@ -5,7 +5,7 @@ import dogPlayImg from '../assets/emergency_dog.png'; // Using existing image
 
 export default function ResourcesVideo() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-950">
+    <section className="py-4 bg-white dark:bg-slate-950">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="bg-[#f8fafc] dark:bg-slate-900 rounded-[2rem] flex flex-col md:flex-row overflow-hidden relative shadow-sm border border-slate-100 dark:border-slate-800">

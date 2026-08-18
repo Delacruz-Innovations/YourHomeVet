@@ -57,7 +57,7 @@ const SkiperPinnedCarousel = ({
   return (
     <div
       id={sectionId}
-      className="py-16 sm:py-20 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
+      className="py-8 sm:py-4 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
     >
       <div className="w-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-8 shrink-0">
@@ -295,7 +295,7 @@ export default function EmergencyContent() {
     <div className="w-full bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
 
       {/* Headline & Overview Section */}
-      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
@@ -358,7 +358,7 @@ export default function EmergencyContent() {
       />
 
       {/* What Happens When We Arrive (Triage Steps) */}
-      <section id="triage-process" className="py-20 bg-[#060D1E] text-white border-y border-slate-800/80 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section id="triage-process" className="py-4 bg-white dark:bg-[#060D1E] text-slate-900 dark:text-white border-y border-slate-200 dark:border-slate-800/80 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Subtle background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#9cbc65]/5 blur-[120px] pointer-events-none rounded-full" />
 
@@ -367,10 +367,10 @@ export default function EmergencyContent() {
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
               Step-by-Step Triage
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-slate-100 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-slate-900 dark:text-slate-100 mb-4">
               What happens when we arrive?
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
               Our medical team springs into immediate action. Here is how we care for your pet step by step.
             </p>
           </div>
@@ -393,25 +393,25 @@ export default function EmergencyContent() {
                   {/* Circle Badge Container */}
                   <div className="relative z-10 mb-6">
                     {/* Top Step Number Badge */}
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-sm bg-slate-900 border border-[#9cbc65]/40 text-[#9cbc65] text-xs font-serif font-bold tracking-wider z-20 shadow-md">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-sm bg-white dark:bg-slate-900 border border-[#9cbc65]/40 text-[#9cbc65] text-xs font-serif font-bold tracking-wider z-20 shadow-md">
                       {step.step}
                     </div>
 
                     {/* Outer Glowing Circle Ring */}
-                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-slate-700/80 bg-slate-900/60 p-2 flex items-center justify-center transition-all duration-300 group-hover:border-[#9cbc65]/60 group-hover:shadow-[0_0_20px_rgba(156,188,101,0.15)]">
+                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full border border-slate-300 dark:border-slate-700/80 bg-slate-50 dark:bg-slate-900/60 p-2 flex items-center justify-center transition-all duration-300 group-hover:border-[#9cbc65]/60 group-hover:shadow-[0_0_20px_rgba(156,188,101,0.15)]">
                       {/* Inner Circular Icon Container */}
-                      <div className="w-full h-full rounded-full border border-slate-800 bg-slate-950 flex items-center justify-center text-[#9cbc65] transition-transform duration-300 group-hover:scale-105">
+                      <div className="w-full h-full rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 flex items-center justify-center text-[#9cbc65] transition-transform duration-300 group-hover:scale-105">
                         <StepIcon size={32} className="stroke-[1.5]" />
                       </div>
                     </div>
                   </div>
 
                   {/* Step Title & Description */}
-                  <h3 className="text-lg sm:text-xl font-serif text-slate-100 font-semibold mb-2">
+                  <h3 className="text-lg sm:text-xl font-serif text-slate-900 dark:text-slate-100 font-semibold mb-2">
                     {step.title}
                   </h3>
                   <div className="w-8 h-0.5 bg-[#9cbc65]/40 my-2 rounded-full group-hover:w-12 transition-all duration-300" />
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-xs">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xs">
                     {step.desc}
                   </p>
                 </div>
@@ -419,22 +419,12 @@ export default function EmergencyContent() {
             })}
           </div>
 
-          {/* Bottom Reassurance Banner (respecting border radius rule rounded-sm) */}
-          <div className="flex justify-center">
-            <div className="rounded-sm border border-slate-800 bg-slate-900/80 hover:border-[#9cbc65]/40 transition-colors py-3.5 px-6 sm:px-8 inline-flex items-center gap-3 text-slate-200 text-xs sm:text-sm shadow-xl">
-              <div className="w-7 h-7 rounded-sm bg-[#9cbc65]/20 border border-[#9cbc65]/40 flex items-center justify-center text-[#9cbc65] shrink-0">
-                <Heart size={14} className="fill-[#9cbc65]/30" />
-              </div>
-              <span>
-                Every minute matters. Your pet is in <strong className="text-[#9cbc65] font-semibold">caring, capable</strong> hands.
-              </span>
-            </div>
-          </div>
+    
         </div>
       </section>
 
       {/* Emergency Services Offered & Diagnostics */}
-      <section id="services-list" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="services-list" className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* Services List */}
@@ -462,16 +452,16 @@ export default function EmergencyContent() {
 
           {/* Diagnostics & ICU */}
           <div id="diagnostics" className="lg:col-span-6 flex flex-col gap-8">
-            <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-xl">
+            <div className="bg-white dark:bg-slate-900 text-slate-900 dark:text-white p-8 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700">
               <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-2 block">
                 24-Hour On-Site Testing
               </span>
-              <h3 className="text-2xl font-serif mb-6 text-white">Diagnostic Capabilities</h3>
+              <h3 className="text-2xl font-serif mb-6 text-slate-900 dark:text-white">Diagnostic Capabilities</h3>
               <div className="space-y-4 text-xs">
                 {diagnosticFeatures.map((df, idx) => (
-                  <div key={idx} className="border-b border-slate-800 pb-3 last:border-0">
-                    <h5 className="font-bold text-slate-200 mb-0.5">{df.title}</h5>
-                    <p className="text-slate-400 leading-relaxed">{df.text}</p>
+                  <div key={idx} className="border-b border-slate-200 dark:border-slate-800 pb-3 last:border-0">
+                    <h5 className="font-bold text-slate-800 dark:text-slate-200 mb-0.5">{df.title}</h5>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{df.text}</p>
                   </div>
                 ))}
               </div>
@@ -492,25 +482,25 @@ export default function EmergencyContent() {
       </section>
 
       {/* Prevention Tips */}
-      <section className="py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
               Pet Safety Advice
             </span>
-            <h2 className="text-3xl font-serif text-white mb-4">
+            <h2 className="text-3xl font-serif text-slate-900 dark:text-white mb-4">
               How to Reduce the Risk of Pet Emergencies
             </h2>
-            <p className="text-xs text-slate-400 max-w-2xl mx-auto">
+            <p className="text-xs text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
               While not all emergencies can be prevented, taking key steps can greatly decrease sudden risks.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {preventionTips.map((tip, idx) => (
-              <div key={idx} className="p-5 rounded-xl bg-slate-800/70 border border-slate-700/60 flex items-start gap-3">
+              <div key={idx} className="p-5 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/60 flex items-start gap-3">
                 <CheckCircle2 size={18} className="text-[#9cbc65] shrink-0 mt-0.5" />
-                <p className="text-xs text-slate-300 leading-relaxed">{tip}</p>
+                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">{tip}</p>
               </div>
             ))}
           </div>
@@ -518,7 +508,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <section id="faq" className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Common Questions
@@ -543,7 +533,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* Final Callout Banner */}
-      <section className="py-16 bg-[#e8f4fd] dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800 px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-8 bg-[#e8f4fd] dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-serif text-slate-900 dark:text-slate-100 mb-4">
             Save Our Emergency Number Now

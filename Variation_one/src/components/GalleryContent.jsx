@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function GalleryContent() {
   const [activeTab, setActiveTab] = useState('All');
@@ -30,7 +31,7 @@ export default function GalleryContent() {
     {
       id: 4,
       category: "Hospital & Facilities",
-      title: "Modern Vet Reception & Lounge",
+      title: "YourHomeVet Reception & Lounge",
       url: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=900"
     },
     {
@@ -90,7 +91,7 @@ export default function GalleryContent() {
     {
       id: 14,
       category: "Hospital & Facilities",
-      title: "Modern Vet Exterior Hospital Building",
+      title: "YourHomeVet Exterior Hospital Building",
       url: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=900"
     },
     {
@@ -144,19 +145,19 @@ export default function GalleryContent() {
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Title Header */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200" 
-            alt="Modern Vet Hospital Interior" 
+            alt="YourHomeVet Hospital Interior" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
         </div>
 
         <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-slate-400 lg:dark:text-slate-400 mb-2 block relative z-10">
-          ModernVet &gt; Gallery
+          yourhomevet &gt; Gallery
         </span>
         <div className="inline-block px-14 py-4 bg-slate-50/90 dark:bg-slate-900/90 border border-white/10 lg:border-slate-200 dark:lg:border-slate-800 rounded-sm shadow-sm mb-6 relative z-10">
           <h1 className="text-[36px] sm:text-[52px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-bold tracking-wide">
@@ -164,7 +165,7 @@ export default function GalleryContent() {
           </h1>
         </div>
         <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-sm max-w-2xl mx-auto relative z-10">
-          Explore inside Modern Vet — from our state-of-the-art CT & ICU surgical suites to our compassionate veterinary teams caring for pets across Dubai.
+          Explore inside YourHomeVet — from our state-of-the-art CT & ICU surgical suites to our compassionate veterinary teams caring for pets across Dubai.
         </p>
 
         {/* Filter Navigation Tabs */}
@@ -195,7 +196,7 @@ export default function GalleryContent() {
               className="break-inside-avoid relative rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-all group cursor-pointer"
               onClick={() => openLightbox(idx)}
             >
-              <img 
+              <LazyImage 
                 src={img.url} 
                 alt={img.title} 
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"

@@ -19,6 +19,7 @@ import {
   Lightbulb,
   FileCheck
 } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function AboutUsContent() {
   const systemCapabilities = [
@@ -104,7 +105,7 @@ export default function AboutUsContent() {
   const carePillars = [
     {
       title: "Advanced Medical Infrastructure",
-      desc: "We believe that all pet owners in the UAE should have access to quality, modern veterinary care delivered consistently and responsibly."
+      desc: "We believe that all pet owners in the UAE should have access to quality, YourHomeVeterinary care delivered consistently and responsibly."
     },
     {
       title: "Standardized Clinical Protocols",
@@ -117,48 +118,49 @@ export default function AboutUsContent() {
   ];
 
   return (
-    <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
+    <div className="w-full bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
-      {/* Background Image for Mobile and Tablet */}
+      {/* Overview / Hero Section */}
+      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+        
+        {/* Background Image for Mobile and Tablet */}
       <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-        <img 
+        <LazyImage 
           src="https://images.unsplash.com/photo-1576201836106?auto=format&fit=crop&q=80&w=1200" 
           alt="Veterinarian with a dog" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
-      </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/85 to-slate-950/60" />
+        </div>
 
-      {/* Hero Section */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           <div className="lg:col-span-7">
-            <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-[#ec558b] lg:dark:text-[#ec558b] mb-3 block">
+            <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
               ESTABLISHED 1995 • 30+ YEARS IN DUBAI
             </span>
-            <h1 className="text-[36px] sm:text-[52px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-6">
               About Us
             </h1>
-            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[14px] sm:text-[16px] leading-[1.8] mb-6">
-              With more than 30 years of experience in Dubai, Modern Vet has been a trusted provider of pet healthcare since 1995. Today, Modern Vet is one of the oldest veterinary clinics in the UAE and continues to provide high quality and compassionate veterinary services for pets and their owners.
+            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-base leading-relaxed mb-6">
+              With more than 30 years of experience in Dubai, YourHomeVet has been a trusted provider of pet healthcare since 1995. Today, YourHomeVet is one of the oldest veterinary clinics in the UAE and continues to provide high quality and compassionate veterinary services for pets and their owners.
             </p>
-            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[14px] sm:text-[16px] leading-[1.8] mb-8">
+            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-base leading-relaxed mb-8">
               From a single clinic, we have evolved into an integrated veterinary group with modern medical technology and facilities, skilled veterinarians, and a commitment to continually improving clinical standards. Our name reflects this journey and forward-thinking approach to veterinary medicine.
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-black lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
               >
                 <Calendar size={16} /> Book An Appointment
               </a>
               <a 
                 href="tel:97145971000" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm border border-white/30 lg:border-slate-400/50 lg:dark:border-slate-700 bg-slate-950/40 lg:bg-slate-900 lg:dark:bg-slate-900/40 text-white lg:text-slate-800 lg:dark:text-slate-200 hover:bg-white/20 lg:hover:bg-white lg:dark:hover:bg-slate-800 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-slate-900/80 lg:bg-slate-900 lg:dark:bg-slate-800 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md border border-white/20 lg:border-none"
               >
                 <Phone size={16} /> Call : 971 4 5971 000
               </a>
@@ -167,11 +169,11 @@ export default function AboutUsContent() {
 
           {/* Desktop Image Side */}
           <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <img 
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1576201836106?auto=format&fit=crop&q=80&w=900" 
-                alt="Modern Vet Dubai Hospital Facility" 
-                className="absolute inset-0 w-full h-full object-cover"
+                alt="YourHomeVet Dubai Hospital Facility" 
+                className="w-full h-[440px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent p-6 flex flex-col justify-end text-white">
                 <span className="text-xs font-bold text-[#9cbc65] uppercase tracking-wider mb-1">
@@ -188,19 +190,19 @@ export default function AboutUsContent() {
       </section>
 
       {/* Founder Video Showcase Section */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
             Our Journey & Heritage
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 dark:text-slate-100 mb-8">
-            The Story That Started Modern Vet
+            The Story That Started YourHomeVet
           </h2>
 
           <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 group aspect-video bg-slate-900 flex items-center justify-center">
-            <img 
+            <LazyImage 
               src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200" 
-              alt="The Story That Started Modern Vet Video Preview" 
+              alt="The Story That Started YourHomeVet Video Preview" 
               className="w-full h-full object-cover opacity-80 group-hover:opacity-70 transition-opacity"
             />
             <button className="w-20 h-20 rounded-full bg-[#ec558b] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform absolute z-10">
@@ -211,14 +213,14 @@ export default function AboutUsContent() {
       </section>
 
       {/* Comprehensive Medical Care */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-sm overflow-hidden shadow-xl border border-slate-200 dark:border-slate-800">
-              <img 
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=900" 
-                alt="Comprehensive Medical Care at Modern Vet" 
+                alt="Comprehensive Medical Care at YourHomeVet" 
                 className="w-full h-[480px] object-cover"
               />
             </div>
@@ -232,7 +234,7 @@ export default function AboutUsContent() {
               Comprehensive Medical Care
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
-              Modern Vet is set up as an integrated medical model that manages all levels of complexity, from preventive health plans to critical, multi-system disease and trauma. Unlike most veterinarians who give you a list of services, we are focused on comprehensive case management.
+              YourHomeVet is set up as an integrated medical model that manages all levels of complexity, from preventive health plans to critical, multi-system disease and trauma. Unlike most veterinarians who give you a list of services, we are focused on comprehensive case management.
             </p>
             <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-8">
               Every client has a single point of contact (our Doctor or our Technician), and every client goes through a coordinated clinical pathway, from diagnosis and stabilization to treatment, monitoring, and long-term recovery planning.
@@ -257,7 +259,7 @@ export default function AboutUsContent() {
       </section>
 
       {/* Advanced Diagnostic & Treatment Infrastructure */}
-      <section className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -267,7 +269,7 @@ export default function AboutUsContent() {
               Advanced Diagnostic & Treatment Infrastructure
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-              Modern Vet combines a multidisciplinary medical team with advanced diagnostic technology, allowing us to evaluate, diagnose, and treat complex cases with speed, precision, and confidence.
+              YourHomeVet combines a multidisciplinary medical team with advanced diagnostic technology, allowing us to evaluate, diagnose, and treat complex cases with speed, precision, and confidence.
             </p>
           </div>
 
@@ -289,7 +291,7 @@ export default function AboutUsContent() {
       </section>
 
       {/* Our Approach to Veterinary Care */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Clinical Philosophy
@@ -317,7 +319,7 @@ export default function AboutUsContent() {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -347,7 +349,7 @@ export default function AboutUsContent() {
       </section>
 
       {/* What Makes Our Care Possible */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Quality Assurance

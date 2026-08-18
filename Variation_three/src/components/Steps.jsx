@@ -30,7 +30,7 @@ const steps = [
 
 export default function Steps() {
   return (
-    <section className="py-20 bg-white dark:bg-slate-900 overflow-hidden relative">
+    <section className="py-4 bg-white dark:bg-slate-900 overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-2xl mx-auto mb-24">

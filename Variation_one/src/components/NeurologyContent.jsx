@@ -25,6 +25,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from './ui/carousel';
+import LazyImage from './ui/LazyImage';
 
 // CarouselSection Component: Standard horizontal carousel with next/prev buttons & swipe support (no scroll locking)
 const SkiperPinnedCarousel = ({
@@ -48,7 +49,7 @@ const SkiperPinnedCarousel = ({
   return (
     <div
       id={sectionId}
-      className="py-16 sm:py-20 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
+      className="py-8 sm:py-4 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
     >
       <div className="w-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-8 shrink-0">
@@ -223,11 +224,11 @@ export default function NeurologyContent() {
     <div className="w-full bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Hero Banner */}
-      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=900" 
             alt="Veterinary Neurology Exam" 
             className="w-full h-full object-cover"
@@ -253,7 +254,7 @@ export default function NeurologyContent() {
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
@@ -271,7 +272,7 @@ export default function NeurologyContent() {
 
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <img 
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=900" 
                 alt="Veterinary Neurology Exam" 
                 className="w-full h-[440px] object-cover"
@@ -290,7 +291,7 @@ export default function NeurologyContent() {
       </section>
 
       {/* What is Veterinary Neurology? */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -314,7 +315,7 @@ export default function NeurologyContent() {
             </p>
             <div className="flex flex-col gap-3">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all block"
@@ -342,7 +343,7 @@ export default function NeurologyContent() {
       />
 
       {/* Early Warning Signs of Neurological Issues */}
-      <section className="py-16 lg:py-24 bg-[#fff9fa] dark:bg-slate-900/80 border-b border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-[#fff9fa] dark:bg-slate-900/80 border-b border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -373,7 +374,7 @@ export default function NeurologyContent() {
       </section>
 
       {/* Advanced Neurological Diagnostics */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
             State-of-the-Art Technology
@@ -382,7 +383,7 @@ export default function NeurologyContent() {
             Advanced Neurological Diagnostics
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-            The key to providing excellent veterinary care for pet neurology disorders is accurate diagnosis. Modern Vet Clinics uses the latest technology along with extensive experience in clinical practice to quickly and accurately diagnose the cause of your pet’s symptoms.
+            The key to providing excellent veterinary care for pet neurology disorders is accurate diagnosis. YourHomeVet Clinics uses the latest technology along with extensive experience in clinical practice to quickly and accurately diagnose the cause of your pet’s symptoms.
           </p>
         </div>
 
@@ -452,26 +453,26 @@ export default function NeurologyContent() {
       </section>
 
       {/* Comprehensive Neurological Treatment Options */}
-      <section className="py-16 lg:py-24 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
               Advanced Clinical Care
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-serif text-slate-900 dark:text-white mb-4">
               Comprehensive Neurological Treatment Options
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {treatmentOptions.map((opt, idx) => (
-              <div key={idx} className="bg-slate-800/80 p-8 rounded-2xl border border-slate-700/60 flex flex-col justify-between">
+              <div key={idx} className="bg-white dark:bg-slate-800/80 p-8 rounded-2xl border border-slate-200 dark:border-slate-700/60 flex flex-col justify-between shadow-sm">
                 <div>
                   <span className="text-[#ec558b] font-mono font-bold text-xs block mb-3">0{idx + 1}</span>
-                  <h3 className="text-lg font-serif font-bold text-white mb-3">
+                  <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white mb-3">
                     {opt.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {opt.desc}
                   </p>
                 </div>

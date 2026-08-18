@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, ChevronLeft, ChevronRight, Sparkles, Video as VideoIcon } from 'lucide-react';
+import LazyImage from './ui/LazyImage';
 
 export default function VideosContent() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -65,15 +66,15 @@ export default function VideosContent() {
     },
     {
       id: 9,
-      title: "Modern Vet Palm Clinic Overview",
-      desc: "The video provides a brief yet detailed look at the Modern Vet Palm Clinic, showcasing its modern veterinary facilities, diagnostic labs, and reception.",
+      title: "YourHomeVet Palm Clinic Overview",
+      desc: "The video provides a brief yet detailed look at the YourHomeVet Palm Clinic, showcasing its YourHomeVeterinary facilities, diagnostic labs, and reception.",
       youtubeId: "dQw4w9WgXcQ",
       image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=900"
     },
     {
       id: 10,
-      title: "Modern Vet Downtown Clinic Overview",
-      desc: "This video offers a succinct overview of the Modern Vet Downtown Clinic, emphasizing its contemporary veterinary facilities, professional team, and patient lounge.",
+      title: "YourHomeVet Downtown Clinic Overview",
+      desc: "This video offers a succinct overview of the YourHomeVet Downtown Clinic, emphasizing its contemporary veterinary facilities, professional team, and patient lounge.",
       youtubeId: "dQw4w9WgXcQ",
       image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=900"
     }
@@ -91,10 +92,10 @@ export default function VideosContent() {
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Title Header */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=1200" 
             alt="Veterinary presentations and clinic tour" 
             className="w-full h-full object-cover"
@@ -103,7 +104,7 @@ export default function VideosContent() {
         </div>
 
         <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-slate-400 lg:dark:text-slate-400 mb-2 block relative z-10">
-          ModernVet &gt; Our Video
+          yourhomevet &gt; Our Video
         </span>
         <div className="inline-block px-14 py-4 bg-slate-50/90 dark:bg-slate-900/90 border border-white/10 lg:border-slate-200 dark:lg:border-slate-800 rounded-sm shadow-sm mb-6 relative z-10">
           <h1 className="text-[36px] sm:text-[52px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-bold tracking-wide">
@@ -126,7 +127,7 @@ export default function VideosContent() {
             >
               {/* Video Thumbnail Box */}
               <div className="relative aspect-video bg-slate-950 flex items-center justify-center overflow-hidden">
-                <img 
+                <LazyImage 
                   src={video.image} 
                   alt={video.title} 
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-500"

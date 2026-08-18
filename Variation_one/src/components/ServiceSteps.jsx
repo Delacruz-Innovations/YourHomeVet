@@ -41,7 +41,7 @@ const steps = [
 
 export default function ServiceSteps() {
   return (
-    <section className="w-full bg-white dark:bg-slate-950 py-12 lg:py-16 overflow-hidden">
+    <section className="w-full bg-white dark:bg-slate-950 py-12 lg:py-8 overflow-hidden">
       <div className="w-full max-w-[1240px] mx-auto flex flex-col gap-10 lg:gap-14 px-4 sm:px-6">
         {steps.map((step, idx) => (
           <div

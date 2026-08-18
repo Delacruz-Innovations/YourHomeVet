@@ -11,7 +11,7 @@ export default function PartnersPage() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Modern Vet Partners – Dubai Pet Care & Relocation Partners"
+        title="YourHomeVet Partners – Dubai Pet Care & Relocation Partners"
         description="Our trusted partners in Dubai for international pet relocation, professional dog training, online mental health, pet sitting, eco sanitization, pet taxi, and 5-star pet hotel boarding."
         canonical="https://yourhomevet.ae/partners"
       />

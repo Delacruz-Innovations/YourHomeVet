@@ -11,7 +11,7 @@ export default function CareersPage() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Careers at Modern Vet – Veterinary Jobs & Opportunities Dubai"
+        title="Careers at YourHomeVet – Veterinary Jobs & Opportunities Dubai"
         description="Join Dubai's premier multi-specialist veterinary group. Explore open jobs for veterinary nurses, technicians, veterinarians, and pharmacists."
         canonical="https://yourhomevet.ae/join-us"
       />

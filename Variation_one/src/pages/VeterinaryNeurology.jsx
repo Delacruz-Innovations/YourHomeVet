@@ -11,7 +11,7 @@ export default function VeterinaryNeurology() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Veterinary Neurology & Neurosurgery Dubai – Modern Vet"
+        title="Veterinary Neurology & Neurosurgery Dubai – YourHomeVet"
         description="Specialist neurology care for pets in Dubai. Advanced MRI/CT diagnostics, seizure management, and spinal neurosurgery."
         canonical="https://yourhomevet.ae/veterinary-neurology"
       />

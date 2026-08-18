@@ -89,7 +89,7 @@ export default function Faq() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="faq" className="relative py-16 bg-white dark:bg-slate-950 overflow-hidden transition-colors duration-300">
+    <section ref={sectionRef} id="faq" className="relative py-8 bg-white dark:bg-slate-950 overflow-hidden transition-colors duration-300">
       
       <PawPrint size={140} className="absolute left-[3%] top-[20%] text-[#9cbc65] opacity-[0.04] dark:opacity-5 -rotate-12 pointer-events-none" />
       <PawPrint size={140} className="absolute right-[3%] bottom-[20%] text-[#9cbc65] opacity-[0.04] dark:opacity-5 rotate-12 pointer-events-none" />

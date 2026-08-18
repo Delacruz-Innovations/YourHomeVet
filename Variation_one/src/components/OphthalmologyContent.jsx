@@ -24,6 +24,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from './ui/carousel';
+import LazyImage from './ui/LazyImage';
 
 // CarouselSection Component: Standard horizontal carousel with next/prev buttons & swipe support (no scroll locking)
 const SkiperPinnedCarousel = ({
@@ -47,7 +48,7 @@ const SkiperPinnedCarousel = ({
   return (
     <div
       id={sectionId}
-      className="py-16 sm:py-20 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
+      className="py-8 sm:py-4 w-full bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 overflow-hidden"
     >
       <div className="w-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-8 shrink-0">
@@ -95,7 +96,7 @@ const SkiperPinnedCarousel = ({
                   className="group relative h-full w-full overflow-hidden rounded-sm bg-slate-900 shadow-2xl border-0"
                 >
                   {/* Taller Full-Bleed Background Image */}
-                  <img
+                  <LazyImage
                     src={item.image}
                     alt={item.title || item.text}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -149,32 +150,32 @@ export default function OphthalmologyContent() {
   const services = [
     {
       title: "Corneal Disease Management",
-      desc: "Modern Vet manages corneal diseases including keratitis and corneal ulcers in pets using medicated drops, pain medication and/or surgery when necessary to prevent loss of vision.",
+      desc: "YourHomeVet manages corneal diseases including keratitis and corneal ulcers in pets using medicated drops, pain medication and/or surgery when necessary to prevent loss of vision.",
       image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Glaucoma Control",
-      desc: "At Modern Vet, we check your pet’s intraocular pressure and use either medical therapy or surgery to slow the progression of glaucoma which is a very painful condition that can result in rapid blindness if left untreated.",
+      desc: "At YourHomeVet, we check your pet’s intraocular pressure and use either medical therapy or surgery to slow the progression of glaucoma which is a very painful condition that can result in rapid blindness if left untreated.",
       image: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Cataract Evaluation and Surgery",
-      desc: "Modern Vet diagnoses cataracts in pets resulting from aging, diabetes, injury, etc., and recommends surgery to remove the cataracts when appropriate to improve vision clarity.",
+      desc: "YourHomeVet diagnoses cataracts in pets resulting from aging, diabetes, injury, etc., and recommends surgery to remove the cataracts when appropriate to improve vision clarity.",
       image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Preventive Eye Examinations",
-      desc: "As part of your pet’s overall wellness exams, Modern Vet will also perform eye examinations to identify any early warning signs of infection, dry eye, cataracts, glaucoma or retinal disease before it progresses.",
+      desc: "As part of your pet’s overall wellness exams, YourHomeVet will also perform eye examinations to identify any early warning signs of infection, dry eye, cataracts, glaucoma or retinal disease before it progresses.",
       image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Emergency Eye Trauma Care",
-      desc: "Modern Vet has emergency treatment available for eye injuries, such as scratches, foreign bodies, bites or accidents, to reduce pain, stabilize the eye, and save vision if possible.",
+      desc: "YourHomeVet has emergency treatment available for eye injuries, such as scratches, foreign bodies, bites or accidents, to reduce pain, stabilize the eye, and save vision if possible.",
       image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=800"
     },
     {
       title: "Advanced Diagnostic Imaging & Testing",
-      desc: "To assist in diagnosing complex eye conditions in pets, Modern Vet uses state-of-the-art diagnostic equipment, such as a slit lamp, tonometer (pressure meter), tear tests, and other special diagnostic tools.",
+      desc: "To assist in diagnosing complex eye conditions in pets, YourHomeVet uses state-of-the-art diagnostic equipment, such as a slit lamp, tonometer (pressure meter), tear tests, and other special diagnostic tools.",
       image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800"
     }
   ];
@@ -227,11 +228,11 @@ export default function OphthalmologyContent() {
   return (
     <div className="w-full bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
          {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
         {/* Background Image for Mobile and Tablet */}
         <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <img 
+          <LazyImage 
             src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=900" 
             alt="Pet Ophthalmology Eye Exam" 
             className="w-full h-full object-cover"
@@ -257,7 +258,7 @@ export default function OphthalmologyContent() {
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
@@ -275,7 +276,7 @@ export default function OphthalmologyContent() {
 
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <img 
+              <LazyImage 
                 src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=900" 
                 alt="Pet Ophthalmology Eye Exam" 
                 className="w-full h-[440px] object-cover"
@@ -294,7 +295,7 @@ export default function OphthalmologyContent() {
       </section>
 
       {/* Why is Veterinary Ophthalmology Important? */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7">
@@ -322,7 +323,7 @@ export default function OphthalmologyContent() {
             </p>
             <div className="flex flex-col gap-3">
               <a 
-                href="https://modernvet.com/booking/" 
+                href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all block"
@@ -346,12 +347,12 @@ export default function OphthalmologyContent() {
         items={services}
         badgeText="Comprehensive Eye Care"
         badgeColor="text-[#ec558b]"
-        title="Ophthalmology Services at Modern Vet"
+        title="Ophthalmology Services at YourHomeVet"
         subtitle="We have comprehensive ophthalmology services to help identify, manage and treat many eye problems in pets to help improve both the sight and comfort of your pet."
       />
 
       {/* Common Signs of Eye Problems */}
-      <section className="py-16 lg:py-24 bg-[#fff9fa] dark:bg-slate-900/80 border-b border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-[#fff9fa] dark:bg-slate-900/80 border-b border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -382,7 +383,7 @@ export default function OphthalmologyContent() {
       </section>
 
       {/* How Do We Examine Your Pet's Eyes? (8 Diagnostic Methods) */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
             Specialized Examinations
@@ -391,7 +392,7 @@ export default function OphthalmologyContent() {
             How do we examine your pet’s eyes?
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-            At Modern Vet, we utilize high-end ophthalmologic equipment to perform a comprehensive pet eye exam, starting with a detailed history and physical exam followed by targeted, specialized testing.
+            At YourHomeVet, we utilize high-end ophthalmologic equipment to perform a comprehensive pet eye exam, starting with a detailed history and physical exam followed by targeted, specialized testing.
           </p>
         </div>
 
@@ -413,7 +414,7 @@ export default function OphthalmologyContent() {
       </section>
 
       {/* What Eye Treatments Do We Provide? & Preventive Wellness */}
-      <section className="py-16 lg:py-24 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-24 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-16">

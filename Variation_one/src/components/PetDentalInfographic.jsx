@@ -84,7 +84,7 @@ const PetDentalInfographic = () => {
   ];
 
   return (
-    <section className="bg-[#faf8f7] dark:bg-slate-900/60 py-16 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden border-y border-slate-100 dark:border-slate-800">
+    <section className="bg-[#faf8f7] dark:bg-slate-900/60 py-8 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden border-y border-slate-100 dark:border-slate-800">
       
       {/* Header Section */}
       <div className="max-w-4xl mx-auto text-center mb-16 relative">

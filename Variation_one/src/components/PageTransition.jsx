@@ -1,13 +1,26 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const TRANSITION_IMAGES = [
+  "https://images.unsplash.com/photo-1450778869180-41d0601e047e?auto=format&fit=crop&q=80&w=1920",
+  "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=1920",
+  "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&q=80&w=1920",
+  "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=1920",
+  "https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&q=80&w=1920"
+];
+
 export default function PageTransition({ children, location }) {
   const overlayRef = useRef(null);
   const contentRef = useRef(null);
   const isInitialMount = useRef(true);
+
+  const randomImage = useMemo(() => {
+    const idx = Math.floor(Math.random() * TRANSITION_IMAGES.length);
+    return TRANSITION_IMAGES[idx];
+  }, []);
 
   useEffect(() => {
     if (!overlayRef.current || !contentRef.current) return;
@@ -76,9 +89,9 @@ export default function PageTransition({ children, location }) {
       </div>
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[9999] pointer-events-none"
+        className="fixed inset-0 z-[9999] pointer-events-none bg-cover bg-center"
         style={{
-          background: 'linear-gradient(135deg, #ec558b 0%, #1b2b4b 50%, #9cbc65 100%)',
+          backgroundImage: `url(${randomImage})`,
           transform: 'scaleX(0)',
           willChange: 'transform'
         }}

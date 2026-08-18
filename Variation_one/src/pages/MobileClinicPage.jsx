@@ -11,7 +11,7 @@ export default function MobileClinicPage() {
   return (
     <div className="w-full flex flex-col">
       <SEO
-        title="Mobile Vet Dubai Service – Modern Vet Home Visits"
+        title="Mobile Vet Dubai Service – YourHomeVet Home Visits"
         description="Our fully equipped mobile veterinary unit brings specialist care directly to your doorstep in Dubai."
         canonical="https://yourhomevet.ae/mobile-clinic"
       />
