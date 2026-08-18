@@ -33,8 +33,6 @@ import {
 import LazyImage from './ui/LazyImage';
 
 export default function EmergencyContent() {
-  const [activeFaq, setActiveFaq] = useState(null);
-
   const emergencySymptoms = [
     "Difficulty breathing or unusual breathing sounds",
     "Uncontrolled or heavy bleeding",
@@ -146,33 +144,33 @@ export default function EmergencyContent() {
   ];
 
   return (
-    <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
+    <div className="w-full relative bg-[#FAFCF8] dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* 1. Hero Section */}
-      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           <div className="lg:col-span-7">
-            <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
-              24/7 EMERGENCY & CRITICAL CARE
+            <span className="text-[#FA4D80] font-bold text-xs tracking-widest uppercase mb-3 block">
+              24/7 Emergency & Critical Care
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-slate-900 dark:text-slate-100 font-normal leading-tight mb-4">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 leading-tight mb-4">
               Emergency & Critical Care
             </h1>
-            <h2 className="text-xl sm:text-2xl font-serif text-[#ec558b] mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#FA4D80] mb-6">
               24/7 Emergency Veterinary Care When Your Pet Needs It Most
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6 font-semibold">
+            <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-6 font-bold">
               When an emergency happens, every minute matters.
             </p>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
               Our Emergency & Critical Care team provides around-the-clock veterinary support for pets experiencing sudden illness, serious injury, poisoning, breathing difficulties, trauma, or other potentially life-threatening conditions.
             </p>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
               From rapid stabilization and diagnostics to intensive monitoring and emergency surgery, our veterinary team is equipped to provide immediate, compassionate care when your pet needs it most.
             </p>
             
-            <div className="p-4 rounded-sm bg-[#fff2f5] dark:bg-rose-950/30 border border-[#fcd5e2] dark:border-rose-900/40 mb-8 inline-block">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ec558b]">
+            <div className="px-5 py-3 rounded-full bg-[#FA4D80]/10 dark:bg-rose-950/40 border border-[#FA4D80]/20 mb-8 inline-block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#FA4D80]">
                 Available 24 hours a day, 7 days a week.
               </span>
             </div>
@@ -180,13 +178,13 @@ export default function EmergencyContent() {
             <div className="flex flex-wrap gap-4">
               <a 
                 href="#book" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#FA4D80] to-[#FF6B9D] hover:from-[#e63c6f] hover:to-[#fa4d80] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-lg"
               >
                 <ShieldAlert size={16} /> Get Emergency Care
               </a>
               <a 
                 href="tel:02081234567" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md"
               >
                 <Phone size={16} /> Call Now: 0208 123 4567
               </a>
@@ -194,18 +192,18 @@ export default function EmergencyContent() {
           </div>
 
           <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <LazyImage 
                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=900" 
                 alt="Emergency Veterinary Care" 
                 className="w-full h-[460px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-6 flex flex-col justify-end text-white">
-                <span className="text-xs font-bold text-[#9cbc65] uppercase tracking-wider mb-1">
-                  24/7 Critical Care
+                <span className="text-xs font-bold text-[#58B66E] uppercase tracking-wider mb-1">
+                  24/7 Rapid Dispatch & ICU
                 </span>
-                <h3 className="text-xl font-serif font-bold text-white">
-                  Coordinated Care Without Delays
+                <h3 className="text-xl font-bold text-white">
+                  Coordinated Emergency Response
                 </h3>
               </div>
             </div>
@@ -214,9 +212,9 @@ export default function EmergencyContent() {
       </section>
 
       {/* 2. Your Pet's Emergency Can't Wait */}
-      <section className="py-12 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-6">
+          <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-6">
             Your Pet's Emergency Can't Wait
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
@@ -225,9 +223,9 @@ export default function EmergencyContent() {
           <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-8">
             That's why our emergency service is available around the clock, including nights, weekends, and holidays.
           </p>
-          <div className="p-6 rounded-sm bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm max-w-2xl mx-auto mb-8">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#ec558b] block mb-2">Our Goal Is Simple</span>
-            <p className="text-base sm:text-lg font-serif font-bold text-slate-900 dark:text-slate-100">
+          <div className="p-8 rounded-3xl bg-[#FAFCF8] dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm max-w-2xl mx-auto mb-8">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#FA4D80] block mb-2">Our Goal Is Simple</span>
+            <p className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100">
               Stabilize your pet. Find the cause. Start the right treatment as quickly as possible.
             </p>
           </div>
@@ -238,30 +236,30 @@ export default function EmergencyContent() {
       </section>
 
       {/* 3. When Should You Bring Your Pet to an Emergency Vet? */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto mb-12 text-center">
-          <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
+          <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
             Emergency Triage Guide
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             When Should You Bring Your Pet to an Emergency Vet?
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-4">
             Some emergencies are obvious. Others can begin with subtle changes that are easy to overlook.
           </p>
-          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed font-semibold">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed font-bold text-[#FA4D80]">
             If something about your pet's health or behavior suddenly seems wrong, it's always better to seek professional advice rather than wait for the condition to become worse.
           </p>
         </div>
 
-        <div className="bg-[#fff2f5] dark:bg-rose-950/20 border border-[#fcd5e2] dark:border-rose-900/40 p-8 sm:p-12 rounded-sm max-w-5xl mx-auto mb-8 shadow-sm">
-          <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-2">
-            <AlertTriangle size={20} className="text-[#ec558b]" /> Seek emergency veterinary care if your pet has:
+        <div className="bg-[#FAFCF8] dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-8 sm:p-12 rounded-3xl max-w-5xl mx-auto mb-8 shadow-sm">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-2">
+            <AlertTriangle size={20} className="text-[#FA4D80]" /> Seek emergency veterinary care if your pet has:
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {emergencySymptoms.map((symptom, idx) => (
-              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                <CheckCircle2 size={16} className="text-[#ec558b] shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 p-2 rounded-xl bg-white dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/60">
+                <CheckCircle2 size={16} className="text-[#FA4D80] shrink-0 mt-0.5" />
                 <span>{symptom}</span>
               </div>
             ))}
@@ -272,20 +270,20 @@ export default function EmergencyContent() {
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
             Even small changes such as reduced appetite, unusual tiredness, hiding, or difficulty moving can sometimes indicate an underlying problem.
           </p>
-          <p className="text-base font-serif font-bold text-slate-900 dark:text-slate-100">
+          <p className="text-base font-bold text-slate-900 dark:text-slate-100">
             When in doubt, contact our veterinary team.
           </p>
         </div>
       </section>
 
       {/* 4. What Happens When You Arrive? */}
-      <section className="py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-slate-950 text-white px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
+            <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
               Clear & Transparent Process
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               What Happens When You Arrive?
             </h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -295,10 +293,10 @@ export default function EmergencyContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {triageSteps.map((step, idx) => (
-              <div key={idx} className="p-6 rounded-sm bg-slate-800/80 border border-slate-700/80 flex flex-col justify-between">
+              <div key={idx} className="p-6 rounded-3xl bg-slate-900 border border-slate-800 flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-serif font-bold text-[#9cbc65] tracking-widest uppercase block mb-2">{step.num}</span>
-                  <h3 className="text-lg font-serif font-bold text-white mb-3">{step.title}</h3>
+                  <span className="text-xs font-bold text-[#58B66E] tracking-widest uppercase block mb-2">{step.num}</span>
+                  <h3 className="text-lg font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-xs text-slate-300 leading-relaxed">{step.desc}</p>
                 </div>
               </div>
@@ -310,10 +308,10 @@ export default function EmergencyContent() {
       {/* 5. Emergency & Critical Care Services */}
       <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
+          <span className="text-[#FA4D80] font-bold text-xs tracking-widest uppercase mb-3 block">
             Complete Department Scope
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             Emergency & Critical Care Services
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
@@ -323,11 +321,11 @@ export default function EmergencyContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {emergencyServices.map((svc, idx) => (
-            <div key={idx} className="p-7 rounded-sm bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
-              <div className="w-10 h-10 rounded-sm bg-[#fff2f5] dark:bg-rose-950/40 text-[#ec558b] flex items-center justify-center mb-4 font-bold">
+            <div key={idx} className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+              <div className="w-10 h-10 rounded-2xl bg-[#FA4D80]/10 text-[#FA4D80] flex items-center justify-center mb-4 font-bold">
                 <HeartPulse size={20} />
               </div>
-              <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white mb-2">{svc.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{svc.title}</h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{svc.desc}</p>
             </div>
           ))}
@@ -335,13 +333,13 @@ export default function EmergencyContent() {
       </section>
 
       {/* 6. Advanced Diagnostics Available On-Site */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
+            <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
               Precision Technology
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
               Advanced Diagnostics Available On-Site
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
@@ -351,11 +349,11 @@ export default function EmergencyContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {diagnostics.map((diag, idx) => (
-              <div key={idx} className="p-7 rounded-sm bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-                <div className="w-10 h-10 rounded-sm bg-slate-100 dark:bg-slate-800 text-[#9cbc65] flex items-center justify-center mb-4 font-bold">
+              <div key={idx} className="p-8 rounded-3xl bg-[#FAFCF8] dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+                <div className="w-10 h-10 rounded-2xl bg-[#E8F7EC] dark:bg-slate-800 text-[#58B66E] flex items-center justify-center mb-4 font-bold">
                   <Microscope size={20} />
                 </div>
-                <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white mb-2">{diag.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{diag.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{diag.desc}</p>
               </div>
             ))}
@@ -366,10 +364,10 @@ export default function EmergencyContent() {
       {/* 7. Intensive Care for Critical Patients */}
       <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
+          <span className="text-[#4FA3DE] font-bold text-xs tracking-widest uppercase mb-3 block">
             ICU & Ongoing Support
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             Intensive Care for Critical Patients
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
@@ -379,11 +377,11 @@ export default function EmergencyContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {icuCare.map((icu, idx) => (
-            <div key={idx} className="p-7 rounded-sm bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-              <div className="w-10 h-10 rounded-sm bg-[#fff2f5] dark:bg-rose-950/40 text-[#ec558b] flex items-center justify-center mb-4 font-bold">
+            <div key={idx} className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+              <div className="w-10 h-10 rounded-2xl bg-[#EBF5FB] dark:bg-slate-800 text-[#4FA3DE] flex items-center justify-center mb-4 font-bold">
                 <ShieldCheck size={20} />
               </div>
-              <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white mb-2">{icu.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{icu.title}</h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{icu.desc}</p>
             </div>
           ))}
@@ -391,12 +389,12 @@ export default function EmergencyContent() {
       </section>
 
       {/* 8. Compassionate Care During Difficult Moments */}
-      <section className="py-16 bg-[#1b2b4b] text-white px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 bg-slate-900 text-white px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <span className="text-amber-400 font-bold text-xs tracking-widest uppercase mb-3 block">
+          <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
             Empathetic Medicine
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Compassionate Care During Difficult Moments
           </h2>
           <p className="text-slate-200 text-base leading-relaxed mb-6">
@@ -405,7 +403,7 @@ export default function EmergencyContent() {
           <p className="text-slate-200 text-base leading-relaxed mb-8">
             Every patient receives care based on their individual condition, medical needs, and recovery goals.
           </p>
-          <p className="text-xl font-serif font-bold text-amber-300">
+          <p className="text-xl font-bold text-[#FA4D80]">
             Advanced medicine matters. So does compassion.
           </p>
         </div>
@@ -414,10 +412,10 @@ export default function EmergencyContent() {
       {/* 9. Helping Prevent Future Emergencies */}
       <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
+          <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
             Proactive Guidance
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             Helping Prevent Future Emergencies
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
@@ -427,11 +425,11 @@ export default function EmergencyContent() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {preventionTips.map((tip, idx) => (
-            <div key={idx} className="p-7 rounded-sm bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-              <div className="w-10 h-10 rounded-sm bg-[#E8F7EC] dark:bg-slate-800 text-[#9cbc65] flex items-center justify-center mb-4 font-bold">
+            <div key={idx} className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+              <div className="w-10 h-10 rounded-2xl bg-[#E8F7EC] dark:bg-slate-800 text-[#58B66E] flex items-center justify-center mb-4 font-bold">
                 <CheckCircle2 size={20} />
               </div>
-              <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white mb-2">{tip.title}</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{tip.title}</h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{tip.desc}</p>
             </div>
           ))}
@@ -439,22 +437,22 @@ export default function EmergencyContent() {
       </section>
 
       {/* 10. Frequently Asked Questions */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
+            <span className="text-[#FA4D80] font-bold text-xs tracking-widest uppercase mb-3 block">
               Got Questions?
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
               Frequently Asked Questions
             </h2>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="p-6 rounded-sm bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-                <h3 className="font-serif font-bold text-base text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
-                  <HelpCircle size={18} className="text-[#ec558b]" /> {faq.q}
+              <div key={idx} className="p-6 rounded-2xl bg-[#FAFCF8] dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
+                <h3 className="font-bold text-base text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+                  <HelpCircle size={18} className="text-[#FA4D80]" /> {faq.q}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pl-6">
                   {faq.a}
@@ -467,27 +465,27 @@ export default function EmergencyContent() {
 
       {/* 11. Your Pet Needs Help. We're Here. */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="bg-[#fff2f5] dark:bg-rose-950/20 border border-[#fcd5e2] dark:border-rose-900/40 rounded-sm p-8 sm:p-12 text-center shadow-sm">
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+        <div className="bg-gradient-to-br from-[#FA4D80]/10 via-[#FAFCF8] to-[#58B66E]/10 dark:from-slate-900 dark:to-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-8 sm:p-12 text-center shadow-sm">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             Your Pet Needs Help. We're Here.
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-6">
             When something goes wrong, you shouldn't have to wonder where to turn. Our Emergency & Critical Care team is available 24/7 to provide immediate veterinary attention, advanced diagnostics, stabilization, treatment, and ongoing support.
           </p>
-          <p className="text-base font-serif font-bold text-[#ec558b] mb-8">
+          <p className="text-base font-bold text-[#FA4D80] mb-8">
             Don't wait if your pet is showing signs of an emergency.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/contact" 
-              className="px-8 py-4 rounded-sm bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest shadow-md hover:bg-slate-800 transition-all"
+              className="px-8 py-4 rounded-full bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-slate-800 transition-all"
             >
               Find a Clinic
             </Link>
             <a 
               href="tel:02081234567" 
-              className="px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest shadow-md transition-all flex items-center gap-2"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#FA4D80] to-[#FF6B9D] hover:from-[#e63c6f] hover:to-[#fa4d80] text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all flex items-center gap-2"
             >
               <Phone size={16} /> Call Emergency Team
             </a>
@@ -496,9 +494,9 @@ export default function EmergencyContent() {
       </section>
 
       {/* 12. Meet Our Veterinary Team */}
-      <section className="py-12 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-12 bg-white dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             Meet Our Veterinary Team
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-8 max-w-2xl mx-auto">
@@ -506,7 +504,7 @@ export default function EmergencyContent() {
           </p>
           <Link 
             to="/about#team" 
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest shadow-md hover:bg-[#ec558b] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#FA4D80] transition-all"
           >
             <Users size={16} /> Meet Our Team
           </Link>
@@ -515,14 +513,14 @@ export default function EmergencyContent() {
 
       {/* 13. Schedule an Appointment */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="bg-slate-900 text-white rounded-sm p-8 sm:p-12 text-center shadow-xl">
-          <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
+        <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-12 text-center shadow-xl">
+          <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
             Ready to Support You
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Schedule an Appointment
           </h2>
-          <p className="text-slate-300 text-base font-serif font-bold mb-8">
+          <p className="text-slate-300 text-base font-bold mb-8">
             Your Pet's Health Can't Wait
           </p>
           <p className="text-slate-300 text-sm leading-relaxed max-w-xl mx-auto mb-8">
@@ -532,13 +530,13 @@ export default function EmergencyContent() {
           <div className="flex flex-wrap justify-center gap-4">
             <a 
               href="#book" 
-              className="px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest shadow-md transition-all flex items-center gap-2"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#FA4D80] to-[#FF6B9D] hover:from-[#e63c6f] hover:to-[#fa4d80] text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all flex items-center gap-2"
             >
               <Calendar size={16} /> Book an Appointment
             </a>
             <Link 
               to="/contact" 
-              className="px-8 py-4 rounded-sm border border-white/40 text-white hover:bg-white/10 text-xs font-bold uppercase tracking-widest transition-all"
+              className="px-8 py-4 rounded-full border border-white/40 text-white hover:bg-white/10 text-xs font-bold uppercase tracking-wider transition-all"
             >
               Contact Us
             </Link>
@@ -547,25 +545,25 @@ export default function EmergencyContent() {
       </section>
 
       {/* 14. Explore More Veterinary Services */}
-      <section className="py-16 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
+            <span className="text-[#FA4D80] font-bold text-xs tracking-widest uppercase mb-3 block">
               Comprehensive Care
             </span>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-slate-100">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100">
               Explore More Veterinary Services
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherServices.map((svc, idx) => (
-              <div key={idx} className="p-6 rounded-sm bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col justify-between group">
+              <div key={idx} className="p-6 rounded-3xl bg-[#FAFCF8] dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm flex flex-col justify-between group">
                 <div>
-                  <h3 className="text-lg font-serif font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#ec558b] transition-colors">{svc.title}</h3>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-[#FA4D80] transition-colors">{svc.title}</h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">{svc.desc}</p>
                 </div>
-                <Link to={svc.link} className="text-xs font-bold text-[#ec558b] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform uppercase tracking-wider">
+                <Link to={svc.link} className="text-xs font-bold text-[#FA4D80] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform uppercase tracking-wider">
                   Learn More <ChevronRight size={14} />
                 </Link>
               </div>

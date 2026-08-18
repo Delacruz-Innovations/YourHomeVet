@@ -1,74 +1,88 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import heroCat from '../assets/cat_play.png';
+import { ArrowRight, Sparkles, Heart, ShieldCheck } from 'lucide-react';
+import heroLandscape from '../assets/v3_brand_hero.jpg';
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#FFF0F5] dark:bg-slate-950 min-h-[580px] lg:min-h-[660px] flex items-center pt-8 lg:pt-0">
-      
-      {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative w-full min-h-[92vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Ambient Atmospheric Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={heroLandscape} 
+          alt="Veterinary Care At Your Doorstep" 
+          className="w-full h-full object-cover object-center scale-[1.02]"
+        />
+        {/* Soft Vignette and Gradient Overlay for optimal readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-900/25 to-slate-950/80 backdrop-blur-[0.3px]" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/15 to-black/50 pointer-events-none" />
+      </div>
+
+      {/* Hero Center Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20 flex flex-col items-center justify-center">
         
-        {/* Left Content */}
-        <div className="space-y-6 lg:pr-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-800 dark:text-white leading-[1.1] tracking-tight"
-          >
-            The <span className="text-[#F2306D]">best care</span> for your <span className="text-[#F2306D]">best friend</span>.
-          </motion.h1>
+        {/* Brand Pill Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/40 text-white text-xs font-bold uppercase tracking-widest mb-6 shadow-lg"
+        >
+          <span className="w-2 h-2 rounded-full bg-[#58B66E] animate-pulse" />
+          <span>VETERINARY CARE AT YOUR DOORSTEP</span>
+        </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium leading-relaxed max-w-md"
-          >
-            Independent since 2002, YourHomeVet delivers premium, personalised veterinary care designed around you and your pet.
-          </motion.p>
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-3xl sm:text-6xl md:text-7xl lg:text-[5.4rem] font-bold text-white tracking-tight leading-[1.1] sm:leading-[1.08] drop-shadow-md"
+        >
+          Grow through <br className="hidden sm:inline" />
+          what you go through
+        </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-          >
-            <a
-              href="#book"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#F2306D] hover:bg-[#D9265F] text-white text-sm font-bold tracking-wide transition-all shadow-md hover:shadow-lg"
-            >
-              Book an Appointment
-            </a>
-           
-          </motion.div>
-        </div>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/95 max-w-2xl font-normal leading-relaxed drop-shadow"
+        >
+          Gentle, stress-free mobile veterinary care for your cats and dogs — compassionate check-ups, vaccines, and emergencies delivered right to your home.
+        </motion.p>
 
-        {/* Right Image */}
-        <div className="relative flex justify-center lg:justify-end">
-           <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative w-full max-w-lg"
-           >
-             <img 
-               src={heroCat} 
-               alt="Veterinary care cat" 
-               className="w-full h-auto object-cover rounded-3xl"
-             />
-             
-             {/* WhatsApp Floating Button Overlay */}
-             <a href="#whatsapp" className="absolute bottom-6 right-6 w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-105 z-20">
-                <svg viewBox="0 0 24 24" className="w-8 h-8 fill-white">
-                  <path d="M12.031 21.183h-.01c-1.523 0-3.013-.404-4.32-1.168l-.31-.184-3.21.841.854-3.13-.202-.321c-.838-1.332-1.28-2.871-1.28-4.464 0-4.606 3.748-8.354 8.354-8.354 2.234 0 4.333.871 5.912 2.451a8.307 8.307 0 012.449 5.908c-.002 4.605-3.75 8.353-8.237 8.421zM7.054 18.59c1.233.731 2.664 1.118 4.135 1.118h.01c3.843 0 6.97-3.127 6.97-6.97s-3.127-6.97-6.97-6.97-6.97 3.127-6.97 6.97c0 1.545.424 3.036 1.229 4.316l1.042 1.656z" />
-                </svg>
-             </a>
-           </motion.div>
-        </div>
+        {/* Signature Pill CTA Button matching brand colors */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="#book"
+            className="group inline-flex items-center gap-3.5 bg-white/95 hover:bg-white text-slate-900 font-semibold text-sm sm:text-base py-2.5 pl-3 pr-7 rounded-full shadow-[0_12px_36px_rgba(0,0,0,0.35)] hover:shadow-[0_16px_44px_rgba(0,0,0,0.45)] transition-all duration-300 transform hover:-translate-y-0.5"
+          >
+            <span className="w-9 h-9 rounded-full bg-[#58B66E] group-hover:bg-[#4ea863] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-sm">
+              <ArrowRight size={17} strokeWidth={2.5} />
+            </span>
+            <span className="tracking-tight font-bold">Book Consultation</span>
+          </a>
+
+          <a
+            href="#services"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-md text-sm font-semibold tracking-wide transition-all shadow-md hover:scale-105"
+          >
+            <Sparkles size={16} className="text-[#FA4D80]" />
+            <span>Explore Services</span>
+          </a>
+        </motion.div>
 
       </div>
+
+      {/* Subtle Bottom Ambient Transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#FAFCF8] dark:from-slate-950 to-transparent pointer-events-none" />
     </section>
   );
 }

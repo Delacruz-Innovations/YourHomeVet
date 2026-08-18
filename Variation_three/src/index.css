@@ -2,6 +2,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Remove all border-radius across entire application */
+*, *::before, *::after {
+  border-radius: 0px !important;
+}
+
 @layer utilities {
   .font-hero {
     font-family: 'Fredoka', 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -29,7 +34,6 @@
 
 ::-webkit-scrollbar-thumb {
   background: #9cbc65;
-  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -66,4 +70,21 @@
   background: rgba(27, 48, 34, 0.6);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(44, 70, 46, 0.4);
+}
+
+/* GSAP ScrollSmoother Structure */
+#smooth-wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
 }
