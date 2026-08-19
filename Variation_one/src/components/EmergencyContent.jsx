@@ -13,24 +13,27 @@ import {
   AlertTriangle, 
   MapPin, 
   FileText, 
-  ChevronRight,
-  HelpCircle,
-  Thermometer,
-  Zap,
-  Microscope,
-  LifeBuoy,
-  ClipboardCheck,
-  ArrowRight,
-  Heart,
-  Dog,
-  Cat,
-  Sparkles,
-  Scissors,
-  Eye,
-  ShieldCheck,
-  Users
+  ChevronRight, 
+  HelpCircle, 
+  Thermometer, 
+  Zap, 
+  Microscope, 
+  LifeBuoy, 
+  ClipboardCheck, 
+  ArrowRight, 
+  Heart, 
+  Dog, 
+  Cat, 
+  Sparkles, 
+  Scissors, 
+  Eye, 
+  ShieldCheck, 
+  Users,
+  PawPrint
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+import emergencyHeroImg from '../assets/vet_emergency_icu.jpg';
+import centerLogo from '../assets/center_logo.jpg';
 
 export default function EmergencyContent() {
   const [activeFaq, setActiveFaq] = useState(null);
@@ -145,72 +148,138 @@ export default function EmergencyContent() {
     { title: "Veterinary Care for Cats", desc: "Specialized feline healthcare focused on prevention, diagnosis, and long-term wellbeing.", link: "/24-7-emergency-care-at-your-door" }
   ];
 
+  const urgencyTiers = [
+    {
+      level: "Immediate Critical Emergencies",
+      color: "bg-rose-500",
+      textColor: "text-rose-500",
+      borderColor: "border-rose-200 dark:border-rose-900/40",
+      bgLight: "bg-rose-50/50 dark:bg-rose-950/20",
+      badge: "Act Immediately",
+      cases: [
+        "Severe breathing distress, gasping, or pale/blue gums",
+        "Loss of consciousness, sudden collapse, or inability to stand",
+        "Severe trauma, motor vehicle accident, or major fall",
+        "Active profuse bleeding that does not stop with pressure",
+        "Suspected poisoning, toxic food or chemical ingestion",
+        "Inability to urinate (especially male cats)",
+        "Bloat / suspected Gastric Torsion (GDV) in dogs",
+        "Continuous unyielding seizures (status epilepticus)"
+      ]
+    },
+    {
+      level: "Urgent Medical Situations",
+      color: "bg-amber-500",
+      textColor: "text-amber-500",
+      borderColor: "border-amber-200 dark:border-amber-900/40",
+      bgLight: "bg-amber-50/50 dark:bg-amber-950/20",
+      badge: "Prompt Assessment",
+      cases: [
+        "Repeated vomiting or severe watery/bloody diarrhea",
+        "Severe sudden lethargy and weakness",
+        "Acute non-weight-bearing lameness or fracture suspicion",
+        "Suspected foreign body ingestion without acute choking",
+        "Eye injuries, sudden cloudiness, swelling, or squinting",
+        "High fever, shivering, or persistent disorientation"
+      ]
+    },
+    {
+      level: "Non-Emergency Same-Day Concerns",
+      color: "bg-[#51b255]",
+      textColor: "text-[#51b255]",
+      borderColor: "border-emerald-200 dark:border-emerald-900/40",
+      bgLight: "bg-emerald-50/50 dark:bg-emerald-950/20",
+      badge: "Schedule Consult",
+      cases: [
+        "Minor cuts or scrapes not bleeding heavily",
+        "Mild limp without severe pain or fracture signs",
+        "Ear infections or mild localized skin itchiness",
+        "Routine questions about ongoing medications"
+      ]
+    }
+  ];
+
+  const emergencyCapabilities = [
+    { title: "Point-of-Care Ultrasound (POCUS)", desc: "Fast-scan abdominal and thoracic ultrasound for internal bleeding or fluid accumulation." },
+    { title: "Oxygen Therapy & Resuscitation", desc: "Immediate supplemental oxygen and advanced airway management during respiratory distress." },
+    { title: "Continuous Multi-Parameter Monitoring", desc: "ECG, blood pressure, capnography, and pulse oximetry for high-risk patients." },
+    { title: "Instant In-House Diagnostic Assays", desc: "Rapid blood gases, electrolytes, hematology, and toxicology screening in minutes." },
+    { title: "Emergency Surgical Triage", desc: "Direct transition to surgical suites for foreign body removal, wound repair, or GDV stabilization." },
+    { title: "24/7 Dedicated ICU Hospitalization", desc: "Round-the-clock intensive veterinary nursing care and continuous intravenous therapy." }
+  ];
+
+  const servicesList = [
+    { title: "Dental Care", desc: "Preventive and advanced dental care designed to support your pet's oral and overall health.", link: "/ourservice/dental" },
+    { title: "Neurology", desc: "Specialized assessment and treatment for conditions affecting the nervous system.", link: "/ourservice/neurology" },
+    { title: "Dermatology", desc: "Diagnosis and management of skin, coat, allergy, and related conditions.", link: "/ourservice/neurology" },
+    { title: "Vaccinations", desc: "Preventive vaccination programs designed around your pet's age, lifestyle, and health needs.", link: "/ourservice/vaccinations" },
+    { title: "Veterinary Care for Dogs", desc: "Comprehensive healthcare throughout every stage of your dog's life.", link: "/24-7-emergency-care-at-your-door" },
+    { title: "Veterinary Care for Cats", desc: "Specialized feline healthcare focused on prevention, diagnosis, and long-term wellbeing.", link: "/24-7-emergency-care-at-your-door" }
+  ];
+
   return (
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
-      {/* 1. Hero Section */}
-      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-7">
+      {/* 1. Split Hero Section (Homepage Hero Style) */}
+      <section className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[540px] lg:min-h-[500px]">
+        
+        {/* Left Content Side */}
+        <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
+          
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
+            <PawPrint size={90} className="absolute bottom-8 left-[15%] text-[#9cbc65] opacity-15 dark:opacity-5 -rotate-12" />
+            <PawPrint size={50} className="absolute bottom-20 right-[35%] text-[#9cbc65] opacity-15 dark:opacity-5 rotate-12" />
+            <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
+          </div>
+
+          <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
             <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
               24/7 EMERGENCY & CRITICAL CARE
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif text-slate-900 dark:text-slate-100 font-normal leading-tight mb-4">
-              Emergency & Critical Care
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-white leading-tight mb-4">
+              24/7 Emergency Care At Your Door
             </h1>
-            <h2 className="text-xl sm:text-2xl font-serif text-[#ec558b] mb-6">
-              24/7 Emergency Veterinary Care When Your Pet Needs It Most
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6 font-semibold">
-              When an emergency happens, every minute matters.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-              Our Emergency & Critical Care team provides around-the-clock veterinary support for pets experiencing sudden illness, serious injury, poisoning, breathing difficulties, trauma, or other potentially life-threatening conditions.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-              From rapid stabilization and diagnostics to intensive monitoring and emergency surgery, our veterinary team is equipped to provide immediate, compassionate care when your pet needs it most.
-            </p>
             
-            <div className="p-4 rounded-sm bg-[#fff2f5] dark:bg-rose-950/30 border border-[#fcd5e2] dark:border-rose-900/40 mb-8 inline-block">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ec558b]">
-                Available 24 hours a day, 7 days a week.
-              </span>
-            </div>
+            <div className="w-12 h-1 bg-[#ec558b] mb-6" />
+
+            <p className="text-slate-100 lg:text-slate-700 lg:dark:text-slate-300 text-[16px] leading-relaxed mb-6 font-medium lg:font-normal">
+              When an emergency happens, every minute matters. Our rapid-response veterinary ambulance delivers clinic-grade emergency care directly to your doorstep.
+            </p>
 
             <div className="flex flex-wrap gap-4">
               <a 
-                href="#book" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
+                href="tel:+971505503777" 
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
               >
-                <ShieldAlert size={16} /> Get Emergency Care
+                <ShieldAlert size={16} /> Call Emergency Vet
               </a>
               <a 
-                href="tel:02081234567" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md"
+                href="tel:+971505503777" 
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
               >
-                <Phone size={16} /> Call Now: 0208 123 4567
+                <Phone size={16} /> +971 50 550 3777
               </a>
-            </div>
-          </div>
-
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800">
-              <LazyImage 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=900" 
-                alt="Emergency Veterinary Care" 
-                className="w-full h-[460px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-6 flex flex-col justify-end text-white">
-                <span className="text-xs font-bold text-[#9cbc65] uppercase tracking-wider mb-1">
-                  24/7 Critical Care
-                </span>
-                <h3 className="text-xl font-serif font-bold text-white">
-                  Coordinated Care Without Delays
-                </h3>
-              </div>
             </div>
           </div>
         </div>
+
+        {/* Right Image Side */}
+        <div className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-1/2 h-full lg:h-auto min-h-[500px] bg-slate-100 dark:bg-slate-800 overflow-hidden z-0 lg:z-auto">
+          <img 
+            src={emergencyHeroImg} 
+            alt="Emergency Veterinary Care" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40 lg:hidden pointer-events-none z-10" />
+        </div>
+
+        {/* Center Floating Rotating Badge */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto">
+            <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
+          </div>
+        </div>
+
       </section>
 
       {/* 2. Your Pet's Emergency Can't Wait */}
@@ -308,7 +377,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* 5. Emergency & Critical Care Services */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Complete Department Scope
@@ -364,7 +433,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* 7. Intensive Care for Critical Patients */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             ICU & Ongoing Support
@@ -412,7 +481,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* 9. Helping Prevent Future Emergencies */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
             Proactive Guidance

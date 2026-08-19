@@ -10,7 +10,7 @@ export default function Pricing() {
   ];
 
   return (
-    <section id="prices" className="py-8 md:py-24 bg-[#faf4f4] scroll-mt-20">
+    <section id="prices" className="py-8 md:py-10 bg-[#faf4f4] scroll-mt-20">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-serif text-slate-900 mb-10 md:mb-12 text-center">
           Our Pricing

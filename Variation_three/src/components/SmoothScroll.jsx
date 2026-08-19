@@ -24,8 +24,21 @@ export default function SmoothScroll({ children }) {
         normalizeScroll: false,
       });
 
-      // Reset scroll position on route change
-      smootherRef.current.scrollTop(0);
+      // If there's a hash in the URL (e.g. #team), smoothly scroll to that element
+      if (location.hash) {
+        setTimeout(() => {
+          const target = document.querySelector(location.hash);
+          if (target) {
+            if (smootherRef.current) {
+              smootherRef.current.scrollTo(target, true, 'top top+=80');
+            } else {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }, 100);
+      } else {
+        smootherRef.current.scrollTop(0);
+      }
       ScrollTrigger.refresh();
     });
 
@@ -36,7 +49,7 @@ export default function SmoothScroll({ children }) {
         smootherRef.current = null;
       }
     };
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <div id="smooth-wrapper" ref={wrapperRef} className="fixed inset-0 overflow-hidden w-full h-full z-0">

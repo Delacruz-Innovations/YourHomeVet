@@ -12,7 +12,7 @@ export default function ServiceRestInMind() {
   ];
 
   return (
-    <section className="py-12 lg:py-24 bg-[#f8f9fa] dark:bg-slate-900 px-4 sm:px-6 relative overflow-hidden">
+    <section className="py-12 lg:py-10 bg-[#f8f9fa] dark:bg-slate-900 px-4 sm:px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 lg:gap-16 lg:gap-24 relative z-10">
         
         {/* Left SVG Graphic */}

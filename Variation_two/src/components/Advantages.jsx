@@ -3,7 +3,7 @@ import { Stethoscope, Home, Clock } from 'lucide-react';
 
 export default function Advantages() {
   return (
-    <section className="py-8 md:py-24 bg-white">
+    <section className="py-8 md:py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <span className="text-[#9cbc65] font-bold text-[10px] tracking-widest uppercase mb-4 block">
           Why choose us

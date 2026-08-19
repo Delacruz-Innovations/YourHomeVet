@@ -20,6 +20,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from './ui/carousel';
+import vetNeuroImg from '../assets/vet_neurology_exam.jpg';
 
 const SkiperPinnedCarousel = ({
   items,
@@ -202,7 +203,7 @@ export default function NeurologyContent() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=900" 
+                src={vetNeuroImg} 
                 alt="Pet Neurology Care" 
                 className="w-full h-[440px] object-cover"
               />

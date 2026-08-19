@@ -12,9 +12,12 @@ import {
   Scissors,
   Check,
   Zap,
-  Clock
+  Clock,
+  PawPrint
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+import spayHeroImg from '../assets/vet_surgery_suite.jpg';
+import centerLogo from '../assets/center_logo.jpg';
 
 export default function SpayNeuterContent() {
   const [selectedPet, setSelectedPet] = useState('Dog');
@@ -49,13 +52,13 @@ export default function SpayNeuterContent() {
   const benefits = [
     {
       num: "01",
-      title: "A Longer, Healthier Life",
-      desc: "Spaying and neutering significantly reduce the risk of serious health conditions, including uterine infections, mammary tumors, testicular tumors and prostate problems. It’s one of the most important steps you can take to give your pet a longer, healthier life."
+      title: "Reduced Risk of Diseases",
+      desc: "Spaying females prevents uterine infections and greatly reduces the risk of mammary tumors. Neutering males prevents testicular cancer and lowers prostate issue risks."
     },
     {
       num: "02",
-      title: "A Calmer, Happier Companion",
-      desc: "Hormone-driven behaviors like heat cycles, excessive vocalization, spraying, mounting and dominance can be stressful for both pets and owners. Spaying or neutering helps reduce these behaviors, creating a calmer and more comfortable home environment."
+      title: "Better Behavioral Balance",
+      desc: "Neutered pets are less likely to mark territory, display aggressive behaviors, or experience stress from mating drives, making them calmer and happier companions."
     },
     {
       num: "03",
@@ -67,30 +70,33 @@ export default function SpayNeuterContent() {
   return (
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
-      {/* Hero Section */}
-      <section className="relative py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      {/* Overview / Split Hero Section */}
+      <section className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[540px] lg:min-h-[500px]">
         
-        {/* Background Image for Mobile and Tablet */}
-        <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <LazyImage 
-            src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=1200" 
-            alt="Pet Spay and Neuter Care" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        {/* Left Content Side */}
+        <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
           
-          <div className="lg:col-span-7">
-            <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-[#ec558b] lg:dark:text-[#ec558b] mb-3 block">
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
+            <PawPrint size={90} className="absolute bottom-8 left-[15%] text-[#9cbc65] opacity-15 dark:opacity-5 -rotate-12" />
+            <PawPrint size={50} className="absolute bottom-20 right-[35%] text-[#9cbc65] opacity-15 dark:opacity-5 rotate-12" />
+            <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
+          </div>
+
+          <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
+            <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
               PREVENTIVE SURGICAL CARE
             </span>
-            <h1 className="text-[36px] sm:text-[52px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-[1.1] mb-6 tracking-tight">
-              Spay & Neuter
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-4">
+              Spay & Neuter Care
             </h1>
-            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[14px] sm:text-[16px] leading-[1.8] mb-8">
-              Keep your pet healthy and protect their future with our spay and neuter services. We offer safe, compassionate care by our experienced veterinarians to prevent litters and help ensure your pet lives a long, healthy life.
+            
+            <div className="w-12 h-1 bg-[#ec558b] mb-6" />
+
+            <p className="text-slate-100 lg:text-slate-700 lg:dark:text-slate-300 text-[16px] leading-relaxed mb-6 font-medium lg:font-normal">
+              Keep your pet healthy and protect their future with our gentle spay and neuter services. We provide safe, minimally invasive procedures.
+            </p>
+            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-sm leading-relaxed mb-8 hidden sm:block">
+              Performed by skilled surgeons with continuous multi-parameter vital monitoring and dedicated post-operative recovery care.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -98,39 +104,37 @@ export default function SpayNeuterContent() {
                 href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-black lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
               >
-                <Calendar size={16} /> Book An Appointment
+                <Calendar size={16} /> Book Consult
               </a>
               <a 
                 href="tel:97145971000" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm border border-white/30 lg:border-slate-400/50 lg:dark:border-slate-700 bg-slate-950/40 lg:bg-slate-900 lg:dark:bg-slate-900/40 text-white lg:text-slate-800 lg:dark:text-slate-200 hover:bg-white/20 lg:hover:bg-white lg:dark:hover:bg-slate-800 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
               >
                 <Phone size={16} /> Call: 971 4 5971 000
               </a>
             </div>
           </div>
-
-          {/* Desktop Image Side */}
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <LazyImage 
-                src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=900" 
-                alt="Pet Spay and Neuter Care" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent p-6 flex flex-col justify-end text-white">
-                <span className="text-xs font-bold text-[#9cbc65] uppercase tracking-wider mb-1">
-                  Compassionate Surgery
-                </span>
-                <h3 className="text-xl font-serif font-bold text-white">
-                  Safe & Gentle Sterilization
-                </h3>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        {/* Right Image Side */}
+        <div className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-1/2 h-full lg:h-auto min-h-[500px] bg-slate-100 dark:bg-slate-800 overflow-hidden z-0 lg:z-auto">
+          <img 
+            src={spayHeroImg} 
+            alt="Pet Spay and Neuter Care" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40 lg:hidden pointer-events-none z-10" />
+        </div>
+
+        {/* Center Floating Rotating Badge */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto">
+            <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
+          </div>
+        </div>
+
       </section>
 
       {/* Your Trusted Partner Section & Special Package Banner */}
@@ -197,7 +201,7 @@ export default function SpayNeuterContent() {
       </section>
 
       {/* Transparent Pricing Matrix Section */}
-      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Clear & Upfront Costs
@@ -427,7 +431,7 @@ export default function SpayNeuterContent() {
       </section>
 
       {/* Why Spay or Neuter Your Pet? Section */}
-      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Health & Behavioral Benefits

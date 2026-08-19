@@ -1,11 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, ChevronLeft, ChevronRight, Video as VideoIcon } from 'lucide-react';
+import { Play, X, ChevronLeft, ChevronRight, Video as VideoIcon, ChevronDown, ChevronUp } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
 
 export default function VideosContent() {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [showAll, setShowAll] = useState(false);
   const [activeVideo, setActiveVideo] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const videosList = [
     {
@@ -52,13 +60,8 @@ export default function VideosContent() {
     }
   ];
 
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(videosList.length / itemsPerPage);
-
-  const displayedVideos = videosList.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  const visibleLimit = isMobile ? 3 : 6;
+  const displayedVideos = showAll ? videosList : videosList.slice(0, visibleLimit);
 
   return (
     <div className="w-full relative bg-[#FAFCF8] dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
@@ -78,37 +81,68 @@ export default function VideosContent() {
 
       {/* Grid */}
       <section className="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedVideos.map((video) => (
-            <div 
-              key={video.id} 
-              className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div 
-                  onClick={() => setActiveVideo(video.youtubeId)}
-                  className="relative h-52 overflow-hidden bg-slate-900 cursor-pointer"
-                >
-                  <LazyImage 
-                    src={video.image} 
-                    alt={video.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-                  />
-                  <div className="absolute inset-0 bg-slate-950/30 flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-[#FA4D80] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                      <Play size={24} className="fill-white ml-1" />
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence mode="popLayout">
+            {displayedVideos.map((video) => (
+              <motion.div 
+                key={video.id} 
+                layout
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.96 }}
+                transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div 
+                    onClick={() => setActiveVideo(video.youtubeId)}
+                    className="relative h-52 overflow-hidden bg-slate-900 cursor-pointer"
+                  >
+                    <LazyImage 
+                      src={video.image} 
+                      alt={video.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/30 flex items-center justify-center">
+                      <div className="w-14 h-14 rounded-full bg-[#FA4D80] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                        <Play size={24} className="fill-white ml-1" />
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{video.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{video.desc}</p>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{video.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{video.desc}</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* View More / Show Less */}
+        {videosList.length > visibleLimit && (
+          <div className="flex justify-center mt-12">
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#FA4D80] hover:bg-[#e63c6f] text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all cursor-pointer"
+            >
+              {showAll ? (
+                <>
+                  <span>Show Less</span>
+                  <ChevronUp size={16} />
+                </>
+              ) : (
+                <>
+                  <span>View More ({videosList.length - visibleLimit} More)</span>
+                  <ChevronDown size={16} />
+                </>
+              )}
+            </motion.button>
+          </div>
+        )}
 
         {/* Video Lightbox */}
         <AnimatePresence>

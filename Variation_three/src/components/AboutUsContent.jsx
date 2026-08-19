@@ -19,6 +19,7 @@ import {
   FileCheck
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+import vetTeamImg from '../assets/vet_team_hero.jpg';
 
 export default function AboutUsContent() {
   const systemCapabilities = [
@@ -141,7 +142,7 @@ export default function AboutUsContent() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <LazyImage 
-                src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
+                src={vetTeamImg} 
                 alt="YourHomeVet Veterinary Team" 
                 className="w-full h-[440px] object-cover"
               />
@@ -183,7 +184,7 @@ export default function AboutUsContent() {
       </section>
 
       {/* Infrastructure Grid */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#FA4D80] font-bold text-xs tracking-widest uppercase mb-3 block">
             Clinical Technology
@@ -227,6 +228,31 @@ export default function AboutUsContent() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Meet Our Team Teaser Section */}
+      <section id="team" className="py-20 bg-[#FAFCF8] dark:bg-slate-950 border-t border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 p-8 sm:p-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div className="max-w-2xl">
+            <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#FA4D80] block mb-2">
+              Clinical Team & Leadership
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-hero font-bold text-slate-900 dark:text-white mb-3">
+              Meet Our RCVS-Registered Veterinary Surgeons & Specialists
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Explore full profiles, surgical credentials, clinical disciplines, and book home consultations with our team of veterinary surgeons, emergency triage leads, and registered veterinary nurses.
+            </p>
+          </div>
+
+          <Link
+            to="/our-team"
+            className="px-6 py-3.5 bg-[#FA4D80] hover:bg-[#e43a6d] text-white text-xs font-bold uppercase tracking-widest transition-colors shrink-0 shadow-md flex items-center gap-2"
+          >
+            <span>View Specialist Directory</span>
+            <ChevronRight size={16} />
+          </Link>
         </div>
       </section>
 

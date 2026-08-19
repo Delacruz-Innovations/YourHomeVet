@@ -64,6 +64,7 @@ export default function Header() {
       hasDropdown: true,
       dropdownItems: [
         { label: 'ABOUT', path: '/about' },
+        { label: 'OUR TEAM', path: '/about#team' },
         { label: 'CAREERS', path: '/join-us' },
         { label: 'PARTNERS', path: '/partners' },
         { label: 'GALLERY', path: '/gallery' },
@@ -83,6 +84,18 @@ export default function Header() {
     if (location.pathname === link.href) return true;
     if (link.hasDropdown && link.dropdownItems?.some(item => location.pathname === item.path)) return true;
     return false;
+  };
+
+  const handleHashClick = (path) => {
+    if (path.includes('#')) {
+      const hash = path.substring(path.indexOf('#'));
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+    }
   };
 
   const linkClass = (active = false) => `
@@ -131,6 +144,7 @@ export default function Header() {
                 >
                   <Link 
                     to={link.href}
+                    onClick={() => handleHashClick(link.href)}
                     className={linkClass(active)}
                   >
                     <span>{link.name}</span>
@@ -142,6 +156,7 @@ export default function Header() {
                       <Link 
                         key={subIdx} 
                         to={item.path} 
+                        onClick={() => handleHashClick(item.path)}
                         className="block px-4 py-2 text-[12.5px] font-semibold tracking-wide text-slate-700 dark:text-slate-200 hover:text-[#FA4D80] hover:bg-[#E8F7EC]/60 dark:hover:bg-slate-800/70 rounded-xl transition-colors"
                       >
                         {item.label}
@@ -156,6 +171,7 @@ export default function Header() {
               <Link 
                 key={idx} 
                 to={link.href} 
+                onClick={() => handleHashClick(link.href)}
                 className={linkClass(active)}
               >
                 {link.name}

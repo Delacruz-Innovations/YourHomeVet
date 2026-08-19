@@ -16,6 +16,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from './ui/carousel';
+import vetEyeImg from '../assets/vet_eye_cat.jpg';
 
 const SkiperPinnedCarousel = ({
   items,
@@ -191,7 +192,7 @@ export default function OphthalmologyContent() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=900" 
+                src={vetEyeImg} 
                 alt="Pet Ophthalmology" 
                 className="w-full h-[440px] object-cover"
               />

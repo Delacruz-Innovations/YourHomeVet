@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutCTA() {
   return (
-    <section className="w-full py-8 lg:py-12 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors">
+    <section className="w-full py-8 lg:py-12 lg:py-10 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors">
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
         
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-slate-900 dark:text-slate-100 mb-4 leading-tight">

@@ -31,6 +31,7 @@ import {
   Users
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+import vetEmergencyImg from '../assets/vet_emergency_icu.jpg';
 
 export default function EmergencyContent() {
   const emergencySymptoms = [
@@ -156,7 +157,7 @@ export default function EmergencyContent() {
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 leading-tight mb-4">
               Emergency & Critical Care
             </h1>
-            <h2 className="text-xl sm:text-2xl font-bold text-[#FA4D80] mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#FA4D80] mb-6 hidden">
               24/7 Emergency Veterinary Care When Your Pet Needs It Most
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed mb-6 font-bold">
@@ -169,8 +170,8 @@ export default function EmergencyContent() {
               From rapid stabilization and diagnostics to intensive monitoring and emergency surgery, our veterinary team is equipped to provide immediate, compassionate care when your pet needs it most.
             </p>
             
-            <div className="px-5 py-3 rounded-full bg-[#FA4D80]/10 dark:bg-rose-950/40 border border-[#FA4D80]/20 mb-8 inline-block">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#FA4D80]">
+            <div className="px-5 py-3 rounded-full bg-[#FA4D80]/10 dark:bg-rose-950/40 border border-[#FA4D80]/20 mb-8 hidden">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#FA4D80] hidden">
                 Available 24 hours a day, 7 days a week.
               </span>
             </div>
@@ -194,7 +195,7 @@ export default function EmergencyContent() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <LazyImage 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=900" 
+                src={vetEmergencyImg} 
                 alt="Emergency Veterinary Care" 
                 className="w-full h-[460px] object-cover"
               />
@@ -236,7 +237,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* 3. When Should You Bring Your Pet to an Emergency Vet? */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="max-w-4xl mx-auto mb-12 text-center">
           <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
             Emergency Triage Guide
@@ -306,7 +307,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* 5. Emergency & Critical Care Services */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#FA4D80] font-bold text-xs tracking-widest uppercase mb-3 block">
             Complete Department Scope
@@ -362,7 +363,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* 7. Intensive Care for Critical Patients */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#4FA3DE] font-bold text-xs tracking-widest uppercase mb-3 block">
             ICU & Ongoing Support
@@ -410,7 +411,7 @@ export default function EmergencyContent() {
       </section>
 
       {/* 9. Helping Prevent Future Emergencies */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#58B66E] font-bold text-xs tracking-widest uppercase mb-3 block">
             Proactive Guidance
@@ -503,7 +504,7 @@ export default function EmergencyContent() {
             Behind every emergency response is a team of experienced veterinary professionals committed to helping animals recover. Our veterinarians, veterinary nurses, technicians, and specialists work together to provide coordinated care across emergency medicine, surgery, diagnostics, internal medicine, critical care, and rehabilitation.
           </p>
           <Link 
-            to="/about#team" 
+            to="/our-team" 
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#FA4D80] transition-all"
           >
             <Users size={16} /> Meet Our Team

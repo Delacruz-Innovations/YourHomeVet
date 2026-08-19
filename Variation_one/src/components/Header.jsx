@@ -226,6 +226,7 @@ export default function Header({ darkMode, toggleDarkMode }) {
       hasDropdown: true,
       dropdownItems: [
         { label: 'ABOUT', path: '/about' },
+        { label: 'OUR TEAM', path: '/our-team' },
         { label: 'CAREERS', path: '/join-us' },
         { label: 'PARTNERS', path: '/partners' },
         { label: 'GALLERY', path: '/gallery' },
@@ -236,7 +237,7 @@ export default function Header({ darkMode, toggleDarkMode }) {
       ]
     },
     { name: 'PACKAGES', href: '/packages', hasDropdown: false },
-    { name: 'OUR TEAM', href: '/about#team', hasDropdown: false },
+    { name: 'OUR TEAM', href: '/our-team', hasDropdown: false },
   ];
 
   return (

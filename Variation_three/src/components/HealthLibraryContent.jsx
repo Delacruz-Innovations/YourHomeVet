@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, ChevronRight, BookOpen, Clock } from 'lucide-react';
+import { Search, Calendar, ChevronRight, BookOpen, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
 
 export default function HealthLibraryContent() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const categories = [
     'All',
@@ -61,20 +69,39 @@ export default function HealthLibraryContent() {
     },
     {
       id: 6,
-      title: "5 WAYS TO CARE FOR YOUR SENIOR DOG",
+      title: "PUPPY VACCINATION PROTOCOLS",
       category: "Pet Care Guides",
       date: "21/07/2026",
-      desc: "Dogs age just like we do and need extra attention once they reach senior age. Discover nutrition, joint supplement, and home comfort adjustments.",
-      image: "https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&q=80&w=800"
+      desc: "A complete guide to essential early puppy immunizations against parvovirus, distemper, hepatitis, and kennel cough in their first 16 weeks.",
+      image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 7,
+      title: "DENTAL HYGIENE & PLAQUE PREVENTION",
+      category: "Pet Care Guides",
+      date: "21/07/2026",
+      desc: "Over 80% of dogs and cats over the age of three suffer from periodontal disease. Practical steps to maintain fresh breath and clean teeth at home.",
+      image: "https://images.unsplash.com/photo-1561037404-61cd46aa615b?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      id: 8,
+      title: "SENIOR CAT COGNITIVE HEALTH",
+      category: "Cats",
+      date: "21/07/2026",
+      desc: "Managing geriatric feline wellbeing: identifying signs of arthritis, cognitive dysfunction, and thyroid imbalances early.",
+      image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=800"
     }
   ];
 
-  const filteredArticles = articles.filter(article => {
-    const matchesCategory = activeCategory === 'All' || article.category === activeCategory;
-    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          article.desc.toLowerCase().includes(searchQuery.toLowerCase());
+  const filteredArticles = articles.filter(art => {
+    const matchesCategory = activeCategory === 'All' || art.category === activeCategory;
+    const matchesSearch = art.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          art.desc.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const visibleLimit = isMobile ? 3 : 6;
+  const displayedArticles = showAll ? filteredArticles : filteredArticles.slice(0, visibleLimit);
 
   return (
     <div className="w-full relative bg-[#FAFCF8] dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
@@ -99,7 +126,10 @@ export default function HealthLibraryContent() {
               type="text" 
               placeholder="Search health library..." 
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setShowAll(false);
+              }}
               className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full pl-12 pr-4 py-3 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:border-[#FA4D80] shadow-sm"
             />
           </div>
@@ -109,7 +139,10 @@ export default function HealthLibraryContent() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setShowAll(false);
+                }}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
                   activeCategory === cat 
                     ? 'bg-[#FA4D80] text-white shadow-md' 
@@ -123,30 +156,64 @@ export default function HealthLibraryContent() {
         </div>
 
         {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredArticles.map((art) => (
-            <div key={art.id} className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-52 overflow-hidden bg-slate-100 dark:bg-slate-800">
-                  <LazyImage src={art.image} alt={art.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
-                    <span className="font-bold text-[#58B66E] uppercase tracking-wider">{art.category}</span>
-                    <span>{art.date}</span>
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence mode="popLayout">
+            {displayedArticles.map((art) => (
+              <motion.div 
+                key={art.id} 
+                layout
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.96 }}
+                transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="h-52 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                    <LazyImage src={art.image} alt={art.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#FA4D80] transition-colors">{art.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">{art.desc}</p>
+                  <div className="p-6">
+                    <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
+                      <span className="font-bold text-[#58B66E] uppercase tracking-wider">{art.category}</span>
+                      <span>{art.date}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3 group-hover:text-[#FA4D80] transition-colors">{art.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">{art.desc}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="px-6 pb-6">
-                <span className="text-xs font-bold text-[#FA4D80] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 uppercase tracking-wider">
-                  Read Full Guide <ChevronRight size={14} />
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+                <div className="px-6 pb-6">
+                  <span className="text-xs font-bold text-[#FA4D80] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 uppercase tracking-wider">
+                    Read Full Guide <ChevronRight size={14} />
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* View More / Show Less */}
+        {filteredArticles.length > visibleLimit && (
+          <div className="flex justify-center mt-12">
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#FA4D80] hover:bg-[#e63c6f] text-white text-xs font-bold uppercase tracking-wider shadow-md transition-all cursor-pointer"
+            >
+              {showAll ? (
+                <>
+                  <span>Show Less</span>
+                  <ChevronUp size={16} />
+                </>
+              ) : (
+                <>
+                  <span>View More ({filteredArticles.length - visibleLimit} More)</span>
+                  <ChevronDown size={16} />
+                </>
+              )}
+            </motion.button>
+          </div>
+        )}
       </section>
 
     </div>

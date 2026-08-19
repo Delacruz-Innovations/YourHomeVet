@@ -37,7 +37,7 @@ export default function Reviews() {
   const scrollRef = useRef(null);
 
   return (
-    <section id="reviews" className="py-24 sm:py-32 bg-[#FAFCF8] dark:bg-slate-950 overflow-hidden font-sans transition-colors">
+    <section id="reviews" className="py-10 sm:py-32 bg-[#FAFCF8] dark:bg-slate-950 overflow-hidden font-sans transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Layout */}

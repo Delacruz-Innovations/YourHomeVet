@@ -56,7 +56,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-8 md:py-12 lg:py-24 transition-colors duration-300">
+    <section id="services" className="py-8 md:py-12 lg:py-10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

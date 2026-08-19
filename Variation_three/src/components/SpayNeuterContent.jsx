@@ -17,6 +17,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from './ui/carousel';
+import vetSurgeryImg from '../assets/vet_surgery_suite.jpg';
 
 const SkiperPinnedCarousel = ({
   items,
@@ -192,7 +193,7 @@ export default function SpayNeuterContent() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=900" 
+                src={vetSurgeryImg} 
                 alt="Spay & Neuter Care" 
                 className="w-full h-[440px] object-cover"
               />

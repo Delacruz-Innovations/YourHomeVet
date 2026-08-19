@@ -31,17 +31,19 @@ const faqs = [
   { question: "Are your emergency vet services open on bank holidays?", answer: "Yes, we operate 24/7, 365 days a year, including all bank holidays and weekends." }
 ];
 
+import faqHeroImg from '../assets/peace_of_mind_cat.png';
+
 export default function FaqPageHero() {
   const [activeTab, setActiveTab] = useState(categories[0]);
   const [openIdx, setOpenIdx] = useState(-1);
 
   return (
-    <section className="relative w-full py-8 sm:py-4 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#e8f4fd] dark:bg-slate-950 transition-colors min-h-screen overflow-hidden">
+    <section className="relative w-full py-8 sm:py-4 lg:py-32 px-4 sm:px-6 lg:px-8 bg-[#e8f4fd] dark:bg-slate-950 transition-colors min-h-screen overflow-hidden pt-32 sm:pt-36 lg:pt-40">
       
       {/* Background Image for Mobile and Tablet */}
       <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
         <img 
-          src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=1200" 
+          src={faqHeroImg} 
           alt="FAQ Support" 
           className="w-full h-full object-cover"
         />

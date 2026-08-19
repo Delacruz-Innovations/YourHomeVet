@@ -13,6 +13,9 @@ import {
   DollarSign
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+import pricesHeroImg from '../assets/hero_care.png';
+import centerLogo from '../assets/center_logo.jpg';
+import { PawPrint } from 'lucide-react';
 
 export default function PricesContent() {
   const [activeCategory, setActiveCategory] = useState('Core Services');
@@ -153,6 +156,19 @@ export default function PricesContent() {
       ],
       price: "On Consultation",
       vatNote: "VAT not included"
+    },
+    {
+      title: "CT Scan & Diagnostic Imaging",
+      badge: "Diagnostics",
+      badgeColor: "bg-indigo-600 text-white",
+      desc: "Computed tomography imaging with high-resolution contrast and specialist radiology report.",
+      included: [
+        "High-definition 3D CT acquisition",
+        "Contrast enhancement study",
+        "Board-certified radiologist analysis"
+      ],
+      price: "From 2,800 AED",
+      vatNote: "VAT not included"
     }
   ];
 
@@ -172,33 +188,33 @@ export default function PricesContent() {
   return (
     <div className="w-full bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
-      {/* Hero Section */}
-      <section className="relative py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      {/* Overview / Split Hero Section */}
+      <section className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[540px] lg:min-h-[500px]">
         
-        {/* Background Image for Mobile and Tablet */}
-        <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <LazyImage 
-            src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=1200" 
-            alt="Transparent Veterinary Pricing Dubai" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        {/* Left Content Side */}
+        <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
           
-          <div className="lg:col-span-7">
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
+            <PawPrint size={90} className="absolute bottom-8 left-[15%] text-[#9cbc65] opacity-15 dark:opacity-5 -rotate-12" />
+            <PawPrint size={50} className="absolute bottom-20 right-[35%] text-[#9cbc65] opacity-15 dark:opacity-5 rotate-12" />
+            <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
+          </div>
+
+          <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
             <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
               Transparent & Upfront
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white lg:text-slate-900 dark:text-slate-100 font-normal leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-4">
               Costs & Service Pricing
             </h1>
-            <p className="text-slate-200 lg:text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6">
-              All services are clearly listed with a price, which helps you know what you will be charged before the appointment occurs. Each of the routine and surgical services includes the required examinations, monitoring, and follow-up (after-care) for the safety and well-being of your pet.
+            
+            <div className="w-12 h-1 bg-[#ec558b] mb-6" />
+
+            <p className="text-slate-100 lg:text-slate-700 lg:dark:text-slate-300 text-[16px] leading-relaxed mb-6 font-medium lg:font-normal">
+              All services are clearly listed with upfront prices. Each service includes the required examinations, monitoring, and aftercare.
             </p>
-            <p className="text-slate-200 lg:text-slate-600 dark:text-slate-400 text-base font-semibold leading-relaxed mb-8">
-              All of our services have clear pricing in advance, so you'll always know what to expect. No surprises on the day.
+            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-sm leading-relaxed mb-8 hidden sm:block">
+              No hidden fees, no surprise add-ons. Clear, transparent healthcare you can trust.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -206,38 +222,37 @@ export default function PricesContent() {
                 href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
               >
                 <Calendar size={16} /> Book An Appointment
               </a>
               <a 
                 href="tel:97145971000" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
               >
-                <Phone size={16} /> Call : 971 4 5971 000
+                <Phone size={16} /> Call: 971 4 5971 000
               </a>
             </div>
           </div>
-
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <LazyImage 
-                src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
-                alt="Transparent Veterinary Pricing Dubai" 
-                className="w-full h-[440px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent p-6 flex flex-col justify-end text-white">
-                <span className="text-xs font-bold text-[#9cbc65] uppercase tracking-wider mb-1">
-                  No Hidden Surprises
-                </span>
-                <h3 className="text-xl font-serif font-bold text-white">
-                  Clear Prices & All-Inclusive Care
-                </h3>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        {/* Right Image Side */}
+        <div className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-1/2 h-full lg:h-auto min-h-[500px] bg-slate-100 dark:bg-slate-800 overflow-hidden z-0 lg:z-auto">
+          <img 
+            src={pricesHeroImg} 
+            alt="Transparent Veterinary Pricing Dubai" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40 lg:hidden pointer-events-none z-10" />
+        </div>
+
+        {/* Center Floating Rotating Badge */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto">
+            <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
+          </div>
+        </div>
+
       </section>
 
       {/* Category Tabs & Pricing Cards Section */}

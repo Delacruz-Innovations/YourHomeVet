@@ -5,7 +5,7 @@ import { Mail, MessageCircle } from 'lucide-react';
 
 export default function HowItWorks() {
   return (
-    <section className="py-8 md:py-24 bg-[#f7faf3]">
+    <section className="py-8 md:py-10 bg-[#f7faf3]">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         
         {/* Left Side: Overlapping Images */}

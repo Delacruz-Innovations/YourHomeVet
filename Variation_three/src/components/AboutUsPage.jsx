@@ -1,6 +1,7 @@
 import React from 'react';
 import SEO from './SEO';
 import AboutUsContent from './AboutUsContent';
+import OurTeamContent from './OurTeamContent';
 import Reviews from './Reviews';
 import FAQSection from './FAQSection';
 
@@ -13,6 +14,7 @@ export default function AboutUsPage() {
         canonical="https://homevetsdubai.com/about"
       />
       <AboutUsContent />
+      <OurTeamContent />
       <Reviews />
       <FAQSection />
     </>

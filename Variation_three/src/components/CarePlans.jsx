@@ -5,7 +5,7 @@ export default function CarePlans({ onOpenEmergencyModal }) {
   const [billingCycle, setBillingCycle] = useState('monthly');
 
   return (
-    <section id="care-plans" className="py-24 bg-[#FAFCF8] dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors">
+    <section id="care-plans" className="py-10 bg-[#FAFCF8] dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

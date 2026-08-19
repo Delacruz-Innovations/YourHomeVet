@@ -12,7 +12,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-[#FAFCF8] dark:bg-slate-950 transition-colors">
+    <section className="py-16 sm:py-10 bg-[#FAFCF8] dark:bg-slate-950 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Banner with Image */}

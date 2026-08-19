@@ -103,6 +103,9 @@ export default function Footer() {
                 <Link to="/about" className="hover:text-[#ec558b] dark:hover:text-white transition-colors">About Us</Link>
               </li>
               <li>
+                <Link to="/our-team" className="hover:text-[#ec558b] dark:hover:text-white transition-colors">Our Veterinary Team</Link>
+              </li>
+              <li>
                 <Link to="/packages" className="hover:text-[#ec558b] dark:hover:text-white transition-colors flex items-center gap-1.5">
                   <span>Health Packages</span>
                   <span className="px-1.5 py-0.2 bg-[#ec558b]/15 text-[#ec558b] text-[9px] font-bold rounded">SAVE</span>

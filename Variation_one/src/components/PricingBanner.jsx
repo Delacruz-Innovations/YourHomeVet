@@ -3,7 +3,7 @@ import { ArrowRight, ClipboardPlus } from 'lucide-react';
 
 export default function PricingBanner() {
   return (
-    <section className="py-12 lg:py-24 bg-white dark:bg-slate-950 px-4 sm:px-6">
+    <section className="py-12 lg:py-10 bg-white dark:bg-slate-950 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto border-4 border-[#edf5e1] dark:border-slate-800 rounded-sm bg-white dark:bg-slate-900 p-8 lg:p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-10">
         
         {/* Background decorative loop */}

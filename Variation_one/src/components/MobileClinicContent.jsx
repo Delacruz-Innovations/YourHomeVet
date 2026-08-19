@@ -18,6 +18,9 @@ import {
   Award
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+import mobileHeroImg from '../assets/vet_home_visit.jpg';
+import centerLogo from '../assets/center_logo.jpg';
+import { PawPrint } from 'lucide-react';
 
 export default function MobileClinicContent() {
   const keyReasons = [
@@ -47,14 +50,21 @@ export default function MobileClinicContent() {
     {
       title: "Reduced Pet Anxiety",
       desc: "For many animals traveling to clinics creates significant stress. Treating animals in the mobile clinic reduces anxiety while maintaining full professional medical standards."
+    }
+  ];
+
+  const advantages = [
+    {
+      title: "Reduced Stress for Your Pet",
+      desc: "Eliminate car anxiety, carrier struggles, and bustling waiting rooms. Your pet is treated peacefully in a quiet clinical environment right outside your home."
     },
     {
-      title: "Comprehensive Services",
-      desc: "Check ups, vaccinations and minor procedures not requiring general anesthesia are completed inside the mobile clinic with diagnostic testing supported by full facility referrals."
+      title: "Convenient for Busy Owners",
+      desc: "Save valuable travel and waiting time. Ideal for professionals, multiple-pet households, seniors, or families with children."
     },
     {
-      title: "Senior & Special Needs Pets",
-      desc: "Ideal for senior or special needs animals experiencing mobility or anxiety difficulties, providing a safe, comfortable, and stress-free setting right at home."
+      title: "Clean Clinical Unit on Wheels",
+      desc: "Our custom Mercedes ambulance vehicle is sanitized between every appointment and equipped with diagnostic tools, treatment table, and cold storage."
     },
     {
       title: "Personalized One-on-One Attention",
@@ -80,81 +90,71 @@ export default function MobileClinicContent() {
   return (
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
-      {/* Hero Section */}
-      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        {/* Background Image for Mobile and Tablet */}
-        <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <LazyImage 
-            src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=1200" 
-            alt="YourHomeVet Mobile Clinic Unit Van" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      {/* Overview / Split Hero Section */}
+      <section className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[540px] lg:min-h-[500px]">
+        
+        {/* Left Content Side */}
+        <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
           
-          <div className="lg:col-span-7">
-            <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-[#ec558b] lg:dark:text-[#ec558b] mb-3 block flex items-center gap-2">
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
+            <PawPrint size={90} className="absolute bottom-8 left-[15%] text-[#9cbc65] opacity-15 dark:opacity-5 -rotate-12" />
+            <PawPrint size={50} className="absolute bottom-20 right-[35%] text-[#9cbc65] opacity-15 dark:opacity-5 rotate-12" />
+            <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
+          </div>
+
+          <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
+            <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block flex items-center gap-2">
               <Truck size={16} /> MOBILE CLINIC DUBAI
             </span>
-            <h1 className="text-[36px] sm:text-[52px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-4">
               Mobile Vet Dubai Service
             </h1>
-            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[14px] sm:text-[16px] leading-[1.8] mb-6">
-              Our veterinary home visit provides you with all the services and care you would normally expect from a veterinary clinic, but at your location, making it easy and stress free to get quality veterinary care for your pet.
+            
+            <div className="w-12 h-1 bg-[#ec558b] mb-6" />
+
+            <p className="text-slate-100 lg:text-slate-700 lg:dark:text-slate-300 text-[16px] leading-relaxed mb-6 font-medium lg:font-normal">
+              Our veterinary home visit provides hospital-grade care at your location, making it easy and stress-free for you and your pet.
             </p>
-            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[14px] sm:text-[16px] leading-[1.8] mb-8">
-              Managed by experienced veterinarians including <strong>Dr. Rahaf Roushdi</strong>, our Mobile Veterinary Unit travels to you so check-ups and minor procedures are performed inside the van—maintaining a clean, safe clinical environment without requiring the vet to enter your home.
+            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-sm leading-relaxed mb-8 hidden sm:block">
+              Managed by experienced clinicians, our state-of-the-art mobile clinic van travels across all Dubai communities.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-4">
               <a 
                 href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-black lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
               >
-                <Calendar size={16} /> Book An Appointment
+                <Calendar size={16} /> Book Mobile Vet
               </a>
               <a 
                 href="tel:97145971000" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm border border-white/30 lg:border-slate-400/50 lg:dark:border-slate-700 bg-slate-950/40 lg:bg-slate-900 lg:dark:bg-slate-900/40 text-white lg:text-slate-800 lg:dark:text-slate-200 hover:bg-white/20 lg:hover:bg-white lg:dark:hover:bg-slate-800 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
               >
-                <Phone size={16} /> Call Us: 971 4 5971 000
+                <Phone size={16} /> Call: 971 4 5971 000
               </a>
             </div>
-
-            {/* Anchor Quick Navigation Bar */}
-            <div className="flex flex-wrap gap-2 text-xs font-semibold text-slate-300 lg:text-slate-600 dark:lg:text-slate-300">
-              <span className="text-[#9cbc65] font-bold">Skip to:</span>
-              <a href="#expert-care" className="hover:text-[#ec558b] underline">Expert Care</a> |
-              <a href="#why-choose" className="hover:text-[#ec558b] underline">Why Choose Us</a> |
-              <a href="#services-offered" className="hover:text-[#ec558b] underline">Services Offered</a> |
-              <a href="#van-capabilities" className="hover:text-[#ec558b] underline">In-Van Capabilities</a>
-            </div>
           </div>
-
-          {/* Desktop Image Side */}
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <LazyImage 
-                src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=900" 
-                alt="YourHomeVet Mobile Clinic Unit Van" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent p-6 flex flex-col justify-end text-white">
-                <span className="text-xs font-bold text-[#9cbc65] uppercase tracking-wider mb-1">
-                  Fully Equipped Van Unit
-                </span>
-                <h3 className="text-xl font-serif font-bold text-white">
-                  Clinical Quality Right at Your Doorstep
-                </h3>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        {/* Right Image Side */}
+        <div className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-1/2 h-full lg:h-auto min-h-[500px] bg-slate-100 dark:bg-slate-800 overflow-hidden z-0 lg:z-auto">
+          <img 
+            src={mobileHeroImg} 
+            alt="YourHomeVet Mobile Clinic Unit Van" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40 lg:hidden pointer-events-none z-10" />
+        </div>
+
+        {/* Center Floating Rotating Badge */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto">
+            <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
+          </div>
+        </div>
+
       </section>
 
       {/* Upgraded Mobile Veterinary Unit & 12 Key Reasons */}
@@ -188,7 +188,7 @@ export default function MobileClinicContent() {
       </section>
 
       {/* Expert Veterinary Care Delivered to Your Location */}
-      <section id="expert-care" className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="expert-care" className="py-8 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7">
@@ -243,7 +243,7 @@ export default function MobileClinicContent() {
       </section>
 
       {/* Why Choose a Mobile Vet Clinic in Dubai? (6 Pillars) */}
-      <section className="py-8 lg:py-24 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-10 bg-slate-50 dark:bg-slate-900/60 border-y border-slate-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#9cbc65] font-bold text-xs tracking-widest uppercase mb-3 block">
@@ -276,7 +276,7 @@ export default function MobileClinicContent() {
       </section>
 
       {/* Services Offered By The YourHomeVet Mobile Clinic */}
-      <section id="services-offered" className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="services-offered" className="py-8 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Dr. Rahaf Roushdi & Team
@@ -302,7 +302,7 @@ export default function MobileClinicContent() {
       </section>
 
       {/* Advanced In-Van Capabilities */}
-      <section id="van-capabilities" className="py-8 lg:py-24 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-4 sm:px-6 lg:px-8">
+      <section id="van-capabilities" className="py-8 lg:py-10 bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7">

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
   Phone, 
@@ -7,6 +7,8 @@ import {
   ShieldCheck, 
   Sparkles, 
   ChevronRight, 
+  ChevronDown,
+  ChevronUp,
   Heart, 
   Eye, 
   Brain, 
@@ -20,6 +22,100 @@ import {
   Award
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+
+function ServiceCategorySection({ categoryTitle, subtitle, list }) {
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const visibleLimit = isMobile ? 3 : 6;
+  const displayedList = showAll ? list : list.slice(0, visibleLimit);
+
+  return (
+    <div className="mb-16">
+      <div className="mb-8">
+        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-2">
+          {categoryTitle}
+        </h2>
+        {subtitle && (
+          <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm italic">
+            {subtitle}
+          </p>
+        )}
+      </div>
+
+      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <AnimatePresence mode="popLayout">
+          {displayedList.map((item, idx) => (
+            <motion.div 
+              key={item.title || idx} 
+              layout
+              initial={{ opacity: 0, y: 30, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.96 }}
+              transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+              className="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-[#FA4D80]/30 transition-all flex flex-col justify-between group"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-[#FAFCF8] dark:bg-slate-800/80 flex items-center justify-center shadow-sm">
+                    {item.icon}
+                  </div>
+                  <span className="px-3.5 py-1 rounded-full bg-[#E8F7EC] dark:bg-slate-800 text-[10px] font-bold text-[#58B66E] uppercase tracking-wider">
+                    {item.badge}
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-[#FA4D80] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                  {item.desc}
+                </p>
+              </div>
+
+              <Link 
+                to={item.link} 
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FA4D80] group-hover:translate-x-1 transition-transform uppercase tracking-wider"
+              >
+                Learn More <ChevronRight size={14} />
+              </Link>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+
+      {list.length > visibleLimit && (
+        <div className="flex justify-center mt-8">
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            onClick={() => setShowAll(!showAll)}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-100 hover:bg-[#FA4D80] hover:text-white dark:bg-slate-800 dark:hover:bg-[#FA4D80] text-slate-700 dark:text-slate-200 text-xs font-bold uppercase tracking-wider shadow-sm transition-all cursor-pointer"
+          >
+            {showAll ? (
+              <>
+                <span>Show Less</span>
+                <ChevronUp size={15} />
+              </>
+            ) : (
+              <>
+                <span>View More ({list.length - visibleLimit} more)</span>
+                <ChevronDown size={15} />
+              </>
+            )}
+          </motion.button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function AllServicesContent() {
 
@@ -227,62 +323,11 @@ export default function AllServicesContent() {
     }
   ];
 
-  const renderSection = (categoryTitle, subtitle, list) => {
-    return (
-      <div className="mb-16">
-        <div className="mb-8">
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-2">
-            {categoryTitle}
-          </h2>
-          {subtitle && (
-            <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm italic">
-              {subtitle}
-            </p>
-          )}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {list.map((item, idx) => (
-            <div 
-              key={idx} 
-              className="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-[#FA4D80]/30 transition-all flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-[#FAFCF8] dark:bg-slate-800/80 flex items-center justify-center shadow-sm">
-                    {item.icon}
-                  </div>
-                  <span className="px-3.5 py-1 rounded-full bg-[#E8F7EC] dark:bg-slate-800 text-[10px] font-bold text-[#58B66E] uppercase tracking-wider">
-                    {item.badge}
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-[#FA4D80] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                  {item.desc}
-                </p>
-              </div>
-
-              <Link 
-                to={item.link} 
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FA4D80] group-hover:translate-x-1 transition-transform uppercase tracking-wider"
-              >
-                Learn More <ChevronRight size={14} />
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className="w-full relative bg-[#FAFCF8] dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
       {/* Hero Header */}
-      <section className="py-12 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section className="py-12 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           <div className="lg:col-span-7">
@@ -365,11 +410,11 @@ export default function AllServicesContent() {
 
       {/* Main Services Categories */}
       <section className="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        {renderSection('Wellness & Prevention', 'Proactive health management to keep your pet thriving at every life stage', wellnessServices)}
-        {renderSection('Surgery & Procedures', 'Board-certified surgeons delivering safe, precise, minimally invasive care', surgeryServices)}
-        {renderSection('Specialist Medicine', 'Advanced diagnostics and treatment from leading veterinary specialists', specialistServices)}
-        {renderSection('Rehabilitation', 'Evidence-based programmes to restore mobility, reduce pain, and improve quality of life', rehabServices)}
-        {renderSection('Grooming & Convenience', 'Full-circle care — home visits, transport, relocation, and more', groomingServices)}
+        <ServiceCategorySection categoryTitle="Wellness & Prevention" subtitle="Proactive health management to keep your pet thriving at every life stage" list={wellnessServices} />
+        <ServiceCategorySection categoryTitle="Surgery & Procedures" subtitle="Board-certified surgeons delivering safe, precise, minimally invasive care" list={surgeryServices} />
+        <ServiceCategorySection categoryTitle="Specialist Medicine" subtitle="Advanced diagnostics and treatment from leading veterinary specialists" list={specialistServices} />
+        <ServiceCategorySection categoryTitle="Rehabilitation" subtitle="Evidence-based programmes to restore mobility, reduce pain, and improve quality of life" list={rehabServices} />
+        <ServiceCategorySection categoryTitle="Grooming & Convenience" subtitle="Full-circle care — home visits, transport, relocation, and more" list={groomingServices} />
       </section>
 
     </div>

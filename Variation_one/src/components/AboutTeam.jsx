@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -23,14 +25,27 @@ const teamMembers = [
 
 export default function AboutTeam() {
   return (
-    <section className="w-full py-8 lg:py-12 lg:py-24 px-4 sm:px-6 lg:px-8 bg-[#f5f9fc] dark:bg-slate-900 transition-colors">
+    <section id="team" className="w-full py-12 lg:py-10 px-4 sm:px-6 lg:px-8 bg-[#f5f9fc] dark:bg-slate-900 transition-colors">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
-        <div className="text-center mb-8 lg:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-slate-900 dark:text-slate-100 leading-tight">
-            Meet the Team
-          </h2>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 lg:mb-16">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#9cbc65] block mb-2">
+              Clinical Leadership
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-slate-900 dark:text-slate-100 leading-tight">
+              Meet the Team
+            </h2>
+          </div>
+
+          <Link
+            to="/our-team"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#ec558b] hover:text-[#d84074] transition-colors"
+          >
+            <span>View All Veterinary Specialists</span>
+            <ArrowRight size={16} />
+          </Link>
         </div>
 
         {/* Team Grid - Carousel on mobile */}
@@ -51,7 +66,7 @@ export default function AboutTeam() {
               <h3 className="text-xl sm:text-2xl font-serif text-slate-900 dark:text-slate-100 mb-2">
                 {member.name}
               </h3>
-              <p className="text-[13px] sm:text-[14px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-center">
+              <p className="text-[13px] sm:text-[14px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 text-center mb-3">
                 {member.role}
               </p>
               

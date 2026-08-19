@@ -1,70 +1,70 @@
 import React from 'react';
-import { PawPrint } from 'lucide-react';
+import { PawPrint, Heart } from 'lucide-react';
+import howItWorksImg from '../assets/emergency_dog.png';
+import centerLogo from '../assets/center_logo.jpg';
 
 export default function HowItWorksHero() {
   return (
-    <section className="relative w-full h-[550px] lg:h-[650px] flex flex-col lg:flex-row overflow-hidden bg-[#f7faf3] dark:bg-slate-900">
+    <section className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[540px] lg:min-h-[500px]">
       
-      {/* Background Image for Mobile and Tablet */}
-      <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=1200" 
-          alt="Dog Bandage" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
-      </div>
+      {/* Left Content Side */}
+      <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
+        
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
+          <PawPrint size={90} className="absolute bottom-8 left-[15%] text-[#9cbc65] opacity-15 dark:opacity-5 -rotate-12" />
+          <PawPrint size={50} className="absolute bottom-20 right-[35%] text-[#9cbc65] opacity-15 dark:opacity-5 rotate-12" />
+          <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
+        </div>
 
-      {/* Decorative Paw Prints */}
-      <PawPrint size={60} className="absolute top-[15%] left-[5%] text-[#9cbc65] opacity-20 dark:opacity-5 rotate-12 pointer-events-none hidden lg:block" />
-      <PawPrint size={80} className="absolute bottom-[20%] left-[8%] text-[#9cbc65] opacity-20 dark:opacity-5 -rotate-12 pointer-events-none hidden lg:block" />
+        <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
+          <span className="text-[#9cbc65] font-bold text-[11px] tracking-[0.2em] uppercase mb-3 block">
+            EMERGENCY VET
+          </span>
+          
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-white leading-tight mb-4">
+            How does the pet emergency service work <span className="text-[#ec558b]">?</span>
+          </h1>
+          
+          <div className="w-12 h-1 bg-[#ec558b] mb-6" />
 
-      {/* Dashed Heart Decorative */}
-      <div className="absolute top-1/4 right-[45%] opacity-30 dark:opacity-10 pointer-events-none hidden lg:block z-10 rotate-12">
-         <svg width="100" height="150" viewBox="0 0 200 300" fill="none" stroke="#ec558b" strokeWidth="1.5" strokeDasharray="6 6">
-            <path d="M100 80 C 100 30, 30 30, 50 90 C 70 150, 100 160, 100 160 C 100 160, 130 150, 150 90 C 170 30, 100 30, 100 80 Z" />
-         </svg>
-      </div>
+          <p className="text-slate-100 lg:text-slate-700 lg:dark:text-slate-300 text-[16px] leading-relaxed mb-8">
+            Dial +971 50 550 3777. We'll ask a few quick questions, arrange for a vet to visit your home, and provide the care your pet needs right where they feel safest.
+          </p>
 
-      {/* Left Text */}
-      <div className="w-full lg:w-[50%] h-full flex flex-col justify-center px-4 sm:px-8 lg:pl-16 xl:pl-[calc((100vw-1280px)/2+2rem)] relative z-10">
-        
-        <span className="text-[#9cbc65] font-bold text-[11px] tracking-[0.2em] uppercase mb-4 block">
-          Emergency Vet
-        </span>
-        
-        <h1 className="text-[36px] sm:text-[44px] lg:text-[54px] font-serif text-white lg:text-slate-800 lg:dark:text-slate-100 leading-tight mb-6 max-w-lg">
-          How does the pet emergency service work <span className="text-[#ec558b]">?</span>
-        </h1>
-        
-        <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-[15px] mb-10 max-w-md leading-[1.7]">
-          Dial +971 50 550 3777. We'll ask a few quick questions, arrange for a vet to visit your home, and provide the care your pet needs right where they feel safest.
-        </p>
-        
-        <div className="flex flex-wrap gap-4">
-          <a href="#call" className="px-8 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md">BOOK AN APPOINTMENT</a>
-          <a href="#advice" className="px-8 py-3.5 rounded-sm border border-white/30 lg:border-[#9cbc65] bg-slate-950/40 lg:bg-transparent text-white lg:text-[#9cbc65] lg:dark:text-slate-400 hover:bg-white/20 lg:hover:bg-[#9cbc65] lg:hover:text-white lg:dark:hover:text-slate-900 text-[11px] font-bold uppercase tracking-wide transition-all">
-            Expert Advice
-          </a>
+          <div className="flex flex-wrap items-center gap-4">
+            <a 
+              href="tel:+971505503777" 
+              className="px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
+            >
+              BOOK AN APPOINTMENT
+            </a>
+            <a 
+              href="#steps" 
+              className="px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
+            >
+              HOW IT WORKS
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Right Image */}
-      <div className="absolute top-0 right-0 w-full lg:w-[60%] h-full z-0 pointer-events-none lg:pointer-events-auto">
+      {/* Right Image Side */}
+      <div className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-1/2 h-full lg:h-auto min-h-[500px] bg-slate-100 dark:bg-slate-800 overflow-hidden z-0 lg:z-auto">
         <img 
-          src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=1400" 
-          alt="Dog Bandage" 
-          className="w-full h-full object-cover" 
+          src={howItWorksImg} 
+          alt="How It Works Emergency Vet" 
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        
-        {/* Wavy Mask Overlay (Simulating the S-curve cutoff) */}
-        <div className="absolute top-0 -left-1 h-full w-[20%] hidden lg:block text-[#f7faf3] dark:text-slate-900">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-current origin-left scale-x-125">
-            <path d="M0,0 C60,0 20,50 60,100 L0,100 Z" />
-          </svg>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40 lg:hidden pointer-events-none z-10" />
+      </div>
+
+      {/* Center Floating Rotating Badge */}
+      <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto">
+          <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
         </div>
       </div>
-      
+
     </section>
   );
 }

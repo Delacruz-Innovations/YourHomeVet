@@ -20,6 +20,7 @@ import {
   CarouselItem,
 } from './ui/carousel';
 import LazyImage from './ui/LazyImage';
+import vetDentalImg from '../assets/vet_dental_dog.jpg';
 import PetDentalInfographic from './PetDentalInfographic';
 
 const SkiperPinnedCarousel = ({
@@ -244,7 +245,7 @@ export default function DentalContent() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <LazyImage 
-                src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
+                src={vetDentalImg} 
                 alt="Pet Dental Care Examination" 
                 className="w-full h-[440px] object-cover"
               />
@@ -274,7 +275,7 @@ export default function DentalContent() {
       <PetDentalInfographic />
 
       {/* Transparent Pricing Section */}
-      <section className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-16 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#FA4D80] font-bold text-xs tracking-widest uppercase mb-3 block">
             Transparent Pricing

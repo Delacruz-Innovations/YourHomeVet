@@ -48,7 +48,8 @@ export default function Footer() {
               <li><Link to="/24-7-emergency-care-at-your-door" className="hover:text-[#FA4D80] transition-colors">All Services</Link></li>
               <li><Link to="/ourservice/emergency" className="hover:text-[#FA4D80] transition-colors">24/7 Emergency Care</Link></li>
               <li><Link to="/packages" className="hover:text-[#FA4D80] transition-colors">Pet Care Packages</Link></li>
-              <li><Link to="/about" className="hover:text-[#FA4D80] transition-colors">About Our Team</Link></li>
+              <li><Link to="/about" className="hover:text-[#FA4D80] transition-colors">About Us</Link></li>
+              <li><Link to="/our-team" className="hover:text-[#FA4D80] transition-colors">Our Veterinary Team</Link></li>
               <li><Link to="/contact" className="hover:text-[#FA4D80] transition-colors">Contact & Dispatch</Link></li>
             </ul>
           </div>

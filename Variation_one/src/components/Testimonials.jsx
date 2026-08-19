@@ -9,7 +9,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="relative py-12 lg:py-24 bg-gradient-to-b from-[#eef5fd] to-white dark:from-slate-900 dark:to-slate-950 transition-colors duration-300 overflow-hidden">
+    <section id="testimonials" className="relative py-12 lg:py-10 bg-gradient-to-b from-[#eef5fd] to-white dark:from-slate-900 dark:to-slate-950 transition-colors duration-300 overflow-hidden">
       
       {/* Dashed Heart Decorative Graphic (Blue) */}
       <div className="absolute top-10 left-[10%] opacity-40 dark:opacity-20 hidden lg:block -rotate-12">

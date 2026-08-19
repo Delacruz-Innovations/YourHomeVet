@@ -14,7 +14,8 @@ import {
   ChevronRight,
   Clock,
   Activity,
-  Award
+  Award,
+  PawPrint
 } from 'lucide-react';
 import {
   Carousel,
@@ -146,6 +147,9 @@ const SkiperPinnedCarousel = ({
   );
 };
 
+import dentalHeroImg from '../assets/vet_dental_dog.jpg';
+import centerLogo from '../assets/center_logo.jpg';
+
 export default function DentalContent() {
   const [selectedDogWeight, setSelectedDogWeight] = useState('0-10');
 
@@ -178,7 +182,7 @@ export default function DentalContent() {
     },
     {
       title: "Emergency Dental Care",
-      desc: "If you notice any emergency signs in your pet (e.g., fractured teeth, bleeding gums, sudden onset of pain), please seek immediate care so that we may address the issue promptly to protect your pet’s overall health."
+      desc: "Emergency dental treatment is provided for acute oral issues including fractured teeth, severe oral trauma, facial swelling and other urgent dental conditions."
     }
   ];
 
@@ -216,26 +220,26 @@ export default function DentalContent() {
     "Nasal discharge or sneezing"
   ];
 
-  const keyBenefits = [
+  const benefits = [
     {
       num: "01",
-      title: "Prevents pain, saves teeth",
-      desc: "Pet dental cleaning prevents pain from tooth problems and can reduce the need for advanced dental procedures if disease is detected early."
+      title: "Prevents dental disease",
+      desc: "Regular dental exams and cleanings remove plaque and tartar before it hardens into calculus. This slows down the progression of periodontal disease and helps to prevent painful conditions like gingivitis and tooth loss."
     },
     {
       num: "02",
-      title: "Prevents heart, kidney and liver problems",
-      desc: "Dental cleaning helps reduce the risk of bacteria entering the bloodstream, which may impact vital organs such as the heart, kidneys, and liver."
+      title: "Relieves pain and discomfort",
+      desc: "Dental problems such as broken teeth, infected roots, and inflamed gums can cause significant pain for your pet. Early treatment helps prevent unnecessary suffering and improves your pet's quality of life."
     },
     {
       num: "03",
-      title: "Improves comfort and ability to eat",
-      desc: "After dental cleaning, eating becomes much easier for your pet as they are able to chew their kibble without pain, and many senior pets even become 'bouncy' and ravenous again."
+      title: "Protects overall health",
+      desc: "Bacteria from infected gums can enter the bloodstream and spread to other organs such as the heart, liver, and kidneys. Maintaining good oral hygiene helps prevent serious systemic health issues."
     },
     {
       num: "04",
-      title: "Will save you money",
-      desc: "By having regular dental cleanings for your pet, you will avoid expensive procedures such as complex surgeries and emergency room visits."
+      title: "Freshens breath",
+      desc: "Bad breath is often a sign of underlying oral disease. Professional cleanings help eliminate the bacteria causing the odor, leaving your pet with fresher breath and a healthier mouth."
     },
     {
       num: "05",
@@ -303,33 +307,33 @@ export default function DentalContent() {
   return (
     <div className="w-full bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
-      {/* Overview / Hero Banner */}
-      <section className="relative pt-32 sm:pt-36 lg:pt-40 pb-16 lg:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      {/* Overview / Split Hero Section */}
+      <section className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[540px] lg:min-h-[500px]">
         
-        {/* Background Image for Mobile and Tablet */}
-        <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <LazyImage 
-            src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
-            alt="Pet Dental Care Examination" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/85 to-slate-950/60" />
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        {/* Left Content Side */}
+        <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
           
-          <div className="lg:col-span-7">
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
+            <PawPrint size={90} className="absolute bottom-8 left-[15%] text-[#9cbc65] opacity-15 dark:opacity-5 -rotate-12" />
+            <PawPrint size={50} className="absolute bottom-20 right-[35%] text-[#9cbc65] opacity-15 dark:opacity-5 rotate-12" />
+            <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
+          </div>
+
+          <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
             <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
               Advanced Veterinary Dentistry
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-4">
               Pet Dental Care
             </h1>
-            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-base leading-relaxed mb-6">
-              Your pet’s health depends on good oral care. Periodontal disease (gum disease) is very common in dogs and cats and often develops without showing obvious signs of pain. Pets often hide signs of dental discomfort, making routine examinations vital for early detection.
+            
+            <div className="w-12 h-1 bg-[#ec558b] mb-6" />
+
+            <p className="text-slate-100 lg:text-slate-700 lg:dark:text-slate-300 text-[16px] leading-relaxed mb-6 font-medium lg:font-normal">
+              Your pet’s health depends on good oral care. Periodontal disease is very common and often develops without obvious signs of pain.
             </p>
-            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-base leading-relaxed mb-8">
-              YourHomeVet provides advanced dental services, including experienced veterinary dentists and dental X-ray capabilities to locate hidden problems below the gumline, such as infected roots, bone loss, and damaged teeth. We provide routine cleanings to advanced oral surgery to protect your pet’s long-term health.
+            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-sm leading-relaxed mb-8 hidden sm:block">
+              YourHomeVet provides comprehensive dental scaling, ultrasonic polishing, and dental X-rays to protect your pet’s teeth and overall vitality.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -337,37 +341,37 @@ export default function DentalContent() {
                 href="https://yourhomevet.com/booking/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
               >
-                <Calendar size={16} /> Book An Appointment
+                <Calendar size={16} /> Book Dental Consult
               </a>
               <a 
                 href="tel:97145971000" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-sm bg-slate-900/80 lg:bg-slate-900 lg:dark:bg-slate-800 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md border border-white/20 lg:border-none"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
               >
                 <Phone size={16} /> Call: 971 4 5971 000
               </a>
             </div>
           </div>
+        </div>
 
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
-              <LazyImage 
-                src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&q=80&w=900" 
-                alt="Pet Dental Care Examination" 
-                className="w-full h-[440px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent p-6 flex flex-col justify-end text-white">
-                <span className="text-xs font-bold text-[#9cbc65] uppercase tracking-wider mb-1">
-                  Full Service Dental Care
-                </span>
-                <h3 className="text-xl font-serif font-bold text-white">
-                  Protecting Smiles & Overall Health
-                </h3>
-              </div>
-            </div>
+        {/* Right Image Side */}
+        <div className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-1/2 h-full lg:h-auto min-h-[500px] bg-slate-100 dark:bg-slate-800 overflow-hidden z-0 lg:z-auto">
+          <img 
+            src={dentalHeroImg} 
+            alt="Pet Dental Care Examination" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40 lg:hidden pointer-events-none z-10" />
+        </div>
+
+        {/* Center Floating Rotating Badge */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto">
+            <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
           </div>
         </div>
+
       </section>
 
       {/* Advanced Dental Services Section - Pinned Scroll Carousel */}
@@ -380,7 +384,7 @@ export default function DentalContent() {
       />
 
       {/* Transparent Pricing Section */}
-      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#ec558b] font-bold text-xs tracking-widest uppercase mb-3 block">
             Transparent Pricing
@@ -547,7 +551,7 @@ export default function DentalContent() {
       <PetDentalInfographic />
 
       {/* Why Is Anesthesia Essential? (Matching screenshot design) */}
-      <section className="py-8 lg:py-24 bg-[#fffbfa] dark:bg-slate-900/60 border-y border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
+      <section className="py-8 lg:py-10 bg-[#fffbfa] dark:bg-slate-900/60 border-y border-rose-100 dark:border-slate-800 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           
           {/* Centered Header */}
@@ -620,7 +624,7 @@ export default function DentalContent() {
       </section>
 
       {/* Pet Dental Care at Home */}
-      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-8 lg:py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7">

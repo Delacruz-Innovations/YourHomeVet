@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 
 const services = [
   {
@@ -43,9 +43,21 @@ const tags = [
 
 export default function Services() {
   const [expandedIndex, setExpandedIndex] = useState(0);
+  const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const visibleLimit = isMobile ? 3 : 6;
+  const displayedServices = showAll ? services : services.slice(0, visibleLimit);
 
   return (
-    <section id="services" className="py-24 sm:py-32 relative overflow-hidden bg-gradient-to-br from-[#f2ebff] via-[#e2e1ff] to-[#e4f3ff] dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 transition-colors">
+    <section id="services" className="py-10 sm:py-32 relative overflow-hidden bg-gradient-to-br from-[#f2ebff] via-[#e2e1ff] to-[#e4f3ff] dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
@@ -88,61 +100,91 @@ export default function Services() {
             </div>
 
             {/* Accordion List */}
-            <div className="flex flex-col w-full font-sans">
-              {services.map((service, index) => {
-                const isExpanded = expandedIndex === index;
+            <motion.div layout className="flex flex-col w-full font-sans">
+              <AnimatePresence mode="popLayout">
+                {displayedServices.map((service, index) => {
+                  const isExpanded = expandedIndex === index;
 
-                return (
-                  <div 
-                    key={index}
-                    className="border-t border-slate-300/60 dark:border-slate-700/60 py-6 sm:py-8 cursor-pointer group"
-                    onClick={() => setExpandedIndex(index)}
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
-                      
-                      {/* Title */}
-                      <div className="sm:w-1/3">
-                        <h4 className={`text-2xl sm:text-3xl font-medium transition-colors ${isExpanded ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-300'}`}>
-                          {service.title}
-                        </h4>
+                  return (
+                    <motion.div 
+                      key={service.title || index}
+                      layout
+                      initial={{ opacity: 0, y: 25 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+                      className="border-t border-slate-300/60 dark:border-slate-700/60 py-6 sm:py-4 cursor-pointer group"
+                      onClick={() => setExpandedIndex(index)}
+                    >
+                      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
+                        
+                        {/* Title */}
+                        <div className="sm:w-1/3">
+                          <h4 className={`text-2xl sm:text-3xl font-medium transition-colors ${isExpanded ? 'text-slate-900 dark:text-white' : 'text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-300'}`}>
+                            {service.title}
+                          </h4>
+                        </div>
+
+                        {/* Description (Expandable) */}
+                        <div className="sm:w-1/2 flex items-start justify-between sm:justify-start gap-4">
+                          <AnimatePresence initial={false}>
+                            {isExpanded && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+                                className="overflow-hidden"
+                              >
+                                <p className="text-slate-600 dark:text-slate-300 text-base sm:text-[17px] leading-relaxed pr-4 pb-4">
+                                  {service.desc}
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </div>
+
+                        {/* Arrow Button */}
+                        <div className="shrink-0 self-end sm:self-start mt-2 sm:mt-0">
+                          <Link 
+                            to={service.link}
+                            className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-800 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors hover:scale-105"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <ArrowUpRight size={18} strokeWidth={2} />
+                          </Link>
+                        </div>
+                        
                       </div>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </motion.div>
 
-                      {/* Description (Expandable) */}
-                      <div className="sm:w-1/2 flex items-start justify-between sm:justify-start gap-4">
-                        <AnimatePresence initial={false}>
-                          {isExpanded && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                              className="overflow-hidden"
-                            >
-                              <p className="text-slate-600 dark:text-slate-300 text-base sm:text-[17px] leading-relaxed pr-4 pb-4">
-                                {service.desc}
-                              </p>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-
-                      {/* Arrow Button */}
-                      <div className="shrink-0 self-end sm:self-start mt-2 sm:mt-0">
-                        <Link 
-                          to={service.link}
-                          className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-800 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors hover:scale-105"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <ArrowUpRight size={18} strokeWidth={2} />
-                        </Link>
-                      </div>
-                      
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
+            {/* View More / Show Less */}
+            {services.length > visibleLimit && (
+              <div className="flex justify-center sm:justify-start mt-8">
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setShowAll(!showAll)}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-300 dark:border-slate-700 shadow-sm text-xs font-bold uppercase tracking-wider transition-all hover:bg-slate-50 cursor-pointer"
+                >
+                  {showAll ? (
+                    <>
+                      <span>Show Less</span>
+                      <ChevronUp size={16} />
+                    </>
+                  ) : (
+                    <>
+                      <span>View More ({services.length - visibleLimit} Remaining)</span>
+                      <ChevronDown size={16} />
+                    </>
+                  )}
+                </motion.button>
+              </div>
+            )}
           </div>
         </div>
       </div>

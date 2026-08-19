@@ -9,11 +9,16 @@ import {
   Heart, 
   Sparkles, 
   CheckCircle2, 
-  ChevronRight,
-  Building2,
-  Award
+  ChevronRight, 
+  Building2, 
+  Award, 
+  PawPrint, 
+  Share2,
+  Play
 } from 'lucide-react';
 import LazyImage from './ui/LazyImage';
+import careersHeroImg from '../assets/v3_hero_landscape.jpg';
+import centerLogo from '../assets/center_logo.jpg';
 
 export default function CareersContent() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -75,52 +80,73 @@ export default function CareersContent() {
   return (
     <div className="w-full relative bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
       
-      {/* Header & About Section */}
-      <section className="py-8 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        {/* Background Image for Mobile and Tablet */}
-        <div className="absolute inset-0 w-full h-full z-0 lg:hidden">
-          <LazyImage 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" 
-            alt="Veterinary team collaboration" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/80 to-slate-950/60" />
-        </div>
+      {/* Overview / Split Hero Section */}
+      <section className="relative w-full flex flex-col lg:flex-row transition-colors duration-300 min-h-[540px] lg:min-h-[500px]">
+        
+        {/* Left Content Side */}
+        <div className="w-full lg:w-1/2 bg-transparent lg:bg-[#f7faf3] lg:dark:bg-slate-900 relative overflow-hidden flex z-10">
+          
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden lg:block">
+            <PawPrint size={90} className="absolute bottom-8 left-[15%] text-[#9cbc65] opacity-15 dark:opacity-5 -rotate-12" />
+            <PawPrint size={50} className="absolute bottom-20 right-[35%] text-[#9cbc65] opacity-15 dark:opacity-5 rotate-12" />
+            <Heart size={140} className="absolute bottom-0 right-[10%] text-[#9cbc65] opacity-10 dark:opacity-5 rotate-12 stroke-[1px] fill-transparent" />
+          </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8 border-b border-white/10 lg:border-slate-100 dark:lg:border-slate-800 pb-6 relative z-10">
-          <div>
-            <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] lg:text-slate-400 lg:dark:text-slate-400 mb-1 block">
-              yourhomevet &gt; Careers
+          <div className="w-full max-w-[640px] px-6 sm:px-8 lg:px-8 xl:pr-16 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:py-36 relative z-10 flex flex-col justify-center ml-auto">
+            <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.2em] uppercase text-[#9cbc65] mb-3 block">
+              YOURHOMEVET &gt; CAREERS
             </span>
-            <h1 className="text-[36px] sm:text-[52px] lg:text-[66px] font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-[1.1] tracking-tight">
-              Careers At YourHomeVet
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-slate-100 font-normal leading-tight mb-4">
+              Join Our Veterinary Family
             </h1>
-          </div>
+            
+            <div className="w-12 h-1 bg-[#ec558b] mb-6" />
 
-          <div className="flex items-center gap-3">
-            <a 
-              href="#jobs-pool" 
-              className="px-7 py-3 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-slate-900 lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-xs font-bold uppercase tracking-widest shadow-md transition-all inline-flex items-center gap-2"
-            >
-              <Briefcase size={15} /> View Open Jobs
-            </a>
-            <button className="p-3 rounded-sm border border-white/30 lg:border-slate-200 dark:lg:border-slate-700 text-white lg:text-slate-600 dark:lg:text-slate-300 hover:bg-white/20 lg:hover:bg-slate-50 dark:lg:hover:bg-slate-800 transition-colors">
-              <Share2 size={16} />
-            </button>
+            <p className="text-slate-100 lg:text-slate-700 lg:dark:text-slate-300 text-[16px] leading-relaxed mb-6 font-medium lg:font-normal">
+              We’re redefining the veterinary profession with cutting-edge medical technology, supportive culture, and industry-leading compensation.
+            </p>
+            <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-sm leading-relaxed mb-8 hidden sm:block">
+              Explore open positions for surgeons, emergency veterinarians, veterinary nurses, and client coordinators across Dubai.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="#jobs-pool" 
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
+              >
+                <Briefcase size={16} /> View Openings
+              </a>
+              <a 
+                href="mailto:careers@yourhomevet.com" 
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
+              >
+                Send Resume
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className="max-w-4xl mb-16 relative z-10">
-          <h2 className="text-2xl font-serif font-bold text-white lg:text-slate-900 lg:dark:text-slate-100 mb-4">
-            About Us
-          </h2>
-          <p className="text-slate-200 lg:text-slate-600 lg:dark:text-slate-400 text-base leading-relaxed">
-            Our lifelong mission is to become dependable partners for pet owners and to aid in creating lasting bonds with their pets. We’re redefining your veterinarian experience by leveraging technology in our processes — from setting up an appointment to the actual veterinarian consultation. Alongside this is ensuring we provide everything that your pet may require with our team of seasoned veterinary doctors, nurses, and technicians — all to deliver modern and complete vet care to your pets.
-          </p>
+        {/* Right Image Side */}
+        <div className="absolute inset-0 lg:relative lg:inset-auto w-full lg:w-1/2 h-full lg:h-auto min-h-[500px] bg-slate-100 dark:bg-slate-800 overflow-hidden z-0 lg:z-auto">
+          <img 
+            src={careersHeroImg} 
+            alt="Veterinary team collaboration" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40 lg:hidden pointer-events-none z-10" />
         </div>
 
-        {/* Core Values */}
-        <div className="mb-16">
+        {/* Center Floating Rotating Badge */}
+        <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-30 pointer-events-none">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center overflow-hidden border-4 border-[#f7faf3] dark:border-slate-800 pointer-events-auto">
+            <img src={centerLogo} alt="Rotating Logo" className="w-full h-full object-cover scale-[1.15]" />
+          </div>
+        </div>
+
+      </section>
+
+      {/* About & Core Values Section */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <h2 className="text-2xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-8">
             Core Values
           </h2>
@@ -136,7 +162,6 @@ export default function CareersContent() {
               </div>
             ))}
           </div>
-        </div>
 
         {/* Hospital Video Container */}
         <div className="relative rounded-sm overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 group aspect-video bg-slate-900 flex items-center justify-center max-w-5xl mx-auto mb-16">

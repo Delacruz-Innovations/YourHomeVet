@@ -17,6 +17,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from './ui/carousel';
+import vetVaccineImg from '../assets/vet_vaccine_puppy.jpg';
 
 const SkiperPinnedCarousel = ({
   items,
@@ -196,7 +197,7 @@ export default function VaccinationsContent() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 dark:border-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=900" 
+                src={vetVaccineImg} 
                 alt="Pet Vaccination at Home" 
                 className="w-full h-[440px] object-cover"
               />
