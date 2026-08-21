@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   Phone, 
@@ -180,17 +181,15 @@ export default function SpayNeuterContent() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <a 
-                href="https://yourhomevet.com/booking/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-lg transition-all block"
+              <Link 
+                to="/book-an-appointment" 
+                className="w-full py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-lg transition-all block text-center"
               >
                 Book An Appointment
-              </a>
+              </Link>
               <a 
                 href="tel:97145971000" 
-                className="w-full py-4 bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all block"
+                className="w-full py-4 bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all block text-center"
               >
                 Call : 971 4 5971 000
               </a>
@@ -346,14 +345,12 @@ export default function SpayNeuterContent() {
 
         {/* Pricing Footer Action */}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a 
-            href="https://yourhomevet.com/booking/" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/book-an-appointment" 
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
           >
             <Calendar size={16} /> Book an Appointment
-          </a>
+          </Link>
           <a 
             href="tel:97145971000" 
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md"

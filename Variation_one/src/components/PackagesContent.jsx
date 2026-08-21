@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Phone, 
@@ -700,14 +701,12 @@ export default function PackagesContent() {
                 >
                   <CreditCard size={15} /> Pay with Stripe ({pkg.priceFormatted})
                 </button>
-                <a 
-                  href="https://yourhomevet.com/booking/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/book-an-appointment" 
                   className="w-full py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 active:scale-[0.98] text-slate-700 dark:text-slate-200 text-center text-xs font-bold uppercase tracking-wider rounded-lg sm:rounded-sm transition-all block"
                 >
-                  Book & Pay In Clinic
-                </a>
+                  Book In-Home Consultation
+                </Link>
               </div>
             </div>
           ))}

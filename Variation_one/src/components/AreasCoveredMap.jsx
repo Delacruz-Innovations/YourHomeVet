@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
@@ -77,15 +78,12 @@ export default function AreasCoveredMap() {
               <p className="text-[13px] text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
                 {loc.desc}
               </p>
-              <button 
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.dispatchEvent(new Event('openBookingModal'));
-                }}
-                className="text-[11px] font-bold uppercase tracking-[0.1em] text-black dark:text-white hover:text-[#ec558b] dark:hover:text-[#ec558b] transition-colors"
+              <Link 
+                to="/book-an-appointment"
+                className="inline-block text-[11px] font-bold uppercase tracking-[0.1em] text-black dark:text-white hover:text-[#ec558b] dark:hover:text-[#ec558b] transition-colors"
               >
-                CONTACT NOW
-              </button>
+                BOOK APPOINTMENT
+              </Link>
             </motion.div>
           ))}
         </div>

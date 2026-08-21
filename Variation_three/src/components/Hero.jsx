@@ -28,8 +28,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/40 text-white text-xs font-bold uppercase tracking-widest mb-6 shadow-lg"
         >
-          <span className="w-2 h-2 rounded-full bg-[#58B66E] animate-pulse" />
-          <span>VETERINARY CARE AT YOUR DOORSTEP</span>
+        
         </motion.div>
 
         {/* Main Headline */}

@@ -121,14 +121,12 @@ export default function MobileClinicContent() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a 
-                href="https://yourhomevet.com/booking/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to="/book-an-appointment" 
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
               >
                 <Calendar size={16} /> Book Mobile Vet
-              </a>
+              </Link>
               <a 
                 href="tel:97145971000" 
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
@@ -319,14 +317,12 @@ export default function MobileClinicContent() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a 
-                href="https://yourhomevet.com/booking/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to="/book-an-appointment" 
                 className="px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest transition-all shadow-lg"
               >
                 Book Mobile Visit
-              </a>
+              </Link>
               <a 
                 href="tel:97145971000" 
                 className="px-8 py-4 rounded-sm bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 text-white text-xs font-bold uppercase tracking-widest transition-all shadow-md"

@@ -29,7 +29,7 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-[#FFF0F5]/50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
+    <section id="faq" className="py-10 bg-[#FFF0F5]/50 dark:bg-slate-950 relative overflow-hidden transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
