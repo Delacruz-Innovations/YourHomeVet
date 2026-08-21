@@ -107,7 +107,7 @@ export default function Hero() {
             </span>
             
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white lg:text-slate-900 lg:dark:text-white leading-tight mb-5">
-              Mobile Vet Services in the comfort of your home.
+              Complete Veterinary Care Under One Roof
             </h1>
             
             <div className="w-12 h-1 bg-[#ec558b] mb-6" />
