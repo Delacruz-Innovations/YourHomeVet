@@ -316,14 +316,12 @@ export default function PricesContent() {
                     </span>
                   </div>
 
-                  <a 
-                    href="https://yourhomevet.com/booking/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                  <Link 
+                    to="/book-an-appointment" 
                     className="w-full py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm transition-all shadow-md block"
                   >
                     Book Now
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

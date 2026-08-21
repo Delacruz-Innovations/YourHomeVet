@@ -112,14 +112,12 @@ export default function VaccinationsContent() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a 
-                href="https://yourhomevet.com/booking/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <Link 
+                to="/book-an-appointment" 
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
               >
                 <Calendar size={16} /> Book Vaccination
-              </a>
+              </Link>
               <a 
                 href="tel:97145971000" 
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"
@@ -319,14 +317,12 @@ export default function VaccinationsContent() {
                 360 AED
               </div>
             </div>
-            <a 
-              href="https://yourhomevet.com/booking/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/book-an-appointment" 
               className="w-full py-4 bg-[#51b255] hover:bg-[#439c47] text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm shadow-md block"
             >
               Book Now
-            </a>
+            </Link>
           </div>
 
           <div className="bg-white dark:bg-slate-900 rounded-sm border-2 border-[#ec558b] p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
@@ -345,14 +341,12 @@ export default function VaccinationsContent() {
                 510 AED
               </div>
             </div>
-            <a 
-              href="https://yourhomevet.com/booking/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/book-an-appointment" 
               className="w-full py-4 bg-[#ec558b] hover:bg-[#d84074] text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm shadow-md block"
             >
               Book Now
-            </a>
+            </Link>
           </div>
 
         </div>
