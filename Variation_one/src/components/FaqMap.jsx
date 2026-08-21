@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function FaqMap() {
   return (
@@ -30,16 +31,18 @@ export default function FaqMap() {
           
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-4">
-            <a 
-              href="/emergency-vet-near-me" 
+            <Link 
+              to="/emergency-vet-near-me" 
               className="px-8 py-3.5 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"
             >
               EXPLORE AREAS WE COVER
-            </a>
-            <a 
-              href="tel:+971505503777" 
+            </Link>
+            <Link 
+              to="/book-an-appointment" 
               className="px-8 py-3.5 rounded-sm border border-slate-400 dark:border-slate-600 bg-transparent text-slate-800 dark:text-slate-200 hover:bg-white/50 dark:hover:bg-slate-900/50 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"
-            >BOOK AN APPOINTMENT</a>
+            >
+              BOOK AN APPOINTMENT
+            </Link>
           </div>
         </div>
       </div>

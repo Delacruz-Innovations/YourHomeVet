@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PawPrint } from 'lucide-react';
@@ -15,38 +16,17 @@ export default function WhyUs() {
       // Parallax and entrance on image
       if (imageRef.current) {
         gsap.fromTo(
-          imageRef.current.querySelector('img'),
-          { scale: 1.1, opacity: 0.8 },
+          imageRef.current,
+          { y: 40, opacity: 0.8 },
           {
-            scale: 1,
+            y: -20,
             opacity: 1,
-            ease: 'power2.out',
+            ease: "none",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 85%',
-              end: 'bottom top',
-              scrub: 1
-            }
-          }
-        );
-      }
-
-      // Text container staggered reveal on scroll (with entrance and exit)
-      if (sectionRef.current) {
-        gsap.fromTo(
-          sectionRef.current.querySelectorAll('.whyus-text-container > *'),
-          { opacity: 0, x: 40 },
-          {
-            opacity: 1,
-            x: 0,
-            duration: 0.85,
-            stagger: 0.12,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 75%',
-              end: 'bottom 20%',
-              toggleActions: 'play reverse play reverse'
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.2,
             }
           }
         );
@@ -57,21 +37,39 @@ export default function WhyUs() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="whyus" className="relative w-full flex flex-col lg:flex-row transition-colors duration-300">
-      
-      <div ref={imageRef} className="w-full lg:w-1/2 relative h-[400px] lg:h-auto min-h-[500px] whyus-image-container">
-        <img
-          src={rabbitImage}
-          alt="Woman holding a rabbit"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      <div className="w-full lg:w-1/2 bg-[#fdf0f4] dark:bg-slate-900 relative overflow-hidden flex">
+    <section 
+      ref={sectionRef} 
+      className="w-full bg-[#fdf5b6]/20 dark:bg-slate-900/30 py-20 lg:py-28 overflow-hidden transition-colors"
+    >
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
-        <PawPrint size={140} className="absolute bottom-8 right-12 text-[#ec558b] opacity-10 dark:opacity-5 rotate-12 pointer-events-none" fill="currentColor" />
+        {/* Left: Image with custom organic shape background */}
+        <div className="relative flex justify-center items-center">
+          {/* Soft yellow/cream organic blob */}
+          <div className="absolute w-[300px] sm:w-[420px] h-[300px] sm:h-[420px] bg-[#fbf5be] dark:bg-[#fbf5be]/10 rounded-full blur-2xl -z-10" />
+          
+          <div className="relative w-full max-w-[440px] aspect-square rounded-[36px] overflow-hidden bg-slate-100 dark:bg-slate-800 shadow-2xl border-4 border-white dark:border-slate-800">
+            <img 
+              ref={imageRef}
+              src={rabbitImage} 
+              alt="Rabbit emergency care" 
+              className="w-full h-full object-cover transform scale-105"
+            />
+          </div>
 
-        <div className="w-full max-w-[640px] px-4 sm:px-6 lg:px-8 xl:pl-16 py-8 lg:py-8 lg:py-32 relative z-10 flex flex-col justify-center mr-auto whyus-text-container">
+          <div className="absolute -bottom-6 -left-2 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl flex items-center gap-3.5 border border-slate-100 dark:border-slate-700">
+            <div className="w-10 h-10 rounded-xl bg-[#ec558b]/10 text-[#ec558b] flex items-center justify-center">
+              <PawPrint size={22} />
+            </div>
+            <div>
+              <p className="text-xs font-bold text-slate-800 dark:text-slate-100">Exotic Pets Care</p>
+              <p className="text-[11px] text-slate-400">Rabbits, birds, & more</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Content */}
+        <div className="flex flex-col">
           <span className="text-[#ec558b] font-bold text-[11px] tracking-wide uppercase mb-4 block">
             Do we service your postcode?
           </span>
@@ -85,16 +83,18 @@ export default function WhyUs() {
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <a
-              href="/emergency-vet-near-me"
+            <Link
+              to="/emergency-vet-near-me"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md"
             >
               Explore Areas We Cover
-            </a>
-            <a
-              href="#call"
+            </Link>
+            <Link
+              to="/book-an-appointment"
               className="inline-flex items-center justify-center px-6 py-3.5 rounded-sm border border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white dark:hover:text-slate-900 text-[11px] font-bold uppercase tracking-wide transition-colors"
-            >BOOK AN APPOINTMENT</a>
+            >
+              BOOK AN APPOINTMENT
+            </Link>
           </div>
         </div>
       </div>

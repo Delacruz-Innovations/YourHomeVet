@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
@@ -326,17 +327,15 @@ export default function OphthalmologyContent() {
               Early detection prevents long-term vision loss. Schedule a comprehensive eye examination with our specialists.
             </p>
             <div className="flex flex-col gap-3">
-              <a 
-                href="https://yourhomevet.com/booking/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all block"
+              <Link 
+                to="/book-an-appointment" 
+                className="w-full py-3.5 bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all block text-center"
               >
                 Book An Appointment
-              </a>
+              </Link>
               <a 
                 href="tel:97145971000" 
-                className="w-full py-3.5 bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm transition-all block"
+                className="w-full py-3.5 bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm transition-all block text-center"
               >
                 Call : 971 4 5971 000
               </a>

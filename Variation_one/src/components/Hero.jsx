@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -117,18 +118,12 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-wrap items-center gap-4">
-              <motion.a
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                href="#booking"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.dispatchEvent(new Event('openBookingModal'));
-                }}
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-colors shadow-md cursor-pointer"
+              <Link
+                to="/book-an-appointment"
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md"
               >
                 Book An Appointment
-              </motion.a>
+              </Link>
             </div>
 
             <div className="hidden gap-3 mt-8 z-10">

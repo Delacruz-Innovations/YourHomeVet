@@ -289,14 +289,12 @@ export default function Header({ darkMode, toggleDarkMode }) {
                 {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-indigo-600" />}
               </motion.button>
 
-              <motion.a
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                href="tel:+971505503777"
-                className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[13px] font-bold shadow-md shadow-pink-500/20 transition-all duration-200 tracking-wide"
+              <Link
+                to="/book-an-appointment"
+                className="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[13px] font-bold shadow-md shadow-pink-500/20 transition-all duration-200 tracking-wide transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 BOOK AN APPOINTMENT
-              </motion.a>
+              </Link>
 
               <button
                 onClick={() => setMobileMenuOpen(true)}
@@ -353,14 +351,12 @@ export default function Header({ darkMode, toggleDarkMode }) {
                 {darkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-indigo-600" />}
               </motion.button>
 
-              <motion.a
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                href="tel:+971505503777"
-                className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[12px] sm:text-[13px] font-bold shadow-md shadow-pink-500/20 transition-all duration-200 tracking-wide"
+              <Link
+                to="/book-an-appointment"
+                className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[12px] sm:text-[13px] font-bold shadow-md shadow-pink-500/20 transition-all duration-200 tracking-wide transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 BOOK AN APPOINTMENT
-              </motion.a>
+              </Link>
 
               <button
                 onClick={() => setMobileMenuOpen(true)}
@@ -483,10 +479,17 @@ export default function Header({ darkMode, toggleDarkMode }) {
               })}
             </div>
 
-            <div className="pt-8 pb-4 flex flex-col gap-4">
+            <div className="pt-8 pb-4 flex flex-col gap-3">
+              <Link
+                to="/book-an-appointment"
+                onClick={closeMobileMenu}
+                className="w-full py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-center text-xs font-bold tracking-widest uppercase shadow-md block"
+              >
+                Book An Appointment
+              </Link>
               <a
                 href="tel:+971505503777"
-                className="w-full py-4 rounded-sm bg-[#ec558b] text-white text-center text-xs font-bold tracking-widest uppercase shadow-lg block"
+                className="w-full py-3.5 rounded-sm border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 text-center text-xs font-bold tracking-widest uppercase block"
               >
                 Call Emergency: +971 50 550 3777
               </a>

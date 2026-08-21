@@ -30,6 +30,7 @@ import GalleryPage from './pages/GalleryPage';
 import VideosPage from './pages/VideosPage';
 import PackagesPage from './pages/PackagesPage';
 import OurTeamPage from './pages/OurTeamPage';
+import BookingPage from './pages/BookingPage';
 
 // Register ScrollTrigger globally once
 gsap.registerPlugin(ScrollTrigger);
@@ -115,6 +116,10 @@ function App() {
           <Route path="our-team" element={<OurTeamPage />} />
           <Route path="team" element={<OurTeamPage />} />
           <Route path="meet-our-team" element={<OurTeamPage />} />
+          <Route path="book-an-appointment" element={<BookingPage />} />
+          <Route path="book-appointment" element={<BookingPage />} />
+          <Route path="book" element={<BookingPage />} />
+          <Route path="booking" element={<BookingPage />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const blocks = [
   {
@@ -91,10 +92,12 @@ export default function EmergencyVetBlocks() {
               
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4">
-                <a 
-                  href="tel:+971505503777" 
+                <Link 
+                  to="/book-an-appointment" 
                   className="px-8 py-3.5 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
-                >BOOK AN APPOINTMENT</a>
+                >
+                  BOOK AN APPOINTMENT
+                </Link>
                 <a 
                   href="#call-me-back" 
                   className="px-8 py-3.5 rounded-sm border border-slate-400/50 dark:border-slate-700 bg-transparent text-slate-800 dark:text-slate-200 hover:bg-white/50 dark:hover:bg-slate-900/50 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"

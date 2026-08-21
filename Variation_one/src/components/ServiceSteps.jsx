@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -96,16 +97,18 @@ export default function ServiceSteps() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4">
-                  <a
-                    href="tel:+971505503777"
+                  <Link
+                    to="/book-an-appointment"
                     className="px-7 py-3.5 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] transition-colors shadow-md"
-                  >BOOK AN APPOINTMENT</a>
-                  <a
-                    href="/emergency-vet-near-me"
+                  >
+                    BOOK AN APPOINTMENT
+                  </Link>
+                  <Link
+                    to="/emergency-vet-near-me"
                     className="px-7 py-3.5 rounded-sm border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] transition-colors"
                   >
                     EXPLORE AREAS WE COVER
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

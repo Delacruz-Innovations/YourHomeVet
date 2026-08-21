@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function EmergencyVetHero() {
   return (
@@ -37,12 +38,12 @@ export default function EmergencyVetHero() {
         
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a 
-            href="tel:+971505503777" 
+          <Link 
+            to="/book-an-appointment" 
             className="px-8 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] lg:bg-black lg:hover:bg-slate-800 text-white lg:dark:bg-white lg:dark:text-slate-950 text-[11px] font-bold uppercase tracking-[0.1em] transition-all shadow-md"
           >
             BOOK AN APPOINTMENT
-          </a>
+          </Link>
           <a 
             href="#call-me-back" 
             className="px-8 py-3.5 rounded-sm border border-white/30 lg:border-slate-400/50 lg:dark:border-slate-700 bg-slate-950/40 lg:bg-white/40 lg:dark:bg-slate-900/40 text-white lg:text-slate-800 lg:dark:text-slate-200 hover:bg-white/20 lg:hover:bg-white lg:dark:hover:bg-slate-800 text-[11px] font-bold uppercase tracking-[0.1em] transition-all"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import emergencyImage from '../assets/emergency_dog.png';
 import catImage from '../assets/cat_play.png';
@@ -11,7 +12,7 @@ export default function InsuranceQuestions() {
       <div className="absolute top-1/2 -left-24 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-[#dbeefe] opacity-90 blur-3xl pointer-events-none"></div>
       <div className="absolute top-1/3 -right-24 w-[500px] h-[500px] rounded-full bg-[#e0d4f5] opacity-60 blur-3xl pointer-events-none"></div>
 
-      {/* Floating Pet Images (Styled as beautiful circular badges since we have full-bleed generated images) */}
+      {/* Floating Pet Images */}
       <div className="absolute left-[5%] lg:left-[15%] bottom-[-5%] w-[35%] max-w-[280px] pointer-events-none opacity-90 dark:opacity-80 mix-blend-multiply dark:mix-blend-normal z-0 hidden sm:block">
          <img src={emergencyImage} alt="Dog" className="w-full h-auto rounded-full object-cover aspect-square shadow-2xl border-8 border-white dark:border-slate-800" />
       </div>
@@ -32,12 +33,12 @@ export default function InsuranceQuestions() {
 
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4 relative z-20">
-          <motion.a
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            href="tel:+971505503777"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md"
-          >BOOK AN APPOINTMENT</motion.a>
+          <Link
+            to="/book-an-appointment"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-black hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-[11px] font-bold uppercase tracking-wide transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-md"
+          >
+            BOOK AN APPOINTMENT
+          </Link>
           <motion.a
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

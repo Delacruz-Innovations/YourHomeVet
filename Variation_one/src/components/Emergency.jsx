@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -65,14 +66,12 @@ export default function Emergency() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mt-8">
-          <motion.a 
-            href="#call" 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 bg-[#ec558b] hover:bg-[#d84074] text-white px-8 py-4 rounded-sm font-bold text-[13px] uppercase tracking-[0.1em] transition-colors shadow-lg"
+          <Link 
+            to="/book-an-appointment" 
+            className="inline-flex items-center gap-2 bg-[#ec558b] hover:bg-[#d84074] text-white px-8 py-4 rounded-sm font-bold text-[13px] uppercase tracking-[0.1em] transition-all transform hover:scale-105 active:scale-95 shadow-lg"
           >
             BOOK AN APPOINTMENT
-          </motion.a>
+          </Link>
           
           <motion.button 
             whileHover={{ scale: 1.05 }}

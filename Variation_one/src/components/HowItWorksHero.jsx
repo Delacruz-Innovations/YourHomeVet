@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PawPrint, Heart } from 'lucide-react';
 import howItWorksImg from '../assets/emergency_dog.png';
 import centerLogo from '../assets/center_logo.jpg';
@@ -32,12 +33,12 @@ export default function HowItWorksHero() {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <a 
-              href="tel:+971505503777" 
+            <Link 
+              to="/book-an-appointment" 
               className="px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-all shadow-md"
             >
               BOOK AN APPOINTMENT
-            </a>
+            </Link>
             <a 
               href="#steps" 
               className="px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-all bg-slate-950/40 lg:bg-transparent"

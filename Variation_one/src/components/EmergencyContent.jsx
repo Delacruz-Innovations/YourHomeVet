@@ -599,12 +599,12 @@ export default function EmergencyContent() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <a 
-              href="#book" 
+            <Link 
+              to="/book-an-appointment" 
               className="px-8 py-4 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-widest shadow-md transition-all flex items-center gap-2"
             >
               <Calendar size={16} /> Book an Appointment
-            </a>
+            </Link>
             <Link 
               to="/contact" 
               className="px-8 py-4 rounded-sm border border-white/40 text-white hover:bg-white/10 text-xs font-bold uppercase tracking-widest transition-all"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 
 export default function ServiceRestInMind() {
@@ -58,7 +59,9 @@ export default function ServiceRestInMind() {
           </ul>
           
           <div className="flex flex-wrap gap-4">
-            <a href="#call" className="px-7 py-3 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md">BOOK AN APPOINTMENT</a>
+            <Link to="/book-an-appointment" className="px-7 py-3 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-[11px] font-bold uppercase tracking-wide transition-colors shadow-md">
+              BOOK AN APPOINTMENT
+            </Link>
             <a href="#services" className="px-7 py-3 rounded-sm border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-[11px] font-bold uppercase tracking-wide transition-colors">
               See All Services
             </a>

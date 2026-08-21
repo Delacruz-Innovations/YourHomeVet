@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import Header from './Header';
 import Footer from './Footer';
 import WhatsAppWidget from './WhatsAppWidget';
-import BookingModal from './BookingModal';
 import CallMeBackModal from './CallMeBackModal';
 import PageTransition from './PageTransition';
 
@@ -15,17 +14,27 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function Layout({ darkMode, toggleDarkMode }) {
   const location = useLocation();
+  const navigate = useNavigate();
   
-  // Global click interceptor for modals
+  // Global click interceptor for booking page navigation & callback modal
   useEffect(() => {
     const handleGlobalClick = (e) => {
       const target = e.target.closest('a, button');
       if (target) {
         const text = target.textContent.trim().toUpperCase();
+        const href = target.getAttribute('href');
         
-        if (text === 'BOOK AN APPOINTMENT') {
+        if (
+          text === 'BOOK AN APPOINTMENT' || 
+          text === 'BOOK APPOINTMENT' || 
+          text === 'BOOK CONSULTATION' || 
+          href === '#booking' || 
+          href === '#book'
+        ) {
           e.preventDefault();
-          window.dispatchEvent(new Event('openBookingModal'));
+          navigate('/book-an-appointment');
+          window.scrollTo(0, 0);
+          return;
         }
         
         if (text === 'CALL ME BACK' || text === 'REQUEST CALL BACK' || text === 'REQUEST A CALL BACK') {
@@ -36,7 +45,7 @@ export default function Layout({ darkMode, toggleDarkMode }) {
     };
     document.addEventListener('click', handleGlobalClick);
     return () => document.removeEventListener('click', handleGlobalClick);
-  }, []);
+  }, [navigate]);
 
   // Initialize GSAP ScrollSmoother
   useEffect(() => {
@@ -77,7 +86,6 @@ export default function Layout({ darkMode, toggleDarkMode }) {
       
       {/* Global Floating Widgets & Modals (outside smooth-content to prevent fixed position conflicts) */}
       <WhatsAppWidget />
-      <BookingModal />
       <CallMeBackModal />
     </div>
   );
