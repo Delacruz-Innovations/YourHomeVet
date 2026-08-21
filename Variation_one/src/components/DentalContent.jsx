@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'framer-motion';
@@ -666,14 +667,12 @@ export default function DentalContent() {
             </div>
 
             <div className="space-y-3">
-              <a 
-                href="https://yourhomevet.com/booking/" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                to="/book-an-appointment" 
                 className="w-full py-4 bg-white text-[#ec558b] text-center text-xs font-bold uppercase tracking-widest rounded-sm transition-all hover:bg-slate-100 shadow-md block"
               >
                 Book An Appointment
-              </a>
+              </Link>
               <a 
                 href="tel:97145971000" 
                 className="w-full py-4 bg-slate-900 text-white text-center text-xs font-bold uppercase tracking-widest rounded-sm transition-all hover:bg-slate-800 shadow-md block"
