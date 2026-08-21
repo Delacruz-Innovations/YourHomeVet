@@ -120,18 +120,14 @@ export default function Hero() {
               <motion.a
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                href="#nurse"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-colors shadow-md"
+                href="#booking"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new Event('openBookingModal'));
+                }}
+                className="inline-flex items-center justify-center px-8 py-3.5 rounded-sm bg-[#ec558b] hover:bg-[#d84074] text-white text-xs font-bold uppercase tracking-wide transition-colors shadow-md cursor-pointer"
               >
-                Call Our Nurse
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                href="#callback"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-sm border-2 border-[#9cbc65] text-[#9cbc65] hover:bg-[#9cbc65] hover:text-white text-xs font-bold uppercase tracking-wide transition-colors bg-slate-950/40 lg:bg-transparent"
-              >
-                Call Me Back
+                Book An Appointment
               </motion.a>
             </div>
 
